@@ -32,7 +32,7 @@
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--white);color:var(--text);font-family:var(--font-b);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
 
-/* ── NAV ── */
+
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
 .nav-logo{font-family:var(--font-d);font-size:1.1rem;color:var(--teal-dd);letter-spacing:-0.01em}
@@ -42,7 +42,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .nav-cta{font-size:0.82rem;font-weight:500;color:var(--teal);border:1px solid var(--teal);padding:6px 16px;border-radius:20px;text-decoration:none;transition:all 0.2s;letter-spacing:0.02em}
 .nav-cta:hover{background:var(--teal);color:var(--white)}
 
-/* ── HERO ── */
+
 #hero{min-height:100vh;display:flex;align-items:center;background:var(--off);position:relative;overflow:hidden;padding:80px 5% 60px}
 #atom-canvas{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.18}
 .hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;position:relative;z-index:1}
@@ -64,12 +64,12 @@ h1 em{font-style:italic;color:var(--teal)}
 .hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem}
 .htag{font-family:var(--font-m);font-size:0.7rem;background:var(--teal-ll);color:var(--teal-dd);padding:4px 10px;border-radius:4px;border:1px solid var(--teal-l)}
 
-/* ── MOLECULE DIVIDER ── */
+
 .mol-div{display:flex;align-items:center;gap:0;width:100%;overflow:hidden;margin:0 auto;max-width:1100px;padding:0 5%}
 .mol-line{flex:1;height:1px;background:var(--border)}
 .mol-svg-wrap{padding:0 12px;opacity:0.5}
 
-/* ── SECTIONS ── */
+
 section{padding:80px 5%}
 .section-inner{max-width:1100px;margin:0 auto}
 .s-label{font-family:var(--font-m);font-size:0.7rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:8px}
@@ -77,7 +77,7 @@ section{padding:80px 5%}
 h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;color:var(--navy);line-height:1.15;letter-spacing:-0.01em;margin-bottom:2.5rem}
 h2 em{font-style:italic;color:var(--teal)}
 
-/* ── ABOUT / SKILLS ── */
+
 #about{background:var(--white)}
 .about-grid{display:grid;grid-template-columns:1.1fr 1.6fr;gap:4rem;align-items:start}
 .about-text p{font-size:0.95rem;line-height:1.85;color:var(--text-m);margin-bottom:1rem}
@@ -92,7 +92,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .sk:hover{background:var(--teal-ll);border-color:var(--teal);color:var(--teal-dd)}
 .sk.hot{background:var(--teal-ll);border-color:var(--teal-l);color:var(--teal-dd)}
 
-/* ── EXPERIENCE TIMELINE ── */
+
 #experience{background:var(--teal-ll)}
 .timeline{position:relative;padding-left:2px}
 .timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;background:var(--border-m)}
@@ -112,7 +112,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .t-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0.75rem}
 .ttag{font-family:var(--font-m);font-size:0.65rem;background:var(--teal-ll);color:var(--teal-dd);padding:2px 7px;border-radius:3px;border:1px solid var(--teal-l)}
 
-/* ── PROJECTS ── */
+
 #projects{background:var(--white)}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .pcard{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.25s;background:var(--white)}
@@ -139,7 +139,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .feat-hl-items li{font-size:0.8rem;color:var(--teal-dd);padding-left:12px;position:relative}
 .feat-hl-items li::before{content:'✓';position:absolute;left:0;font-size:0.7rem}
 
-/* ── PUBLICATIONS ── */
+
 #publications{background:var(--off)}
 .pub-item{border:1px solid var(--border);border-radius:10px;padding:1.5rem;background:var(--white);margin-bottom:1rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start}
 .pub-year{font-family:var(--font-m);font-size:0.7rem;color:var(--teal);background:var(--teal-ll);border:1px solid var(--teal-l);border-radius:4px;padding:4px 8px;white-space:nowrap;height:fit-content}
@@ -148,7 +148,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .pub-venue{font-family:var(--font-m);font-size:0.72rem;color:var(--teal);display:flex;align-items:center;gap:6px}
 .pub-award{display:inline-flex;align-items:center;gap:4px;background:#FEF9C3;color:#854D0E;border:1px solid #FDE68A;border-radius:4px;font-size:0.68rem;padding:2px 7px;margin-left:8px;font-weight:500}
 
-/* ── EDUCATION ── */
+
 #education{background:var(--white)}
 .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .ecard{border:1px solid var(--border);border-radius:12px;padding:1.5rem;background:var(--white);transition:border-color 0.2s}
@@ -163,7 +163,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .e-year{font-family:var(--font-m);font-size:0.7rem;color:var(--text-l)}
 .e-note{font-size:0.78rem;color:var(--text-m);margin-top:0.75rem;line-height:1.6;border-top:1px solid var(--border);padding-top:0.75rem}
 
-/* ── CONTACT / FOOTER ── */
+  
 #contact{background:var(--teal-dd);padding:80px 5% 60px}
 .contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
 .contact-inner h2{color:var(--white);margin-bottom:1rem}
@@ -178,7 +178,7 @@ h2 em{font-style:italic;color:var(--teal)}
 .foot-copy{font-size:0.78rem;color:rgba(255,255,255,0.4)}
 .foot-loc{font-family:var(--font-m);font-size:0.7rem;color:rgba(255,255,255,0.4)}
 
-/* ── ANIMATIONS ── */
+
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
@@ -194,7 +194,7 @@ h2 em{font-style:italic;color:var(--teal)}
 </head>
 <body>
 
-<!-- NAV -->
+
 <nav>
   <div class="nav-inner">
     <span class="nav-logo">Shubham Shinde</span>
@@ -209,7 +209,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </nav>
 
-<!-- HERO -->
+
 <section id="hero">
   <canvas id="atom-canvas"></canvas>
   <div class="hero-inner">
@@ -260,7 +260,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- MOLECULE DIVIDER -->
+
 <div style="padding:0 5%;background:var(--white)">
   <div class="mol-div">
     <div class="mol-line"></div>
@@ -283,7 +283,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </div>
 
-<!-- ABOUT -->
+
 <section id="about">
   <div class="section-inner">
     <div class="s-label">About</div>
@@ -335,7 +335,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- DIVIDER -->
+
 <div style="padding:0 5%;background:var(--teal-ll)">
   <div class="mol-div">
     <div class="mol-line"></div>
@@ -354,7 +354,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </div>
 
-<!-- EXPERIENCE -->
+
 <section id="experience">
   <div class="section-inner">
     <div class="s-label">Experience</div>
@@ -425,7 +425,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- DIVIDER -->
+
 <div style="padding:0 5%;background:var(--white)">
   <div class="mol-div">
     <div class="mol-line"></div>
@@ -447,14 +447,14 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </div>
 
-<!-- PROJECTS -->
+
 <section id="projects">
   <div class="section-inner">
     <div class="s-label">Projects</div>
     <h2>Key<br><em>contributions</em></h2>
     <div class="proj-grid">
 
-      <!-- FEATURED -->
+
       <div class="pcard featured reveal">
         <div class="pcard-top">
           <div>
@@ -533,7 +533,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
+
 <section id="publications">
   <div class="section-inner">
     <div class="s-label">Publications</div>
@@ -552,7 +552,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- EDUCATION -->
+
 <section id="education">
   <div class="section-inner">
     <div class="s-label">Education</div>
@@ -583,7 +583,7 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-<!-- CONTACT -->
+
 <section id="contact">
   <div class="contact-inner">
     <div>
@@ -629,7 +629,7 @@ h2 em{font-style:italic;color:var(--teal)}
 </section>
 
 <script>
-// ── Animated atom canvas ───────────────────────────────────────────────────────
+
 const canvas=document.getElementById('atom-canvas');
 const ctx=canvas.getContext('2d');
 let W,H,cx,cy,t=0;
@@ -652,7 +652,7 @@ for(let i=0;i<28;i++){
 
 function draw(){
   ctx.clearRect(0,0,W,H);
-  // background grid dots
+  
   ctx.fillStyle=TEAL+'0.12)';
   for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40)ctx.fillRect(x-0.5,y-0.5,1,1);
 
@@ -665,24 +665,24 @@ function draw(){
     ctx.fillStyle=TEAL+'0.25)';ctx.fill();
   });
 
-  // nucleus glow
+ 
   const g=ctx.createRadialGradient(cx,cy,0,cx,cy,30);
   g.addColorStop(0,TEAL+'0.35)');g.addColorStop(1,TEAL+'0)');
   ctx.beginPath();ctx.arc(cx,cy,30,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
   ctx.beginPath();ctx.arc(cx,cy,8,0,Math.PI*2);ctx.fillStyle=TEAL+'0.5)';ctx.fill();
 
-  // orbits and electrons
+
   orbits.forEach((o,i)=>{
     const angle=t*o.speed*60+i*(Math.PI*2/orbits.length);
     ctx.save();ctx.translate(cx,cy);ctx.rotate(o.tilt);
     ctx.beginPath();ctx.ellipse(0,0,o.rx,o.ry,0,0,Math.PI*2);
     ctx.strokeStyle=TEAL+'0.15)';ctx.lineWidth=1;ctx.stroke();
-    // electron
+
     const ex=Math.cos(angle)*o.rx;
     const ey=Math.sin(angle)*o.ry;
     ctx.beginPath();ctx.arc(ex,ey,o.size,0,Math.PI*2);
     ctx.fillStyle=TEAL+'0.55)';ctx.fill();
-    // trail
+
     for(let tr=1;tr<=6;tr++){
       const ta=angle-tr*0.12;
       const tx2=Math.cos(ta)*o.rx,ty2=Math.sin(ta)*o.ry;
@@ -692,7 +692,7 @@ function draw(){
     ctx.restore();
   });
 
-  // connector lines between nearby nodes
+
   nodes.forEach((a,i)=>{
     nodes.slice(i+1).forEach(b=>{
       const d=Math.hypot(a.x-b.x,a.y-b.y);
@@ -704,7 +704,7 @@ function draw(){
 }
 draw();
 
-// ── Scroll reveal ─────────────────────────────────────────────────────────────
+
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
 },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
