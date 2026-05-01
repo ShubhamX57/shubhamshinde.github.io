@@ -35,7 +35,13 @@
   --font-b:   'Crimson Pro', Georgia, serif;
   --font-m:   'JetBrains Mono', monospace;
   --font-h:   'Caveat', cursive;
-  --rule-h:   28px;
+
+  /* ── Baseline grid unit ──
+     Every vertical measurement must be a multiple of this.
+     1u=28px  2u=56px  3u=84px  4u=112px  5u=140px  6u=168px */
+  --u:        28px;
+  --rule-h:   28px;   /* alias kept for bg gradient */
+  --nav-h:    56px;   /* 2u — nav height */
   --margin-w: 72px;
 }
 
@@ -49,10 +55,15 @@ body{
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-b);
-  font-size: 17px;
-  line-height: 1.85;
+  font-size: 16px;
+  /* ── CRITICAL: line-height must equal --u exactly ── */
+  line-height: var(--u);
   -webkit-font-smoothing: antialiased;
-  /* Ruled lines */
+  /* Push content below fixed nav — must be a multiple of --u */
+  padding-top: var(--nav-h);
+  /* Ruled lines.
+     background-position y=0 means first rule at top of padding-top area.
+     Rules land at: 28, 56, 84, 112 … px from content start. */
   background-image:
     linear-gradient(var(--margin-l) 0px, var(--margin-l) 1px, transparent 1px),
     linear-gradient(90deg, var(--margin-l) 0px, var(--margin-l) 1px, transparent 1px),
@@ -63,7 +74,8 @@ body{
       var(--rule) var(--rule-h)
     );
   background-size: 1px 100%, calc(var(--margin-w) + 1px) 100%, 100% var(--rule-h);
-  background-position: calc(var(--margin-w)) 0, calc(var(--margin-w)) 0, 0 56px;
+  /* y offset = nav-h so rules stay locked to content rows regardless of scroll */
+  background-position: calc(var(--margin-w)) 0, calc(var(--margin-w)) 0, 0 var(--nav-h);
   background-attachment: local, local, local;
 }
 
@@ -111,7 +123,7 @@ nav{
   max-width:960px;margin:0 auto;
   display:flex;align-items:center;
   justify-content:space-between;
-  height:52px;padding:0 2rem 0 calc(var(--margin-w) + 2rem);
+  height:var(--nav-h);padding:0 2rem 0 calc(var(--margin-w) + 2rem);
 }
 .nav-logo{
   font-family:var(--font-h);font-size:1.35rem;
@@ -143,19 +155,40 @@ nav{
 
 /* ══════════════════════════════════════════════
    SECTION SCAFFOLDING
+   All vertical values are multiples of --u (28px)
 ══════════════════════════════════════════════ */
-section{padding:72px 0 56px;position:relative}
+section{padding:84px 0 56px;position:relative}   /* 3u top, 2u bottom */
 section+section{border-top:1px solid var(--rule)}
 
 .entry-date{
   font-family:var(--font-m);font-size:0.62rem;
   color:var(--ink-ll);letter-spacing:0.1em;
-  text-transform:uppercase;margin-bottom:0.5rem;
+  text-transform:uppercase;
+  /* 28px line-height keeps it on grid; margin eats one full unit */
+  line-height:var(--u);
+  margin-bottom:var(--u);
 }
-h1,h2,h3{font-family:var(--font-s);font-weight:500;line-height:1.15}
-h1{font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-0.02em;color:var(--ink)}
-h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.01em;color:var(--ink);margin-bottom:2rem}
-h3{font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem}
+h1,h2,h3{font-family:var(--font-s);font-weight:500}
+h1{
+  font-size:clamp(2.2rem,4.5vw,3.4rem);
+  /* 3u line-height for large display text */
+  line-height:calc(3 * var(--u));
+  letter-spacing:-0.02em;color:var(--ink);
+  margin-bottom:0;
+}
+h2{
+  font-size:clamp(1.5rem,2.8vw,2rem);
+  /* 2u line-height */
+  line-height:calc(2 * var(--u));
+  letter-spacing:-0.01em;color:var(--ink);
+  /* 2u gap below heading before body text */
+  margin-bottom:calc(2 * var(--u));
+}
+h3{
+  font-size:1rem;color:var(--ink);
+  line-height:var(--u);
+  margin-bottom:var(--u);
+}
 
 /* Margin annotation */
 .annot{
@@ -193,29 +226,39 @@ code{
 #hero{
   min-height:100vh;
   display:flex;align-items:center;
-  padding:100px 0 72px;
+  /* 3u top + 3u bottom — body padding-top already accounts for nav */
+  padding:84px 0 84px;
 }
 .hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%}
 .hero-label{
   font-family:var(--font-m);font-size:0.65rem;
   color:var(--ink-l);letter-spacing:0.12em;
-  text-transform:uppercase;margin-bottom:1.25rem;
+  text-transform:uppercase;
+  line-height:var(--u);
+  margin-bottom:var(--u);
 }
-.hero-name{margin-bottom:0.4rem}
+.hero-name{margin-bottom:0}
 .hero-name em{font-style:italic;color:var(--blue)}
 .hero-subtitle{
-  font-size:1.1rem;font-style:italic;
-  color:var(--ink-m);margin-bottom:0.25rem;
+  font-size:1.05rem;font-style:italic;
+  color:var(--ink-m);
+  line-height:var(--u);
+  margin-bottom:0;
 }
 .hero-uni{
   font-family:var(--font-m);font-size:0.7rem;
-  color:var(--ink-l);margin-bottom:2rem;letter-spacing:0.04em;
+  color:var(--ink-l);
+  line-height:var(--u);
+  margin-bottom:calc(2 * var(--u));
+  letter-spacing:0.04em;
 }
 .hero-lead{
-  font-size:1.15rem;line-height:1.9;
-  color:var(--ink-m);max-width:580px;margin-bottom:2rem;
+  font-size:1rem;
+  line-height:var(--u);
+  color:var(--ink-m);max-width:560px;
+  margin-bottom:calc(2 * var(--u));
 }
-.hero-links{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem}
+.hero-links{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:calc(2 * var(--u))}
 .btn-p{
   font-family:var(--font-m);font-size:0.68rem;
   color:var(--paper);background:var(--blue);
@@ -276,15 +319,16 @@ code{
   display:grid;grid-template-columns:1fr 340px;
   gap:4rem;align-items:start;
 }
-.prose p{font-size:1.05rem;line-height:1.95;color:var(--ink-m);margin-bottom:1rem}
+.prose p{font-size:1rem;line-height:var(--u);color:var(--ink-m);margin-bottom:var(--u)}
 .prose p:last-child{margin-bottom:0}
 .prose strong{color:var(--ink);font-weight:600}
 
 /* awards */
-.award-list{list-style:none;margin-top:1.5rem}
+.award-list{list-style:none;margin-top:calc(2 * var(--u))}
 .award-list li{
   font-size:0.9rem;color:var(--ink-m);
-  padding:0.6rem 0;border-bottom:1px dashed var(--rule);
+  line-height:var(--u);
+  padding:14px 0;border-bottom:1px dashed var(--rule);
   display:flex;align-items:baseline;gap:0.6rem;
 }
 .award-list li::before{content:'★';color:var(--amber);font-size:0.75rem;flex-shrink:0}
@@ -323,7 +367,7 @@ code{
   position:relative;
   border-radius:0 2px 2px 0;
 }
-.exp-entry.drdo{border-left-color:var(--blue)}
+.exp-entry.AERO Lab{border-left-color:var(--blue)}
 .exp-entry.spart{border-left-color:var(--green)}
 .exp-entry.guru{border-left-color:var(--ink-ll)}
 .exp-head{
@@ -660,7 +704,7 @@ pre .n{color:#FFCB6B} /* number */
         I build the software infrastructure that lets science happen at scale —
         from <span class="hi">neutron scattering analysis pipelines</span> at ISIS-aligned facilities
         to parallelised sensor platforms ingesting <span class="hi">20 GB of daily data</span>
-        at DRDO. I care deeply about reproducibility, correctness, and writing
+        at AERO Lab. I care deeply about reproducibility, correctness, and writing
         code that a fellow scientist can trust.
       </p>
 
@@ -732,7 +776,7 @@ pre .n{color:#FFCB6B} /* number */
         funded by the SARTHI National Scholarship.
       </p>
       <p>
-        Three years of industry work — from a <strong>defence research laboratory</strong>
+        Three years of industry work — from a <strong>aero research laboratory</strong>
         to an ML startup to clinical imaging — have given me a healthy respect for
         what production software actually demands: thorough testing, reproducible
         environments, and systems that someone else can understand at 2 am when
@@ -854,15 +898,15 @@ pre .n{color:#FFCB6B} /* number */
 
   <div class="exp-list">
 
-    <div class="exp-entry drdo reveal" style="position:relative">
+    <div class="exp-entry AERO Lab reveal" style="position:relative">
       <span class="annot" style="top:1rem">
         <span class="annot-r">most recent</span>
-        defence<br>R&amp;D lab
+        aerody<br>R&amp;D lab
       </span>
       <div class="exp-head">
         <div>
           <div class="exp-role">Data Scientist — Project Engineer</div>
-          <div class="exp-org">ARDE – DRDO · Armament Research &amp; Development Establishment</div>
+          <div class="exp-org">ARDE – AERO Lab · Armament Research &amp; Development Establishment</div>
           <div class="exp-loc">📍 Pune, India</div>
         </div>
         <span class="exp-date">Jun 2024 – Aug 2025</span>
@@ -1030,15 +1074,15 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
       </div>
     </div>
 
-    <!-- DRDO Pipeline -->
+    <!-- AERO Lab Pipeline -->
     <div class="proj-case reveal">
       <div class="pc-header">
         <div>
           <div class="pc-badges">
             <span class="tag blue">HPC</span><span class="tag blue">Microservices</span><span class="tag">Production</span>
           </div>
-          <div class="pc-title">DRDO Sensor Data Pipeline &amp; Monitoring System</div>
-          <div class="pc-sub">ARDE–DRDO · Pune, India</div>
+          <div class="pc-title">AERO Lab Sensor Data Pipeline &amp; Monitoring System</div>
+          <div class="pc-sub">ARDE–AERO Lab · Pune, India</div>
         </div>
         <div class="pc-date">2024 – 2025</div>
       </div>
