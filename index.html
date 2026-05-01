@@ -3,331 +3,843 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shubham Shinde — Scientific Computing & Data Science</title>
+<title>Shubham Shinde — Lab Notebook</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
+/* ══════════════════════════════════════════════
+   ROOT TOKENS
+══════════════════════════════════════════════ */
 :root{
-  --teal:#0D9488;
-  --teal-d:#0F766E;
-  --teal-dd:#115E59;
-  --teal-l:#CCFBF1;
-  --teal-ll:#F0FDFA;
-  --navy:#0C2340;
-  --navy-m:#1A3A55;
-  --text:#1A2E2E;
-  --text-m:#4A7070;
-  --text-l:#7BA0A0;
-  --white:#FFFFFF;
-  --off:#FAFFFE;
-  --border:#D0F0EC;
-  --border-m:#A7E6DC;
-  --font-d:'Fraunces',Georgia,serif;
-  --font-b:'DM Sans',system-ui,sans-serif;
-  --font-m:'JetBrains Mono',monospace;
+  --paper:    #FAFAF5;
+  --paper-d:  #F3EFE6;
+  --ink:      #1E1710;
+  --ink-m:    #4A3F30;
+  --ink-l:    #8A7A65;
+  --ink-ll:   #B8AA95;
+  --rule:     #E0D9CC;
+  --margin-l: #D9B8B8;
+  --blue:     #1A3E8C;
+  --blue-l:   #EEF2FF;
+  --blue-ll:  #F8F9FF;
+  --green:    #2D6A4F;
+  --green-l:  #D8F3DC;
+  --amber:    #92400E;
+  --amber-l:  #FEF3C7;
+  --red-l:    #FEE2E2;
+  --hi:       rgba(254,240,138,0.55);
+  --font-s:   'Lora', Georgia, serif;
+  --font-b:   'Crimson Pro', Georgia, serif;
+  --font-m:   'JetBrains Mono', monospace;
+  --font-h:   'Caveat', cursive;
+  --rule-h:   28px;
+  --margin-w: 72px;
 }
 
+/* ══════════════════════════════════════════════
+   BASE
+══════════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--white);color:var(--text);font-family:var(--font-b);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
 
+body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-b);
+  font-size: 17px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  /* Ruled lines */
+  background-image:
+    linear-gradient(var(--margin-l) 0px, var(--margin-l) 1px, transparent 1px),
+    linear-gradient(90deg, var(--margin-l) 0px, var(--margin-l) 1px, transparent 1px),
+    repeating-linear-gradient(
+      transparent,
+      transparent calc(var(--rule-h) - 1px),
+      var(--rule) calc(var(--rule-h) - 1px),
+      var(--rule) var(--rule-h)
+    );
+  background-size: 1px 100%, calc(var(--margin-w) + 1px) 100%, 100% var(--rule-h);
+  background-position: calc(var(--margin-w)) 0, calc(var(--margin-w)) 0, 0 56px;
+  background-attachment: local, local, local;
+}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-.nav-logo{font-family:var(--font-d);font-size:1.1rem;color:var(--teal-dd);letter-spacing:-0.01em}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;font-size:0.82rem;font-weight:500;color:var(--text-m);letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
-.nav-links a:hover{color:var(--teal)}
-.nav-cta{font-size:0.82rem;font-weight:500;color:var(--teal);border:1px solid var(--teal);padding:6px 16px;border-radius:20px;text-decoration:none;transition:all 0.2s;letter-spacing:0.02em}
-.nav-cta:hover{background:var(--teal);color:var(--white)}
+/* ── COFFEE STAIN (personality) ── */
+body::before{
+  content:'';
+  position:fixed;
+  bottom:12%;
+  right:4%;
+  width:90px;height:90px;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 45% 45%,
+    rgba(139,90,43,0.04) 0%,
+    rgba(139,90,43,0.07) 40%,
+    rgba(139,90,43,0.03) 55%,
+    transparent 70%);
+  pointer-events:none;
+  z-index:0;
+}
+/* ── PAGE HOLE PUNCHES ── */
+body::after{
+  content:'';
+  position:fixed;
+  left:18px;
+  top:0;bottom:0;
+  width:24px;
+  background:
+    radial-gradient(circle at 12px 18vh, var(--paper-d) 7px, transparent 8px),
+    radial-gradient(circle at 12px 50vh, var(--paper-d) 7px, transparent 8px),
+    radial-gradient(circle at 12px 82vh, var(--paper-d) 7px, transparent 8px);
+  pointer-events:none;
+  z-index:200;
+}
 
+/* ══════════════════════════════════════════════
+   NAV — Table of Contents strip
+══════════════════════════════════════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,245,0.93);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-inner{
+  max-width:960px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  height:52px;padding:0 2rem 0 calc(var(--margin-w) + 2rem);
+}
+.nav-logo{
+  font-family:var(--font-h);font-size:1.35rem;
+  color:var(--blue);letter-spacing:0.01em;
+  text-decoration:none;
+}
+.nav-toc{display:flex;gap:1.75rem;list-style:none}
+.nav-toc a{
+  font-family:var(--font-m);font-size:0.65rem;
+  color:var(--ink-m);text-decoration:none;
+  letter-spacing:0.06em;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-toc a:hover{color:var(--blue)}
+.nav-pg{
+  font-family:var(--font-m);font-size:0.65rem;
+  color:var(--ink-ll);letter-spacing:0.05em;
+}
+@media(max-width:720px){.nav-toc{display:none}}
 
-#hero{min-height:100vh;display:flex;align-items:center;background:var(--off);position:relative;overflow:hidden;padding:80px 5% 60px}
-#atom-canvas{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.18}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;position:relative;z-index:1}
-.hero-label{font-family:var(--font-m);font-size:0.72rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
-.hero-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--teal)}
-h1{font-family:var(--font-d);font-size:clamp(2.8rem,5vw,4.2rem);font-weight:300;line-height:1.08;letter-spacing:-0.02em;color:var(--navy);margin-bottom:0.5rem}
-h1 em{font-style:italic;color:var(--teal)}
-.hero-title{font-size:1rem;color:var(--text-m);font-weight:400;margin-bottom:1.5rem;letter-spacing:0.01em}
-.hero-bio{font-size:0.95rem;line-height:1.8;color:var(--text-m);margin-bottom:2rem;max-width:480px}
-.hero-links{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-p{display:inline-flex;align-items:center;gap:6px;background:var(--teal);color:var(--white);padding:10px 22px;border-radius:24px;font-size:0.85rem;font-weight:500;text-decoration:none;transition:all 0.2s;letter-spacing:0.01em}
-.btn-p:hover{background:var(--teal-d);transform:translateY(-1px)}
-.btn-s{display:inline-flex;align-items:center;gap:6px;color:var(--teal);border:1px solid var(--border-m);padding:10px 22px;border-radius:24px;font-size:0.85rem;font-weight:500;text-decoration:none;transition:all 0.2s}
-.btn-s:hover{border-color:var(--teal);background:var(--teal-ll)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.hstat{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center}
-.hstat-n{font-family:var(--font-d);font-size:2.2rem;font-weight:400;color:var(--teal);line-height:1}
-.hstat-l{font-size:0.75rem;color:var(--text-m);margin-top:4px;letter-spacing:0.03em}
-.hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.5rem}
-.htag{font-family:var(--font-m);font-size:0.7rem;background:var(--teal-ll);color:var(--teal-dd);padding:4px 10px;border-radius:4px;border:1px solid var(--teal-l)}
+/* ══════════════════════════════════════════════
+   LAYOUT WRAPPER
+══════════════════════════════════════════════ */
+.page{
+  max-width:960px;margin:0 auto;
+  padding:0 2.5rem 0 calc(var(--margin-w) + 2.5rem);
+  position:relative;
+}
 
+/* ══════════════════════════════════════════════
+   SECTION SCAFFOLDING
+══════════════════════════════════════════════ */
+section{padding:72px 0 56px;position:relative}
+section+section{border-top:1px solid var(--rule)}
 
-.mol-div{display:flex;align-items:center;gap:0;width:100%;overflow:hidden;margin:0 auto;max-width:1100px;padding:0 5%}
-.mol-line{flex:1;height:1px;background:var(--border)}
-.mol-svg-wrap{padding:0 12px;opacity:0.5}
+.entry-date{
+  font-family:var(--font-m);font-size:0.62rem;
+  color:var(--ink-ll);letter-spacing:0.1em;
+  text-transform:uppercase;margin-bottom:0.5rem;
+}
+h1,h2,h3{font-family:var(--font-s);font-weight:500;line-height:1.15}
+h1{font-size:clamp(2.4rem,5vw,3.6rem);letter-spacing:-0.02em;color:var(--ink)}
+h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.01em;color:var(--ink);margin-bottom:2rem}
+h3{font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem}
 
+/* Margin annotation */
+.annot{
+  font-family:var(--font-h);font-size:0.95rem;
+  color:var(--green);
+  position:absolute;
+  left:calc(-1 * var(--margin-w) - 0.5rem);
+  width:calc(var(--margin-w) - 0.5rem);
+  text-align:right;line-height:1.3;
+  top:0;
+}
+.annot-r{
+  font-family:var(--font-h);font-size:0.85rem;
+  color:var(--ink-ll);display:block;margin-bottom:0.3rem;
+}
 
-section{padding:80px 5%}
-.section-inner{max-width:1100px;margin:0 auto}
-.s-label{font-family:var(--font-m);font-size:0.7rem;color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:8px}
-.s-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--teal)}
-h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:300;color:var(--navy);line-height:1.15;letter-spacing:-0.01em;margin-bottom:2.5rem}
-h2 em{font-style:italic;color:var(--teal)}
+/* highlight span */
+.hi{background:var(--hi);padding:0 2px;border-radius:2px}
+/* blue ink for links */
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s}
+a:hover{border-bottom-color:var(--blue)}
 
+/* inline code */
+code{
+  font-family:var(--font-m);font-size:0.78em;
+  background:var(--paper-d);
+  border:1px solid var(--rule);
+  padding:1px 6px;border-radius:3px;
+  color:var(--ink-m);
+}
 
-#about{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1.1fr 1.6fr;gap:4rem;align-items:start}
-.about-text p{font-size:0.95rem;line-height:1.85;color:var(--text-m);margin-bottom:1rem}
-.about-text p strong{color:var(--text);font-weight:500}
-.award-chip{display:inline-flex;align-items:center;gap:6px;background:var(--teal-ll);border:1px solid var(--teal-l);border-radius:6px;padding:6px 12px;font-size:0.78rem;color:var(--teal-dd);margin:3px;font-weight:500}
-.awards-row{margin-top:1rem}
-.skills-wrap{display:flex;flex-direction:column;gap:1.25rem}
-.skill-group{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem}
-.sg-label{font-family:var(--font-m);font-size:0.68rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.6rem;font-weight:500}
-.sg-tags{display:flex;flex-wrap:wrap;gap:5px}
-.sk{font-size:0.78rem;background:var(--white);border:1px solid var(--border-m);color:var(--text);padding:3px 9px;border-radius:4px;font-family:var(--font-m);transition:all 0.2s}
-.sk:hover{background:var(--teal-ll);border-color:var(--teal);color:var(--teal-dd)}
-.sk.hot{background:var(--teal-ll);border-color:var(--teal-l);color:var(--teal-dd)}
+/* ══════════════════════════════════════════════
+   HERO — Cover page
+══════════════════════════════════════════════ */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:100px 0 72px;
+}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%}
+.hero-label{
+  font-family:var(--font-m);font-size:0.65rem;
+  color:var(--ink-l);letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:1.25rem;
+}
+.hero-name{margin-bottom:0.4rem}
+.hero-name em{font-style:italic;color:var(--blue)}
+.hero-subtitle{
+  font-size:1.1rem;font-style:italic;
+  color:var(--ink-m);margin-bottom:0.25rem;
+}
+.hero-uni{
+  font-family:var(--font-m);font-size:0.7rem;
+  color:var(--ink-l);margin-bottom:2rem;letter-spacing:0.04em;
+}
+.hero-lead{
+  font-size:1.15rem;line-height:1.9;
+  color:var(--ink-m);max-width:580px;margin-bottom:2rem;
+}
+.hero-links{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-p{
+  font-family:var(--font-m);font-size:0.68rem;
+  color:var(--paper);background:var(--blue);
+  padding:8px 18px;border-radius:2px;
+  text-decoration:none;border-bottom:none;
+  letter-spacing:0.06em;text-transform:uppercase;
+  transition:opacity 0.2s;
+}
+.btn-p:hover{opacity:0.85;border-bottom:none}
+.btn-s{
+  font-family:var(--font-m);font-size:0.68rem;
+  color:var(--blue);border:1px solid var(--blue);
+  padding:7px 17px;border-radius:2px;
+  text-decoration:none;
+  letter-spacing:0.06em;text-transform:uppercase;
+  transition:all 0.2s;
+}
+.btn-s:hover{background:var(--blue-ll);border-bottom-color:var(--blue)}
 
+/* Notebook card on the right */
+.hero-card{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:1.5rem 1.25rem;
+  width:210px;
+  box-shadow:2px 3px 12px rgba(0,0,0,0.06);
+  position:relative;
+  flex-shrink:0;
+}
+.hero-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:6px;
+  background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 8px,transparent 8px,transparent 12px);
+  border-radius:2px 2px 0 0;
+}
+.hc-label{font-family:var(--font-h);font-size:0.8rem;color:var(--ink-l);margin-bottom:1rem;margin-top:0.5rem}
+.hc-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.6rem;padding-bottom:0.6rem;border-bottom:1px dashed var(--rule)}
+.hc-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.hc-k{font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l);text-transform:uppercase;letter-spacing:0.06em}
+.hc-v{font-family:var(--font-s);font-size:1.1rem;font-weight:600;color:var(--blue)}
 
-#experience{background:var(--teal-ll)}
-.timeline{position:relative;padding-left:2px}
-.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;background:var(--border-m)}
-.titem{display:grid;grid-template-columns:48px 1fr;gap:1.5rem;margin-bottom:3rem;position:relative}
-.titem:last-child{margin-bottom:0}
-.t-dot{width:48px;height:48px;border-radius:50%;background:var(--white);border:2px solid var(--teal-l);display:flex;align-items:center;justify-content:center;font-family:var(--font-m);font-size:0.6rem;color:var(--teal);flex-shrink:0;position:relative;z-index:1;font-weight:500}
-.t-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;position:relative}
-.t-card::before{content:'';position:absolute;left:-12px;top:16px;width:12px;height:1px;background:var(--border-m)}
-.t-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.75rem}
-.t-role{font-family:var(--font-d);font-size:1.1rem;font-weight:400;color:var(--navy)}
-.t-org{font-size:0.82rem;color:var(--teal);font-weight:500;margin-top:2px}
-.t-date{font-family:var(--font-m);font-size:0.7rem;color:var(--text-l);background:var(--teal-ll);padding:3px 8px;border-radius:4px;white-space:nowrap}
-.t-loc{font-family:var(--font-m);font-size:0.68rem;color:var(--text-l);margin-bottom:0.75rem}
-.t-bullets{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
-.t-bullets li{font-size:0.875rem;line-height:1.7;color:var(--text-m);padding-left:1rem;position:relative}
-.t-bullets li::before{content:'→';position:absolute;left:0;color:var(--teal);font-size:0.75rem;top:2px}
-.t-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0.75rem}
-.ttag{font-family:var(--font-m);font-size:0.65rem;background:var(--teal-ll);color:var(--teal-dd);padding:2px 7px;border-radius:3px;border:1px solid var(--teal-l)}
+/* tags */
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{
+  font-family:var(--font-m);font-size:0.62rem;
+  background:var(--paper-d);border:1px solid var(--rule);
+  color:var(--ink-m);padding:2px 8px;border-radius:2px;
+}
+.tag.blue{background:var(--blue-ll);border-color:#C7D7F5;color:var(--blue)}
+.tag.green{background:var(--green-l);border-color:#B7DFC0;color:var(--green)}
+.tag.amber{background:var(--amber-l);border-color:#FBBF24;color:var(--amber)}
 
+/* ══════════════════════════════════════════════
+   ABOUT — Prose bio
+══════════════════════════════════════════════ */
+#about .about-body{
+  display:grid;grid-template-columns:1fr 340px;
+  gap:4rem;align-items:start;
+}
+.prose p{font-size:1.05rem;line-height:1.95;color:var(--ink-m);margin-bottom:1rem}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:600}
 
-#projects{background:var(--white)}
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.pcard{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all 0.25s;background:var(--white)}
-.pcard:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 30px rgba(13,148,136,0.1)}
-.pcard-top{padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
-.pcard-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:1rem}
-.badge{font-family:var(--font-m);font-size:0.62rem;padding:3px 8px;border-radius:4px;font-weight:500;border:1px solid transparent}
-.badge-sci{background:#F0FDFA;color:#0F766E;border-color:#99F6E4}
-.badge-ml{background:#F5F3FF;color:#5B21B6;border-color:#DDD6FE}
-.badge-api{background:#FFF7ED;color:#C2410C;border-color:#FED7AA}
-.badge-hpc{background:#EFF6FF;color:#1E40AF;border-color:#BFDBFE}
-.badge-bio{background:#F0FDF4;color:#166534;border-color:#BBF7D0}
-.pcard-title{font-family:var(--font-d);font-size:1.05rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;line-height:1.3}
-.pcard-sub{font-family:var(--font-m);font-size:0.7rem;color:var(--teal);margin-bottom:0.75rem}
-.pcard-desc{font-size:0.83rem;line-height:1.7;color:var(--text-m)}
-.pcard-bot{padding:1rem 1.5rem;display:flex;flex-wrap:wrap;gap:4px}
-.stack-t{font-family:var(--font-m);font-size:0.65rem;color:var(--text-l);background:var(--off);border:1px solid var(--border);padding:2px 7px;border-radius:3px}
-.pcard.featured{grid-column:span 2;border-color:var(--teal-l)}
-.pcard.featured .pcard-top{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.pcard.featured .pcard-desc{font-size:0.875rem}
-.feat-highlight{background:var(--teal-ll);border-radius:8px;padding:1rem;margin-top:0.5rem}
-.feat-hl-label{font-family:var(--font-m);font-size:0.62rem;color:var(--teal);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem}
-.feat-hl-items{list-style:none;display:flex;flex-direction:column;gap:0.3rem}
-.feat-hl-items li{font-size:0.8rem;color:var(--teal-dd);padding-left:12px;position:relative}
-.feat-hl-items li::before{content:'✓';position:absolute;left:0;font-size:0.7rem}
+/* awards */
+.award-list{list-style:none;margin-top:1.5rem}
+.award-list li{
+  font-size:0.9rem;color:var(--ink-m);
+  padding:0.6rem 0;border-bottom:1px dashed var(--rule);
+  display:flex;align-items:baseline;gap:0.6rem;
+}
+.award-list li::before{content:'★';color:var(--amber);font-size:0.75rem;flex-shrink:0}
 
+/* skills table */
+.skills-table{border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.sk-row{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--rule)}
+.sk-row:last-child{border-bottom:none}
+.sk-cat{
+  font-family:var(--font-m);font-size:0.6rem;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--ink-l);background:var(--paper-d);
+  padding:0.7rem 0.75rem;
+  border-right:1px solid var(--rule);
+  display:flex;align-items:center;
+}
+.sk-vals{padding:0.5rem 0.75rem;display:flex;flex-wrap:wrap;gap:4px;align-items:center;background:var(--paper)}
+.sk-item{
+  font-family:var(--font-m);font-size:0.62rem;
+  color:var(--ink-m);background:var(--paper-d);
+  border:1px solid var(--rule);padding:1px 6px;border-radius:2px;
+  transition:all 0.15s;cursor:default;
+}
+.sk-item:hover{background:var(--blue-ll);border-color:#C7D7F5;color:var(--blue)}
+.sk-item.hot{background:var(--blue-ll);border-color:#C7D7F5;color:var(--blue);font-weight:500}
 
-#publications{background:var(--off)}
-.pub-item{border:1px solid var(--border);border-radius:10px;padding:1.5rem;background:var(--white);margin-bottom:1rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start}
-.pub-year{font-family:var(--font-m);font-size:0.7rem;color:var(--teal);background:var(--teal-ll);border:1px solid var(--teal-l);border-radius:4px;padding:4px 8px;white-space:nowrap;height:fit-content}
-.pub-title{font-family:var(--font-d);font-size:1rem;color:var(--navy);margin-bottom:0.3rem;line-height:1.35}
-.pub-authors{font-size:0.82rem;color:var(--text-m);margin-bottom:0.3rem}
-.pub-venue{font-family:var(--font-m);font-size:0.72rem;color:var(--teal);display:flex;align-items:center;gap:6px}
-.pub-award{display:inline-flex;align-items:center;gap:4px;background:#FEF9C3;color:#854D0E;border:1px solid #FDE68A;border-radius:4px;font-size:0.68rem;padding:2px 7px;margin-left:8px;font-weight:500}
+/* ══════════════════════════════════════════════
+   EXPERIENCE — Lab entries
+══════════════════════════════════════════════ */
+#experience .exp-list{display:flex;flex-direction:column;gap:2.5rem}
+.exp-entry{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--blue);
+  padding:1.5rem 1.75rem;
+  position:relative;
+  border-radius:0 2px 2px 0;
+}
+.exp-entry.drdo{border-left-color:var(--blue)}
+.exp-entry.spart{border-left-color:var(--green)}
+.exp-entry.guru{border-left-color:var(--ink-ll)}
+.exp-head{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:1rem;
+  flex-wrap:wrap;margin-bottom:0.25rem;
+}
+.exp-role{font-family:var(--font-s);font-size:1.05rem;font-weight:500;color:var(--ink)}
+.exp-org{
+  font-family:var(--font-m);font-size:0.68rem;
+  color:var(--blue);letter-spacing:0.04em;
+  margin-bottom:0.15rem;
+}
+.exp-loc{font-family:var(--font-m);font-size:0.62rem;color:var(--ink-ll);margin-bottom:1rem}
+.exp-date{
+  font-family:var(--font-m);font-size:0.62rem;
+  color:var(--ink-l);background:var(--paper-d);
+  border:1px solid var(--rule);padding:3px 8px;
+  border-radius:2px;white-space:nowrap;flex-shrink:0;
+}
+.exp-points{list-style:none}
+.exp-points li{
+  font-size:0.97rem;line-height:1.8;color:var(--ink-m);
+  padding:0.35rem 0 0.35rem 1.4rem;
+  border-bottom:1px dashed var(--rule);
+  position:relative;
+}
+.exp-points li:last-child{border-bottom:none}
+.exp-points li::before{
+  content:'–';position:absolute;left:0;
+  color:var(--ink-ll);font-weight:400;
+}
+.exp-metric{
+  display:inline-block;
+  font-family:var(--font-s);font-weight:600;
+  color:var(--blue);background:var(--blue-ll);
+  padding:0 4px;border-radius:2px;
+}
+.exp-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--rule)}
 
+/* ══════════════════════════════════════════════
+   PROJECTS — Case studies
+══════════════════════════════════════════════ */
+#projects .proj-list{display:flex;flex-direction:column;gap:2.5rem}
 
-#education{background:var(--white)}
-.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.ecard{border:1px solid var(--border);border-radius:12px;padding:1.5rem;background:var(--white);transition:border-color 0.2s}
-.ecard:hover{border-color:var(--teal)}
-.ecard.current{border-color:var(--teal);background:var(--teal-ll)}
-.e-status{font-family:var(--font-m);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem}
-.ecard.current .e-status{color:var(--teal);display:flex;align-items:center;gap:6px}
-.ecard.current .e-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;animation:blink 1.5s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.e-deg{font-family:var(--font-d);font-size:1.05rem;color:var(--navy);line-height:1.3;margin-bottom:0.5rem}
-.e-school{font-size:0.82rem;color:var(--teal);font-weight:500;margin-bottom:0.25rem}
-.e-year{font-family:var(--font-m);font-size:0.7rem;color:var(--text-l)}
-.e-note{font-size:0.78rem;color:var(--text-m);margin-top:0.75rem;line-height:1.6;border-top:1px solid var(--border);padding-top:0.75rem}
+.proj-case{
+  border:1px solid var(--rule);
+  border-radius:2px;overflow:hidden;
+  position:relative;
+}
+.proj-case.featured{border-color:#C7D7F5}
 
-  
-#contact{background:var(--teal-dd);padding:80px 5% 60px}
-.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem}
-.contact-inner h2{color:var(--white);margin-bottom:1rem}
-.contact-inner p{color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:1.8}
-.contact-links{display:flex;flex-direction:column;gap:1rem}
-.clink{display:flex;align-items:center;gap:1rem;text-decoration:none;padding:1rem 1.25rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);color:var(--white);transition:all 0.2s}
-.clink:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.35)}
-.clink-icon{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.clink-label{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:2px}
-.clink-val{font-size:0.88rem;font-weight:500}
-.foot-bot{max-width:1100px;margin:3rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.12);display:flex;justify-content:space-between;align-items:center}
-.foot-copy{font-size:0.78rem;color:rgba(255,255,255,0.4)}
-.foot-loc{font-family:var(--font-m);font-size:0.7rem;color:rgba(255,255,255,0.4)}
+/* Paperclip decoration on featured */
+.proj-case.featured::before{
+  content:'';
+  position:absolute;top:-10px;left:24px;
+  width:32px;height:22px;
+  border:2px solid var(--ink-ll);
+  border-radius:10px 10px 0 0;
+  border-bottom:none;
+}
 
+.pc-header{
+  background:var(--paper-d);
+  padding:1.25rem 1.75rem;
+  border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:1rem;flex-wrap:wrap;
+}
+.pc-header.blue-head{background:var(--blue-ll)}
+.pc-title{
+  font-family:var(--font-s);font-size:1.15rem;
+  font-weight:500;color:var(--ink);margin-bottom:0.2rem;
+}
+.pc-sub{
+  font-family:var(--font-m);font-size:0.62rem;
+  color:var(--ink-l);letter-spacing:0.04em;
+}
+.pc-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:0.5rem}
+.pc-date{
+  font-family:var(--font-h);font-size:0.9rem;
+  color:var(--ink-l);white-space:nowrap;flex-shrink:0;
+}
+.pc-body{padding:1.5rem 1.75rem}
 
-.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+/* Two-col project layout */
+.pc-cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.pc-desc{font-size:0.97rem;line-height:1.85;color:var(--ink-m)}
+
+/* Findings box */
+.findings{
+  background:var(--paper-d);
+  border:1px solid var(--rule);
+  border-radius:2px;padding:1rem 1.25rem;
+}
+.findings-label{
+  font-family:var(--font-m);font-size:0.62rem;
+  color:var(--ink-l);text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:0.75rem;
+}
+.findings-list{list-style:none}
+.findings-list li{
+  font-size:0.88rem;line-height:1.7;
+  color:var(--ink-m);padding:0.3rem 0;
+  padding-left:1.25rem;position:relative;
+  border-bottom:1px dashed var(--rule);
+}
+.findings-list li:last-child{border-bottom:none}
+.findings-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:600}
+
+/* Equation block */
+.eq-block{
+  background:var(--paper-d);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--blue);
+  padding:1rem 1.25rem;
+  margin:1rem 0;border-radius:0 2px 2px 0;
+  overflow-x:auto;
+}
+.eq-label{
+  font-family:var(--font-m);font-size:0.6rem;
+  color:var(--ink-l);text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:0.5rem;
+}
+
+/* GitHub link block */
+.gh-block{
+  display:flex;align-items:center;gap:0.75rem;
+  background:var(--paper-d);border:1px solid var(--rule);
+  border-radius:2px;padding:0.75rem 1rem;
+  margin-top:1rem;text-decoration:none;
+  border-bottom:none;transition:border-color 0.2s;
+  color:var(--ink);
+}
+.gh-block:hover{border-color:var(--blue)}
+.gh-icon{
+  width:32px;height:32px;border-radius:4px;
+  background:var(--ink);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;
+}
+.gh-icon svg{width:18px;height:18px;fill:var(--paper)}
+.gh-info-l{font-family:var(--font-m);font-size:0.6rem;color:var(--ink-l);text-transform:uppercase;letter-spacing:0.06em}
+.gh-info-v{font-family:var(--font-m);font-size:0.75rem;color:var(--blue)}
+
+/* Annotation box (handwritten note) */
+.note-box{
+  font-family:var(--font-h);
+  background:var(--amber-l);
+  border:1px solid #FDE68A;
+  border-radius:2px;
+  padding:0.75rem 1rem;
+  font-size:0.95rem;
+  color:var(--amber);
+  position:relative;
+  margin-top:0.5rem;
+}
+.note-box::before{content:'Note — ';font-weight:600}
+
+/* Code block */
+pre{
+  background:var(--ink);color:#E8E4DC;
+  font-family:var(--font-m);font-size:0.72rem;
+  line-height:1.7;padding:1rem 1.25rem;
+  border-radius:2px;overflow-x:auto;margin:1rem 0;
+}
+pre .c{color:#6B8A6B} /* comment */
+pre .k{color:#9DD0E8} /* keyword */
+pre .s{color:#C3E88D} /* string */
+pre .n{color:#FFCB6B} /* number */
+
+/* ══════════════════════════════════════════════
+   PUBLICATIONS — Bibliography
+══════════════════════════════════════════════ */
+#publications .bib-list{display:flex;flex-direction:column;gap:1.5rem}
+.bib-entry{
+  display:grid;grid-template-columns:36px 1fr;
+  gap:1rem;align-items:start;
+}
+.bib-num{
+  font-family:var(--font-s);font-size:1rem;
+  font-weight:500;color:var(--ink-l);
+  padding-top:2px;text-align:right;
+}
+.bib-body{border-bottom:1px solid var(--rule);padding-bottom:1.5rem}
+.bib-title{
+  font-family:var(--font-s);font-style:italic;
+  font-size:1rem;color:var(--ink);
+  line-height:1.4;margin-bottom:0.25rem;
+}
+.bib-authors{font-size:0.88rem;color:var(--ink-m);margin-bottom:0.2rem}
+.bib-venue{
+  font-family:var(--font-m);font-size:0.65rem;
+  color:var(--ink-l);letter-spacing:0.04em;
+}
+.bib-award{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:var(--font-m);font-size:0.6rem;
+  background:var(--amber-l);border:1px solid #FDE68A;
+  color:var(--amber);padding:2px 7px;border-radius:2px;
+  margin-left:8px;text-transform:uppercase;letter-spacing:0.05em;
+}
+
+/* ══════════════════════════════════════════════
+   EDUCATION — Timeline
+══════════════════════════════════════════════ */
+#education .edu-list{display:flex;flex-direction:column;gap:1.25rem}
+.edu-entry{
+  display:grid;grid-template-columns:1fr 2fr auto;
+  gap:1.5rem;padding:1.25rem 1.5rem;
+  border:1px solid var(--rule);border-radius:2px;
+  background:var(--paper);align-items:start;
+  transition:border-color 0.2s;
+}
+.edu-entry:hover{border-color:var(--blue)}
+.edu-entry.active{border-color:#C7D7F5;background:var(--blue-ll)}
+.edu-deg{font-family:var(--font-s);font-size:1rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;line-height:1.3}
+.edu-school{font-family:var(--font-m);font-size:0.65rem;color:var(--blue);letter-spacing:0.03em;margin-bottom:0.15rem}
+.edu-year{font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l)}
+.edu-note{font-size:0.88rem;color:var(--ink-m);line-height:1.6}
+.edu-gpa{
+  font-family:var(--font-s);font-size:1.4rem;
+  font-weight:600;color:var(--blue);text-align:right;
+  white-space:nowrap;
+}
+.edu-live{
+  display:flex;align-items:center;gap:5px;
+  font-family:var(--font-m);font-size:0.6rem;
+  color:var(--blue);text-transform:uppercase;
+  letter-spacing:0.06em;margin-bottom:0.25rem;
+}
+.dot-live{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue);
+  animation:pulse 1.8s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+
+/* ══════════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════════ */
+#contact{
+  background:var(--ink);
+  background-image:
+    repeating-linear-gradient(
+      transparent, transparent calc(var(--rule-h) - 1px),
+      rgba(255,255,255,0.04) calc(var(--rule-h) - 1px),
+      rgba(255,255,255,0.04) var(--rule-h));
+  padding:80px 0;
+  margin:0 -2.5rem 0 calc(-1 * var(--margin-w) - 2.5rem);
+  padding-left:calc(var(--margin-w) + 2.5rem);
+  padding-right:2.5rem;
+}
+.contact-inner{max-width:960px;margin:0 auto}
+.contact-inner .entry-date{color:rgba(255,255,255,0.3)}
+.contact-inner h2{color:rgba(255,255,255,0.9);margin-bottom:1rem}
+.contact-inner p{color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.clink{
+  display:flex;align-items:center;gap:0.75rem;
+  padding:0.9rem 1.1rem;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:2px;color:rgba(255,255,255,0.8);
+  text-decoration:none;border-bottom:none;
+  transition:all 0.2s;background:rgba(255,255,255,0.03);
+}
+.clink:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.07)}
+.clink-icon{
+  font-family:var(--font-m);font-size:0.8rem;
+  color:rgba(255,255,255,0.35);width:24px;text-align:center;
+  flex-shrink:0;
+}
+.clink-label{font-family:var(--font-m);font-size:0.58rem;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:2px}
+.clink-val{font-family:var(--font-m);font-size:0.72rem;color:rgba(255,255,255,0.75)}
+
+.foot-line{
+  margin-top:3rem;padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,0.1);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.foot-copy{font-family:var(--font-m);font-size:0.6rem;color:rgba(255,255,255,0.25);letter-spacing:0.04em}
+.foot-sig{font-family:var(--font-h);font-size:1rem;color:rgba(255,255,255,0.25)}
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.55s ease,transform 0.55s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
 
-@media(max-width:900px){
-  .hero-inner,.about-grid,.contact-inner{grid-template-columns:1fr}
-  .proj-grid{grid-template-columns:1fr}
-  .pcard.featured{grid-column:span 1}
-  .pcard.featured .pcard-top{grid-template-columns:1fr}
-  .edu-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
+/* ══════════════════════════════════════════════
+   PRINT
+══════════════════════════════════════════════ */
+@media print{
+  nav,body::before,body::after{display:none}
+  body{font-size:11pt;background:white;background-image:none}
+  .page{padding-left:1.5cm;max-width:100%}
+  section{padding:24pt 0}
+  .hero-card{display:none}
 }
 </style>
 </head>
 <body>
 
-
+<!-- ══ NAV ══════════════════════════════════════════ -->
 <nav>
   <div class="nav-inner">
-    <span class="nav-logo">Shubham Shinde</span>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <a href="#hero" class="nav-logo">S. Shinde</a>
+    <ul class="nav-toc">
+      <li><a href="#about">§1 About</a></li>
+      <li><a href="#experience">§2 Experience</a></li>
+      <li><a href="#projects">§3 Projects</a></li>
+      <li><a href="#publications">§4 Publications</a></li>
+      <li><a href="#education">§5 Education</a></li>
+      <li><a href="#contact">§6 Contact</a></li>
     </ul>
-    <a href="mailto:shubham.edu.ms@gmail.com" class="nav-cta">Get in touch</a>
+    <div class="nav-pg">Bristol, UK · 2026</div>
   </div>
 </nav>
 
-
+<!-- ══ HERO ═════════════════════════════════════════ -->
+<div class="page">
 <section id="hero">
-  <canvas id="atom-canvas"></canvas>
   <div class="hero-inner">
     <div>
-      <div class="hero-label">Scientific Software Engineer</div>
-      <h1>Shubham<br><em>Shinde</em></h1>
-      <p class="hero-title">MSc Scientific Computing & Data Science · University of Bristol</p>
-      <p class="hero-bio">Building production-grade scientific data infrastructure at the intersection of high-performance computing, machine learning, and open-source research tooling.</p>
+      <div class="entry-date">Notebook of — Shubham Shinde · Opened March 2026</div>
+      <h1 class="hero-name">
+        Scientific<br>
+        <em>Software</em><br>
+        Engineer.
+      </h1>
+      <p class="hero-subtitle">MSc Scientific Computing with Data Science</p>
+      <p class="hero-uni">University of Bristol · Bristol, UK · SARTHI Scholar 2025</p>
+
+      <p class="hero-lead">
+        I build the software infrastructure that lets science happen at scale —
+        from <span class="hi">neutron scattering analysis pipelines</span> at ISIS-aligned facilities
+        to parallelised sensor platforms ingesting <span class="hi">20 GB of daily data</span>
+        at DRDO. I care deeply about reproducibility, correctness, and writing
+        code that a fellow scientist can trust.
+      </p>
+
       <div class="hero-links">
-        <a href="mailto:shubham.edu.ms@gmail.com" class="btn-p">✉ Email me</a>
-        <a href="https://github.com" class="btn-s">⌥ GitHub</a>
+        <a href="mailto:shubham.edu.ms@gmail.com" class="btn-p">✉ Email</a>
+        <a href="https://github.com/ShubhamX57" class="btn-s">⌥ GitHub</a>
         <a href="https://linkedin.com" class="btn-s">↗ LinkedIn</a>
+        <a href="#" class="btn-s" onclick="window.print();return false">⎙ Print CV</a>
       </div>
-      <div class="hero-tags">
-        <span class="htag">Python</span><span class="htag">FastAPI</span><span class="htag">CUDA</span>
-        <span class="htag">HDF5</span><span class="htag">PyTorch</span><span class="htag">MPI</span>
-        <span class="htag">NumPy · SciPy</span><span class="htag">Docker · K8s</span>
+
+      <div class="tags">
+        <span class="tag blue">Python · FastAPI</span>
+        <span class="tag blue">CUDA · MPI · SLURM</span>
+        <span class="tag blue">PyTorch · XGBoost</span>
+        <span class="tag">NumPy · SciPy · HDF5</span>
+        <span class="tag">Docker · Kubernetes</span>
+        <span class="tag">PostgreSQL · Redis</span>
       </div>
     </div>
-    <div>
-      <div class="hero-stats">
-        <div class="hstat">
-          <div class="hstat-n">3+</div>
-          <div class="hstat-l">Years experience</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">42%</div>
-          <div class="hstat-l">Error reduction in aerodynamics applications</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">16%</div>
-          <div class="hstat-l">Systematic error fix (QENS)</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">89.7%</div>
-          <div class="hstat-l">CNN-Transformer accuracy</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">20GB</div>
-          <div class="hstat-l">Daily data ingested</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">90%</div>
-          <div class="hstat-l">Test coverage achieved</div>
-        </div>
+
+    <div class="hero-card">
+      <div class="hc-label">At a glance</div>
+      <div class="hc-row">
+        <span class="hc-k">Experience</span>
+        <span class="hc-v">3+ yrs</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Error fix</span>
+        <span class="hc-v">–42%</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">QENS gain</span>
+        <span class="hc-v">–16%</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">CNN acc.</span>
+        <span class="hc-v">89.7%</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Data/day</span>
+        <span class="hc-v">20 GB</span>
+      </div>
+      <div class="hc-row">
+        <span class="hc-k">Coverage</span>
+        <span class="hc-v">&gt;90%</span>
       </div>
     </div>
   </div>
 </section>
 
-
-<div style="padding:0 5%;background:var(--white)">
-  <div class="mol-div">
-    <div class="mol-line"></div>
-    <div class="mol-svg-wrap">
-      <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="6" stroke="#0D9488" stroke-width="1.5"/>
-        <circle cx="50" cy="8" r="5" stroke="#0D9488" stroke-width="1.5"/>
-        <circle cx="80" cy="20" r="6" stroke="#0D9488" stroke-width="1.5"/>
-        <circle cx="50" cy="32" r="5" stroke="#0D9488" stroke-width="1.5"/>
-        <circle cx="100" cy="8" r="4" stroke="#99F6E4" stroke-width="1.2"/>
-        <line x1="26" y1="17" x2="45" y2="11" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="55" y1="11" x2="74" y2="17" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="26" y1="23" x2="45" y2="29" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="55" y1="29" x2="74" y2="23" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="80" y1="14" x2="80" y2="26" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="84" y1="17" x2="96" y2="10" stroke="#99F6E4" stroke-width="1"/>
-      </svg>
-    </div>
-    <div class="mol-line"></div>
-  </div>
-</div>
-
-
+<!-- ══ ABOUT ════════════════════════════════════════ -->
 <section id="about">
-  <div class="section-inner">
-    <div class="s-label">About</div>
-    <h2>Bridging physics,<br><em>code & computation</em></h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I am a <strong>Scientific Software Engineer</strong> with 3+ years of industry experience, currently pursuing an <strong>MSc in Scientific Computing with Data Science</strong> at the University of Bristol — supported by the prestigious SARTHI Maharashtra Government Foreign Scholarship.</p>
-        <p>My work lives at the intersection of high-performance computing and research software engineering. I have built production data pipelines handling 20 GB+ daily sensor streams in HPC, developed Bayesian MCMC analysis tools for neutron scattering experiments, and shipped full-stack scientific services from bare FastAPI backend to React monitoring dashboards.</p>
-        <p>I am particularly drawn to problems where <strong>software craftsmanship meets scientific rigour</strong> — designing systems that are not just functional, but reproducible, testable, and long-lived enough to serve a research community.</p>
-        <div class="awards-row">
-          <span class="award-chip">🏆 SARTHI Foreign Scholarship 2025</span>
-          <span class="award-chip">🥇 Best Research Paper — SPPU 2023</span>
-          <span class="award-chip">🎓 Student Academic Rep (SARF)</span>
-        </div>
-      </div>
-      <div class="skills-wrap">
-        <div class="skill-group">
-          <div class="sg-label">Languages</div>
-          <div class="sg-tags">
-            <span class="sk hot">Python</span><span class="sk hot">SQL</span><span class="sk">JavaScript</span><span class="sk">Bash</span><span class="sk">MATLAB</span><span class="sk">Dart</span>
+  <div class="entry-date">§ 1 — About the author</div>
+  <h2>Background &amp; <em>skills</em></h2>
+
+  <div class="about-body">
+    <div class="prose reveal" style="position:relative">
+      <span class="annot" style="top:0">
+        <span class="annot-r">personal</span>
+        from Pune →<br>Bristol
+      </span>
+
+      <p>
+        I grew up in Pune, India, trained first as a <strong>mechanical engineer</strong>,
+        and somewhere in the middle of simulating wind turbine blades in CFD,
+        I realised the most interesting problems were the computational ones.
+        That instinct eventually led me to a <strong>PG Diploma in Data Science & AI</strong>,
+        award-winning research in aerial image analysis, and now an MSc at Bristol
+        funded by the SARTHI National Scholarship.
+      </p>
+      <p>
+        Three years of industry work — from a <strong>defence research laboratory</strong>
+        to an ML startup to clinical imaging — have given me a healthy respect for
+        what production software actually demands: thorough testing, reproducible
+        environments, and systems that someone else can understand at 2 am when
+        something breaks.
+      </p>
+      <p>
+        My current research is in <strong>quasi-elastic neutron scattering (QENS)</strong>
+        at Bristol, building open-source analysis tools aligned with workflows at
+        facilities like ISIS Neutron Source. The physics is fascinating —
+        watching diffusion models live or die against experimental data —
+        and the engineering challenge of making that rigorous, fast, and
+        shareable is exactly the kind of problem I want to keep solving.
+      </p>
+      <p>
+        Outside of work I am the student academic representative for our MSc cohort,
+        I manage digital platforms for two professional engineering societies,
+        and I remain quietly convinced that a good README is an act of kindness.
+      </p>
+
+      <ul class="award-list">
+        <li><strong>SARTHI Maharashtra Government Foreign Scholarship</strong> — 2025-26, awarded for academic excellence to support postgraduate study abroad</li>
+        <li><strong>Best Research Paper Award</strong> — Dept. of Technology, SPPU 2023</li>
+        <li><strong>Student Academic Representative (SARF)</strong> — MSc cohort liaison, University of Bristol</li>
+        <li><strong>University Merit Scholarship</strong> — Savitribai Phule Pune University 2018</li>
+      </ul>
+    </div>
+
+    <div class="reveal">
+      <div class="skills-table">
+        <div class="sk-row">
+          <div class="sk-cat">Languages</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">Python</span>
+            <span class="sk-item hot">SQL</span>
+            <span class="sk-item">JavaScript</span>
+            <span class="sk-item">Bash</span>
+            <span class="sk-item">MATLAB</span>
+            <span class="sk-item">Dart</span>
           </div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">Scientific Stack</div>
-          <div class="sg-tags">
-            <span class="sk hot">NumPy</span><span class="sk hot">SciPy</span><span class="sk hot">HDF5 / h5py</span><span class="sk">PySpark</span><span class="sk">Dask</span><span class="sk">Matplotlib</span><span class="sk">Plotly</span><span class="sk">D3.js</span><span class="sk">LaTeX</span>
+        <div class="sk-row">
+          <div class="sk-cat">Scientific</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">NumPy</span>
+            <span class="sk-item hot">SciPy</span>
+            <span class="sk-item hot">HDF5/h5py</span>
+            <span class="sk-item">PySpark</span>
+            <span class="sk-item">Dask</span>
+            <span class="sk-item">Matplotlib</span>
+            <span class="sk-item">Plotly</span>
+            <span class="sk-item">D3.js</span>
+            <span class="sk-item">LaTeX</span>
           </div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">HPC & Parallel Computing</div>
-          <div class="sg-tags">
-            <span class="sk hot">CUDA</span><span class="sk hot">MPI</span><span class="sk">OpenMP</span><span class="sk">Cython</span><span class="sk">SLURM</span><span class="sk">Multi-GPU</span><span class="sk">Parallel I/O</span>
+        <div class="sk-row">
+          <div class="sk-cat">HPC</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">CUDA</span>
+            <span class="sk-item hot">MPI</span>
+            <span class="sk-item hot">SLURM</span>
+            <span class="sk-item">OpenMP</span>
+            <span class="sk-item">Cython</span>
+            <span class="sk-item">Multi-GPU</span>
+            <span class="sk-item">Parallel I/O</span>
           </div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">ML & Data</div>
-          <div class="sg-tags">
-            <span class="sk hot">PyTorch</span><span class="sk">Scikit-learn</span><span class="sk">XGBoost</span><span class="sk">MLflow</span><span class="sk">DVC</span><span class="sk">OpenCV</span>
+        <div class="sk-row">
+          <div class="sk-cat">ML / Data</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">PyTorch</span>
+            <span class="sk-item">Scikit-learn</span>
+            <span class="sk-item">XGBoost</span>
+            <span class="sk-item">LightGBM</span>
+            <span class="sk-item">MLflow</span>
+            <span class="sk-item">DVC</span>
+            <span class="sk-item">OpenCV</span>
           </div>
         </div>
-        <div class="skill-group">
-          <div class="sg-label">APIs, DevOps & Databases</div>
-          <div class="sg-tags">
-            <span class="sk hot">FastAPI</span><span class="sk hot">Docker</span><span class="sk">Kubernetes</span><span class="sk">GitHub Actions</span><span class="sk">PostgreSQL</span><span class="sk">Redis</span><span class="sk">MongoDB</span><span class="sk">Neo4j</span>
+        <div class="sk-row">
+          <div class="sk-cat">APIs</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">FastAPI</span>
+            <span class="sk-item">Flask</span>
+            <span class="sk-item">REST design</span>
+            <span class="sk-item">OpenAPI</span>
+            <span class="sk-item">JWT Auth</span>
+          </div>
+        </div>
+        <div class="sk-row">
+          <div class="sk-cat">DevOps</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">Docker</span>
+            <span class="sk-item">Kubernetes</span>
+            <span class="sk-item">GitHub Actions</span>
+            <span class="sk-item">Terraform</span>
+            <span class="sk-item">CMake</span>
+          </div>
+        </div>
+        <div class="sk-row">
+          <div class="sk-cat">Databases</div>
+          <div class="sk-vals">
+            <span class="sk-item hot">PostgreSQL</span>
+            <span class="sk-item">MongoDB</span>
+            <span class="sk-item">Redis</span>
+            <span class="sk-item">SQLite</span>
+            <span class="sk-item">Firebase</span>
+            <span class="sk-item">Neo4j</span>
           </div>
         </div>
       </div>
@@ -335,380 +847,408 @@ h2 em{font-style:italic;color:var(--teal)}
   </div>
 </section>
 
-
-<div style="padding:0 5%;background:var(--teal-ll)">
-  <div class="mol-div">
-    <div class="mol-line"></div>
-    <div class="mol-svg-wrap">
-      <svg width="80" height="40" viewBox="0 0 80 40" fill="none">
-        <polygon points="40,4 68,20 68,20 40,36 12,20 12,20" stroke="#0D9488" stroke-width="1.5" fill="none"/>
-        <circle cx="40" cy="4" r="3.5" fill="#0D9488" opacity="0.5"/>
-        <circle cx="68" cy="20" r="3.5" fill="#0D9488" opacity="0.5"/>
-        <circle cx="40" cy="36" r="3.5" fill="#0D9488" opacity="0.5"/>
-        <circle cx="12" cy="20" r="3.5" fill="#0D9488" opacity="0.5"/>
-        <line x1="40" y1="4" x2="40" y2="36" stroke="#0D9488" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
-        <line x1="12" y1="20" x2="68" y2="20" stroke="#0D9488" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
-      </svg>
-    </div>
-    <div class="mol-line"></div>
-  </div>
-</div>
-
-
+<!-- ══ EXPERIENCE ════════════════════════════════════ -->
 <section id="experience">
-  <div class="section-inner">
-    <div class="s-label">Experience</div>
-    <h2>Lab<br><em>notebook</em></h2>
-    <div class="timeline">
+  <div class="entry-date">§ 2 — Professional record</div>
+  <h2>Experience <em>log</em></h2>
 
-      <div class="titem reveal">
-        <div class="t-dot">NOW</div>
-        <div class="t-card">
-          <div class="t-head">
-            <div>
-              <div class="t-role">Data Scientist — Project Engineer</div>
-              <div class="t-org">ARDE (Armament Research & Development Establishment)</div>
-            </div>
-            <span class="t-date">Jun 2024 – Aug 2025</span>
-          </div>
-          <div class="t-loc">Pune, India</div>
-          <ul class="t-bullets">
-            <li>Designed a service-oriented data platform with FastAPI microservices, JWT auth, and versioned endpoints delivering processed sensor data to React dashboards at sub-100 ms latency in a restricted offline network</li>
-            <li>Built a CI/CD pipeline with GitHub Actions — unit, integration testing, Docker image builds — cutting release time from hours to under 10 minutes</li>
-            <li>Engineered a parallelised offline pipeline (PySpark + SLURM) ingesting 20+ GB daily sensor data with automated failure recovery, schema validation, and audit logging into PostgreSQL</li>
-            <li>Accelerated ML iteration by 80%+ with parallelised multi-GPU training; ensemble model (XGBoost + LightGBM) reduced targeting error by 42% over the legacy analytical baseline</li>
-          </ul>
-          <div class="t-tags"><span class="ttag">FastAPI</span><span class="ttag">PySpark</span><span class="ttag">SLURM</span><span class="ttag">PostgreSQL</span><span class="ttag">XGBoost</span><span class="ttag">Multi-GPU</span><span class="ttag">Docker</span></div>
+  <div class="exp-list">
+
+    <div class="exp-entry drdo reveal" style="position:relative">
+      <span class="annot" style="top:1rem">
+        <span class="annot-r">most recent</span>
+        defence<br>R&amp;D lab
+      </span>
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Data Scientist — Project Engineer</div>
+          <div class="exp-org">ARDE – DRDO · Armament Research &amp; Development Establishment</div>
+          <div class="exp-loc">📍 Pune, India</div>
         </div>
+        <span class="exp-date">Jun 2024 – Aug 2025</span>
       </div>
-
-      <div class="titem reveal">
-        <div class="t-dot">2023</div>
-        <div class="t-card">
-          <div class="t-head">
-            <div>
-              <div class="t-role">Machine Learning Research Engineer</div>
-              <div class="t-org">Spartifical Pvt Ltd</div>
-            </div>
-            <span class="t-date">Feb 2023 – May 2023</span>
-          </div>
-          <div class="t-loc">Remote</div>
-          <ul class="t-bullets">
-            <li>Built a full-stack scientific data service: FastAPI inference endpoints with a React monitoring dashboard; Pytest and Jest test suites achieving 90%+ code coverage</li>
-            <li>Delivered a reproducible research artefact — Docker, DVC data versioning, CI pipeline — enabling peer replication from a single docker-compose up; published in a peer-reviewed journal</li>
-            <li>Developed a hybrid CNN-Transformer classifier achieving 89.7% accuracy on NASA lunar terrain data; integrated NASA dataset APIs and internal annotation systems</li>
-          </ul>
-          <div class="t-tags"><span class="ttag">CNN-Transformer</span><span class="ttag">FastAPI</span><span class="ttag">React</span><span class="ttag">DVC</span><span class="ttag">Docker</span><span class="ttag">Pytest</span></div>
-        </div>
+      <ul class="exp-points">
+        <li>Designed a <strong>service-oriented data platform</strong> with FastAPI microservices, JWT authentication, and versioned endpoints delivering processed sensor data to React dashboards at <span class="exp-metric">sub-100 ms latency</span> — all within a restricted offline network</li>
+        <li>Built a complete CI/CD pipeline (GitHub Actions + Docker) cutting release and validation time from hours to <span class="exp-metric">&lt; 10 minutes</span></li>
+        <li>Engineered a parallelised offline data-management pipeline (<code>PySpark + SLURM</code>) ingesting <span class="exp-metric">&gt; 20 GB</span> of daily sensor data with automated failure recovery, schema validation, and audit logging into PostgreSQL</li>
+        <li>Accelerated ML iteration by <span class="exp-metric">80%+</span> through multi-GPU training; ensemble model (XGBoost + LightGBM) reduced targeting error by <span class="exp-metric">42%</span> over the legacy analytical baseline</li>
+        <li>Provided on-call production support: fault diagnosis, incident resolution, root-cause analysis, and post-mortem documentation for live data services</li>
+      </ul>
+      <div class="exp-stack">
+        <span class="tag">FastAPI</span><span class="tag">PySpark</span><span class="tag">SLURM</span>
+        <span class="tag">PostgreSQL</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span>
+        <span class="tag">Multi-GPU</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
       </div>
-
-      <div class="titem reveal">
-        <div class="t-dot">2020</div>
-        <div class="t-card">
-          <div class="t-head">
-            <div>
-              <div class="t-role">Design Engineer</div>
-              <div class="t-org">Gurudatta Enterprises Pvt Ltd</div>
-            </div>
-            <span class="t-date">Nov 2020 – May 2022</span>
-          </div>
-          <div class="t-loc">Satara, India</div>
-          <ul class="t-bullets">
-            <li>Managed 3D models, assemblies, and engineering drawings in SolidWorks and CATIA V5; conducted tolerance stack-up analysis across 200+ prototype test cycles</li>
-            <li>Automated test-bench data logging with Python scripts, reducing post-processing time by ~60%</li>
-          </ul>
-          <div class="t-tags"><span class="ttag">SolidWorks</span><span class="ttag">CATIA V5</span><span class="ttag">Python</span><span class="ttag">CFD</span></div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="exp-entry spart reveal" style="position:relative">
+      <span class="annot" style="top:1rem">
+        <span class="annot-r">published</span>
+        NASA data<br>+ journal
+      </span>
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Machine Learning Research Engineer</div>
+          <div class="exp-org">Spartifical Pvt Ltd</div>
+          <div class="exp-loc">📍 Remote</div>
+        </div>
+        <span class="exp-date">Feb 2023 – May 2023</span>
+      </div>
+      <ul class="exp-points">
+        <li>Built a full-stack scientific data service: FastAPI inference endpoints integrated with a React monitoring dashboard; Pytest and Jest test suites achieving <span class="exp-metric">&gt; 90% code coverage</span></li>
+        <li>Delivered a reproducible research artefact — Docker environment, DVC data versioning, CI pipeline — enabling peer scientists to replicate all results from a single <code>docker-compose up</code>; <strong>work published in a peer-reviewed journal</strong></li>
+        <li>Developed a hybrid <strong>CNN-Transformer classifier</strong> at <span class="exp-metric">89.7% accuracy</span> on NASA lunar terrain data; implemented interfaces to NASA dataset APIs and internal annotation systems</li>
+      </ul>
+      <div class="exp-stack">
+        <span class="tag">PyTorch</span><span class="tag">CNN-Transformer</span><span class="tag">FastAPI</span>
+        <span class="tag">React</span><span class="tag">DVC</span><span class="tag">Docker</span><span class="tag">NASA APIs</span>
+      </div>
+    </div>
+
+    <div class="exp-entry guru reveal">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Design Engineer</div>
+          <div class="exp-org">Gurudatta Enterprises Pvt Ltd</div>
+          <div class="exp-loc">📍 Satara, India</div>
+        </div>
+        <span class="exp-date">Nov 2020 – May 2022</span>
+      </div>
+      <ul class="exp-points">
+        <li>Created and managed 3D models, assemblies, and engineering drawings in <strong>SolidWorks and CATIA V5</strong>; conducted tolerance stack-up analysis through 200+ prototype test cycles</li>
+        <li>Automated test-bench data logging with Python scripts, reducing post-processing time by <span class="exp-metric">~60%</span> — my first taste of how software changes scientific workflows</li>
+      </ul>
+      <div class="exp-stack">
+        <span class="tag">SolidWorks</span><span class="tag">CATIA V5</span><span class="tag">Python</span><span class="tag">CFD</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
-
-<div style="padding:0 5%;background:var(--white)">
-  <div class="mol-div">
-    <div class="mol-line"></div>
-    <div class="mol-svg-wrap">
-      <svg width="100" height="40" viewBox="0 0 100 40" fill="none">
-        <circle cx="50" cy="20" r="7" stroke="#0D9488" stroke-width="1.5"/>
-        <circle cx="50" cy="20" r="3" fill="#0D9488" opacity="0.3"/>
-        <circle cx="20" cy="10" r="4" stroke="#0D9488" stroke-width="1.2"/>
-        <circle cx="80" cy="10" r="4" stroke="#0D9488" stroke-width="1.2"/>
-        <circle cx="20" cy="30" r="4" stroke="#0D9488" stroke-width="1.2"/>
-        <circle cx="80" cy="30" r="4" stroke="#0D9488" stroke-width="1.2"/>
-        <line x1="24" y1="12" x2="43" y2="17" stroke="#0D9488" stroke-width="1"/>
-        <line x1="76" y1="12" x2="57" y2="17" stroke="#0D9488" stroke-width="1"/>
-        <line x1="24" y1="28" x2="43" y2="23" stroke="#0D9488" stroke-width="1"/>
-        <line x1="76" y1="28" x2="57" y2="23" stroke="#0D9488" stroke-width="1"/>
-      </svg>
-    </div>
-    <div class="mol-line"></div>
-  </div>
-</div>
-
-
+<!-- ══ PROJECTS ══════════════════════════════════════ -->
 <section id="projects">
-  <div class="section-inner">
-    <div class="s-label">Projects</div>
-    <h2>Key<br><em>contributions</em></h2>
-    <div class="proj-grid">
+  <div class="entry-date">§ 3 — Scientific &amp; software projects</div>
+  <h2>Project <em>case studies</em></h2>
 
+  <div class="proj-list">
 
-      <div class="pcard featured reveal">
-        <div class="pcard-top">
-          <div>
-            <div class="pcard-badges">
-              <span class="badge badge-sci">Neutron Physics</span>
-              <span class="badge badge-ml">Bayesian MCMC</span>
-              <span class="badge badge-api">FastAPI</span>
-            </div>
-            <div class="pcard-title">Neutron Scattering QENS Analysis & Visualisation Suite</div>
-            <div class="pcard-sub">MSc Capstone · University of Bristol · 2025–Present</div>
-            <p class="pcard-desc">Open-source QENS analysis pipeline for neutron scattering datasets, architecturally aligned with data workflows at large neutron facilities including ISIS Neutron Source. Implements physics-correct resolution correction and Chudley-Elliott jump-diffusion parameter fitting.</p>
+    <!-- FEATURED: QENS -->
+    <div class="proj-case featured reveal" style="margin-top:1.5rem">
+      <div class="pc-header blue-head">
+        <div>
+          <div class="pc-badges">
+            <span class="tag blue">Neutron Physics</span>
+            <span class="tag blue">Bayesian MCMC</span>
+            <span class="tag blue">FastAPI</span>
+            <span class="tag green">Open Source</span>
           </div>
+          <div class="pc-title">QENS Analysis &amp; Visualisation Suite</div>
+          <div class="pc-sub">MSc Capstone · University of Bristol · Aligned with ISIS Neutron Source workflows</div>
+        </div>
+        <div class="pc-date">2025 – present</div>
+      </div>
+
+      <div class="pc-body">
+        <div class="pc-cols">
           <div>
-            <div class="feat-highlight">
-              <div class="feat-hl-label">Scientific achievements</div>
-              <ul class="feat-hl-items">
-                <li>16% reduction in systematic error in diffusion coefficient</li>
-                <li>3× chi-squared improvement over Fickian model</li>
-                <li>Bayesian MCMC across 4 chains — Gelman-Rubin R̂ &lt; 1.01</li>
-                <li>FastAPI + React web interface with cloud deployment</li>
+            <p class="pc-desc">
+              Open-source pipeline for quasi-elastic neutron scattering (QENS) analysis — my MSc capstone at Bristol.
+              The project implements the full physics chain from raw <code>HDF5</code> experimental files through
+              resolution correction, model fitting, and Bayesian parameter estimation, presenting results through
+              a FastAPI + React web interface.
+            </p>
+            <p class="pc-desc" style="margin-top:0.75rem">
+              The core physical model is the <strong>Chudley-Elliott jump-diffusion</strong> framework, which describes
+              how molecules hop between sites in a liquid or confined geometry. Getting the resolution function
+              deconvolution right was the decisive technical challenge — a naive approach inflates the diffusion
+              coefficient by ~20%.
+            </p>
+
+            <div class="eq-block">
+              <div class="eq-label">Chudley-Elliott structure factor (QENS model)</div>
+              $$S(Q,\omega) = \frac{1}{\pi} \cdot \frac{\Gamma(Q)}{\omega^2 + \Gamma^2(Q)}$$
+              <small style="font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l)">where $\Gamma(Q) = \frac{D\,Q^2}{1 + Q^2 l^2}$, $D$ = diffusion coefficient, $l$ = jump length</small>
+            </div>
+
+            <div class="eq-block">
+              <div class="eq-label">Resolution-corrected measured spectrum</div>
+              $$I(Q,\omega) = S(Q,\omega) \otimes R(Q,\omega) + B(Q)$$
+              <small style="font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l)">$R(Q,\omega)$ = instrumental resolution function, $B(Q)$ = background</small>
+            </div>
+
+            <a href="https://github.com/ShubhamX57/QENS" target="_blank" class="gh-block">
+              <div class="gh-icon">
+                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              </div>
+              <div>
+                <div class="gh-info-l">Open Source Repository</div>
+                <div class="gh-info-v">github.com/ShubhamX57/QENS</div>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <div class="findings">
+              <div class="findings-label">Key scientific achievements</div>
+              <ul class="findings-list">
+                <li><span class="exp-metric" style="font-size:0.88rem">16%</span> reduction in systematic error in the diffusion coefficient via physics-correct resolution correction</li>
+                <li><span class="exp-metric" style="font-size:0.88rem">3×</span> improvement in χ² goodness-of-fit: Chudley-Elliott vs Fickian diffusion model</li>
+                <li>Bayesian MCMC across 4 independent chains with Gelman-Rubin $\hat{R} &lt; 1.01$ verified convergence</li>
+                <li>FastAPI + React web interface in progress with cloud deployment</li>
               </ul>
             </div>
+
+            <div class="note-box" style="margin-top:1rem">
+              The 3× χ² improvement over Fickian is the result I'm proudest of — it means the physics model actually matters, not just the software.
+            </div>
+
+            <div style="margin-top:1rem">
+              <div class="eq-label" style="font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem">MCMC convergence diagnostic</div>
+              $$\hat{R} = \sqrt{\frac{\hat{V}}{W}} \to 1 \text{ as chains converge}$$
+              <small style="font-family:var(--font-m);font-size:0.62rem;color:var(--ink-l)">Gelman-Rubin statistic — achieved $\hat{R} &lt; 1.01$ across all parameters</small>
+            </div>
+
+            <pre style="margin-top:1rem"><span class="c"># Chudley-Elliott HWHM fit</span>
+<span class="k">def</span> gamma_CE(Q, D, l):
+    <span class="k">return</span> (D * Q**<span class="n">2</span>) / (<span class="n">1</span> + Q**<span class="n">2</span> * l**<span class="n">2</span>)
+
+<span class="c"># Bayesian MCMC with emcee</span>
+sampler = emcee.EnsembleSampler(
+    nwalkers, ndim, log_posterior,
+    args=[Q_vals, S_exp, R_exp]
+)
+sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True</span>)</pre>
           </div>
         </div>
-        <div class="pcard-bot">
-          <span class="stack-t">Python</span><span class="stack-t">NumPy</span><span class="stack-t">SciPy</span><span class="stack-t">h5py</span><span class="stack-t">FastAPI</span><span class="stack-t">React</span><span class="stack-t">Pytest</span>
+
+        <div style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:4px">
+          <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">SciPy</span>
+          <span class="tag">h5py</span><span class="tag">emcee (MCMC)</span><span class="tag">FastAPI</span>
+          <span class="tag">React</span><span class="tag">Pytest</span><span class="tag">HDF5</span>
         </div>
       </div>
-
-      <div class="pcard reveal">
-        <div class="pcard-top">
-          <div class="pcard-badges">
-            <span class="badge badge-hpc">HPC</span>
-            <span class="badge badge-api">Microservices</span>
-          </div>
-          <div class="pcard-title">ARDE Sensor Data Pipeline & Monitoring System</div>
-          <div class="pcard-sub">ARDE · 2024–2025</div>
-          <p class="pcard-desc">Local data management tool processing 15+ environmental variable streams from heterogeneous sensors. Automated data validation and structured file archiving with &lt;4 hr mean-time-to-resolution for production issues.</p>
-        </div>
-        <div class="pcard-bot">
-          <span class="stack-t">FastAPI</span><span class="stack-t">PostgreSQL</span><span class="stack-t">React</span><span class="stack-t">PySpark</span>
-        </div>
-      </div>
-
-      <div class="pcard reveal">
-        <div class="pcard-top">
-          <div class="pcard-badges">
-            <span class="badge badge-bio">Clinical</span>
-            <span class="badge badge-api">REST API</span>
-          </div>
-          <div class="pcard-title">Cervical Cancer Screening Portal</div>
-          <div class="pcard-sub">Clinical Data Management · 2023</div>
-          <p class="pcard-desc">Clinical data management system handling DICOM image ingestion and structured report storage with role-based access control. Deployed via Docker under institutional data governance policies.</p>
-        </div>
-        <div class="pcard-bot">
-          <span class="stack-t">Flask</span><span class="stack-t">PostgreSQL</span><span class="stack-t">DICOM</span><span class="stack-t">Docker</span>
-        </div>
-      </div>
-
-      <div class="pcard reveal">
-        <div class="pcard-top">
-          <div class="pcard-badges">
-            <span class="badge badge-ml">Computer Vision</span>
-            <span class="badge badge-sci">NASA Data</span>
-          </div>
-          <div class="pcard-title">CNN-Transformer Classifier for NASA Lunar Terrain</div>
-          <div class="pcard-sub">Spartifical · 2023</div>
-          <p class="pcard-desc">Hybrid CNN-Transformer classifier achieving 89.7% accuracy on NASA lunar terrain data. Integrated NASA dataset APIs with a reproducible research artefact enabling one-command replication.</p>
-        </div>
-        <div class="pcard-bot">
-          <span class="stack-t">PyTorch</span><span class="stack-t">OpenCV</span><span class="stack-t">DVC</span><span class="stack-t">Docker</span>
-        </div>
-      </div>
-
     </div>
+
+    <!-- DRDO Pipeline -->
+    <div class="proj-case reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-badges">
+            <span class="tag blue">HPC</span><span class="tag blue">Microservices</span><span class="tag">Production</span>
+          </div>
+          <div class="pc-title">DRDO Sensor Data Pipeline &amp; Monitoring System</div>
+          <div class="pc-sub">ARDE–DRDO · Pune, India</div>
+        </div>
+        <div class="pc-date">2024 – 2025</div>
+      </div>
+      <div class="pc-body">
+        <p class="pc-desc">
+          A local data management tool processing <strong>15+ environmental variable streams</strong> from heterogeneous
+          sensors in a restricted offline environment. The system enforces automated data validation,
+          structured archiving, and maintains <span class="exp-metric">&lt; 4 hr mean-time-to-resolution</span>
+          for data-service issues during active measurement campaigns.
+          The offline constraint — no internet, no cloud — made robust local architecture non-negotiable.
+        </p>
+        <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:4px">
+          <span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">PySpark</span>
+          <span class="tag">React</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cervical Cancer Portal -->
+    <div class="proj-case reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-badges">
+            <span class="tag green">Clinical</span><span class="tag">DICOM</span><span class="tag">RBAC</span>
+          </div>
+          <div class="pc-title">Cervical Cancer Screening Portal</div>
+          <div class="pc-sub">Clinical data management · Docker-deployed · 2023</div>
+        </div>
+        <div class="pc-date">2023</div>
+      </div>
+      <div class="pc-body">
+        <p class="pc-desc">
+          Clinical data management system handling <strong>DICOM image ingestion</strong> and structured report storage
+          with role-based access control enforcing patient data confidentiality. Backend validated through
+          unit and integration tests covering all API routes and database transactions.
+          Deployed via Docker under institutional data governance policies in a restricted clinical environment.
+        </p>
+        <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:4px">
+          <span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">DICOM</span>
+          <span class="tag">Pytest</span><span class="tag">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CNN-Transformer -->
+    <div class="proj-case reveal">
+      <div class="pc-header">
+        <div>
+          <div class="pc-badges">
+            <span class="tag blue">Computer Vision</span><span class="tag green">Published</span><span class="tag">NASA Data</span>
+          </div>
+          <div class="pc-title">CNN-Transformer Classifier — NASA Lunar Terrain</div>
+          <div class="pc-sub">Spartifical Pvt Ltd · Peer-reviewed journal publication</div>
+        </div>
+        <div class="pc-date">2023</div>
+      </div>
+      <div class="pc-body">
+        <p class="pc-desc">
+          Hybrid CNN-Transformer classifier achieving <span class="exp-metric">89.7% accuracy</span> on NASA lunar
+          terrain data. The work was packaged as a fully reproducible research artefact — Docker environment,
+          DVC data versioning, CI pipeline — enabling peer scientists to replicate all results from a single
+          <code>docker-compose up</code>. The paper was peer-reviewed and published.
+        </p>
+        <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:4px">
+          <span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">DVC</span>
+          <span class="tag">Docker</span><span class="tag">NASA APIs</span><span class="tag">Pytest</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-
+<!-- ══ PUBLICATIONS ══════════════════════════════════ -->
 <section id="publications">
-  <div class="section-inner">
-    <div class="s-label">Publications</div>
-    <h2>Research<br><em>record</em></h2>
-    <div class="pub-item reveal">
-      <span class="pub-year">2023</span>
-      <div>
-        <div class="pub-title">Building Shadow Detection Using Aerial Imagery with Attention-Enhanced YOLOv4</div>
-        <div class="pub-authors">Shinde, S., et al.</div>
-        <div class="pub-venue">
-          Journal of Emerging Technologies in Research (JETIR) · Vol. 10, Issue 9
-          <span class="pub-award">🏆 Best Research Paper</span>
+  <div class="entry-date">§ 4 — Peer-reviewed publications</div>
+  <h2>Bibliography</h2>
+
+  <div class="bib-list">
+    <div class="bib-entry reveal">
+      <div class="bib-num">[1]</div>
+      <div class="bib-body">
+        <div class="bib-title">"Building Shadow Detection Using Aerial Imagery with Attention-Enhanced YOLOv4"</div>
+        <div class="bib-authors">Shinde, S., et al.</div>
+        <div class="bib-venue">
+          Journal of Emerging Technologies in Research (JETIR), Vol. 10, Issue 9, 2023.
+          <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" style="margin-left:6px">jetir.org/papers/JETIR2309292</a>
+          <span class="bib-award">★ Best Research Paper</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<section id="education">
-  <div class="section-inner">
-    <div class="s-label">Education</div>
-    <h2>Academic<br><em>formation</em></h2>
-    <div class="edu-grid">
-      <div class="ecard current reveal">
-        <div class="e-status">Currently enrolled</div>
-        <div class="e-deg">MSc Scientific Computing with Data Science</div>
-        <div class="e-school">University of Bristol</div>
-        <div class="e-year">2025 – 2026 (expected)</div>
-        <div class="e-note">Student Academic Representative (SARF). SARTHI Maharashtra Government Foreign Scholarship recipient. Focus on HPC, numerical methods, and scientific ML.</div>
-      </div>
-      <div class="ecard reveal">
-        <div class="e-status" style="color:var(--teal);font-family:var(--font-m);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem">GPA: 8.5 / 10</div>
-        <div class="e-deg">PG Diploma in Data Science & AI</div>
-        <div class="e-school">Savitribai Phule Pune University — DOT</div>
-        <div class="e-year">2022 – 2023 · Pune, India</div>
-        <div class="e-note">Thesis: Building Shadow Detection Using Aerial Imagery. Best Research Project award.</div>
-      </div>
-      <div class="ecard reveal">
-        <div class="e-status" style="color:var(--text-l);font-family:var(--font-m);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem">GPA: 6.66 / 10</div>
-        <div class="e-deg">Bachelor of Engineering, Mechanical Engineering</div>
-        <div class="e-school">Savitribai Phule Pune University</div>
-        <div class="e-year">2017 – 2020 · Pune, India</div>
-        <div class="e-note">Capstone: Optimisation of Wind Turbine Blades Using CFD. University Merit Scholarship (2018).</div>
+    <div class="bib-entry reveal" style="opacity:0.5">
+      <div class="bib-num">[2]</div>
+      <div class="bib-body" style="border-bottom:1px dashed var(--rule)">
+        <div class="bib-title" style="font-style:normal;color:var(--ink-l)">QENS Analysis Suite — MSc Thesis (in preparation)</div>
+        <div class="bib-authors" style="color:var(--ink-ll)">Shinde, S. — University of Bristol, 2026</div>
+        <div class="bib-venue">Expected submission: 2026 · Open source: github.com/ShubhamX57/QENS</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ══ EDUCATION ═════════════════════════════════════ -->
+<section id="education">
+  <div class="entry-date">§ 5 — Academic formation</div>
+  <h2>Education <em>record</em></h2>
 
+  <div class="edu-list">
+    <div class="edu-entry active reveal">
+      <div>
+        <div class="edu-live"><span class="dot-live"></span>Current</div>
+        <div class="edu-deg">MSc Scientific Computing with Data Science</div>
+        <div class="edu-school">University of Bristol</div>
+        <div class="edu-year">2025 – 2026 (expected) · Bristol, UK</div>
+      </div>
+      <div class="edu-note">
+        Student Academic Representative (SARF) — liaison between MSc cohort and faculty.
+        Research focus: neutron scattering analysis, numerical methods, HPC pipelines.
+        Funded by the competitive <strong>SARTHI Maharashtra Government Foreign Scholarship</strong>.
+      </div>
+      <div class="edu-gpa" style="color:var(--blue)">MSc<br><span style="font-size:0.7rem;font-weight:400;font-family:var(--font-m)">in progress</span></div>
+    </div>
+
+    <div class="edu-entry reveal">
+      <div>
+        <div class="edu-deg">PG Diploma in Data Science &amp; AI</div>
+        <div class="edu-school">Savitribai Phule Pune University — DOT</div>
+        <div class="edu-year">2022 – 2023 · Pune, India</div>
+      </div>
+      <div class="edu-note">
+        Thesis: <em>Building Shadow Detection Using Aerial Imagery</em>.
+        Awarded Best Research Project by the department.
+        Foundation for all subsequent ML and data science work.
+      </div>
+      <div class="edu-gpa">8.5<span style="font-size:0.7rem;font-weight:400;font-family:var(--font-m)">/10</span></div>
+    </div>
+
+    <div class="edu-entry reveal">
+      <div>
+        <div class="edu-deg">Bachelor of Engineering, Mechanical Engineering</div>
+        <div class="edu-school">Savitribai Phule Pune University</div>
+        <div class="edu-year">2017 – 2020 · Pune, India</div>
+      </div>
+      <div class="edu-note">
+        Capstone: Optimisation of Wind Turbine Blades Using CFD.
+        University Merit Scholarship (2018). The engineering rigour from this degree shapes how I approach software reliability.
+      </div>
+      <div class="edu-gpa">6.66<span style="font-size:0.7rem;font-weight:400;font-family:var(--font-m)">/10</span></div>
+    </div>
+  </div>
+</section>
+</div><!-- /page -->
+
+<!-- ══ CONTACT ═══════════════════════════════════════ -->
 <section id="contact">
   <div class="contact-inner">
-    <div>
-      <div style="font-family:var(--font-m);font-size:0.7rem;color:rgba(255,255,255,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:20px;height:1px;background:rgba(255,255,255,0.3)"></span>Contact</div>
-      <h2>Let's build<br><em style="color:#5EEAD4">something</em></h2>
-      <p>Open to research collaborations, scientific software roles, and HPC / data engineering positions. Currently based in Bristol, UK.</p>
-    </div>
-    <div class="contact-links">
+    <div class="entry-date">§ 6 — Get in touch</div>
+    <h2>Let's <em style="color:rgba(255,255,255,0.6)">build</em> something</h2>
+    <p>
+      Open to scientific software engineering roles, HPC and data engineering positions,
+      and research collaborations — especially at the intersection of computational physics,
+      reproducible science, and production-grade software. Currently based in Bristol, UK.
+    </p>
+
+    <div class="contact-grid">
       <a href="mailto:shubham.edu.ms@gmail.com" class="clink">
         <div class="clink-icon">✉</div>
         <div>
-          <div class="clink-label">Personal email</div>
+          <div class="clink-label">Personal</div>
           <div class="clink-val">shubham.edu.ms@gmail.com</div>
         </div>
       </a>
       <a href="mailto:dg25301@bristol.ac.uk" class="clink">
         <div class="clink-icon">🎓</div>
         <div>
-          <div class="clink-label">University email</div>
+          <div class="clink-label">University</div>
           <div class="clink-val">dg25301@bristol.ac.uk</div>
         </div>
       </a>
-      <a href="https://linkedin.com" class="clink">
+      <a href="https://github.com/ShubhamX57" target="_blank" class="clink">
+        <div class="clink-icon">⌥</div>
+        <div>
+          <div class="clink-label">GitHub</div>
+          <div class="clink-val">github.com/ShubhamX57</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="clink">
         <div class="clink-icon">↗</div>
         <div>
           <div class="clink-label">LinkedIn</div>
           <div class="clink-val">linkedin.com/in/shubhamshinde</div>
         </div>
       </a>
-      <a href="https://github.com" class="clink">
-        <div class="clink-icon">⌥</div>
-        <div>
-          <div class="clink-label">GitHub</div>
-          <div class="clink-val">github.com/shubhamshinde</div>
-        </div>
-      </a>
     </div>
-  </div>
-  <div class="foot-bot">
-    <span class="foot-copy">© 2025 Shubham Shinde · Built with precision</span>
-    <span class="foot-loc">📍 Bristol, UK · +44 7352 671872</span>
+
+    <div class="foot-line">
+      <span class="foot-copy">+44 7352 671872 · Bristol, UK · Last updated March 2026</span>
+      <span class="foot-sig">Shubham Shinde</span>
+    </div>
   </div>
 </section>
 
 <script>
-
-const canvas=document.getElementById('atom-canvas');
-const ctx=canvas.getContext('2d');
-let W,H,cx,cy,t=0;
-function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;cx=W/2;cy=H/2}
-resize();window.addEventListener('resize',resize);
-
-const TEAL='rgba(13,148,136,';
-const orbits=[
-  {rx:180,ry:60,tilt:0,speed:0.008,size:5},
-  {rx:160,ry:55,tilt:Math.PI/3,speed:0.011,size:4},
-  {rx:200,ry:65,tilt:-Math.PI/4,speed:0.006,size:4.5},
-  {rx:140,ry:50,tilt:Math.PI/1.5,speed:0.014,size:3.5},
-];
-const nodes=[];
-for(let i=0;i<28;i++){
-  const angle=Math.random()*Math.PI*2;
-  const r=80+Math.random()*280;
-  nodes.push({x:cx+Math.cos(angle)*r,y:cy+Math.sin(angle)*r,r:1+Math.random()*2,speed:0.0003+Math.random()*0.0005,angle,baseR:80+Math.random()*280});
-}
-
-function draw(){
-  ctx.clearRect(0,0,W,H);
-  
-  ctx.fillStyle=TEAL+'0.12)';
-  for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40)ctx.fillRect(x-0.5,y-0.5,1,1);
-
-  // floating nodes
-  nodes.forEach(n=>{
-    n.angle+=n.speed;
-    n.x=cx+Math.cos(n.angle)*n.baseR*(W/900);
-    n.y=cy+Math.sin(n.angle*0.7)*n.baseR*(H/600)*0.5+cy*0.1;
-    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-    ctx.fillStyle=TEAL+'0.25)';ctx.fill();
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
   });
-
- 
-  const g=ctx.createRadialGradient(cx,cy,0,cx,cy,30);
-  g.addColorStop(0,TEAL+'0.35)');g.addColorStop(1,TEAL+'0)');
-  ctx.beginPath();ctx.arc(cx,cy,30,0,Math.PI*2);ctx.fillStyle=g;ctx.fill();
-  ctx.beginPath();ctx.arc(cx,cy,8,0,Math.PI*2);ctx.fillStyle=TEAL+'0.5)';ctx.fill();
-
-
-  orbits.forEach((o,i)=>{
-    const angle=t*o.speed*60+i*(Math.PI*2/orbits.length);
-    ctx.save();ctx.translate(cx,cy);ctx.rotate(o.tilt);
-    ctx.beginPath();ctx.ellipse(0,0,o.rx,o.ry,0,0,Math.PI*2);
-    ctx.strokeStyle=TEAL+'0.15)';ctx.lineWidth=1;ctx.stroke();
-
-    const ex=Math.cos(angle)*o.rx;
-    const ey=Math.sin(angle)*o.ry;
-    ctx.beginPath();ctx.arc(ex,ey,o.size,0,Math.PI*2);
-    ctx.fillStyle=TEAL+'0.55)';ctx.fill();
-
-    for(let tr=1;tr<=6;tr++){
-      const ta=angle-tr*0.12;
-      const tx2=Math.cos(ta)*o.rx,ty2=Math.sin(ta)*o.ry;
-      ctx.beginPath();ctx.arc(tx2,ty2,o.size*(1-tr/8),0,Math.PI*2);
-      ctx.fillStyle=TEAL+(0.06-tr*0.008)+')';ctx.fill();
-    }
-    ctx.restore();
-  });
-
-
-  nodes.forEach((a,i)=>{
-    nodes.slice(i+1).forEach(b=>{
-      const d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=TEAL+(0.12*(1-d/120))+')';ctx.lineWidth=0.5;ctx.stroke();}
-    });
-  });
-
-  t++;requestAnimationFrame(draw);
-}
-draw();
-
-
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
