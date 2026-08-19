@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  
 <head>
-  
 <meta charset="UTF-8">
-  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-<title>Shubham Shinde  Scientific Software Engineer</title>
-  
-<meta name="description" content="Shubham Shinde — scientific software engineer. MSc Scientific Computing with Data Science, University of Bristol. HPC pipelines, neutron-scattering analysis, reproducible research software.">
+<title>Shubham Shinde - Scientific Software Engineer</title>
+<meta name="description" content="Shubham Shinde - scientific software engineer. MSc Scientific Computing with Data Science, University of Bristol. Neutron-scattering analysis, numerical stability, HPC pipelines, reproducible research software.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,381 +12,242 @@
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
-
-
-
-  
 :root{
-  
-  --bg:        #0B0E14;
-  --bg-2:      #0F131C;
-  --panel:     #131825;
-  --panel-2:   #171D2C;
-  --panel-hi:  #1C2335;
-  --line:      #232B40;
-  --line-2:    #2C3550;
-
-  --fg:        #ECEFF6;
-  --fg-2:      #B4BDD2;
-  --fg-3:      #7C879F;
-  --fg-4:      #545E76;
-
-  --cyan:      #5BD6D0;     
-  --cyan-dim:  #2E6E6B;
-  --amber:     #E8A04A;     
-  --amber-dim: #6E5026;
-  --rose:      #E0607A;     
-  --rose-dim:  #6B2E3C;
-  --violet:    #9B8CE8;
-
-  --glow-cyan: rgba(91,214,208,0.16);
-  --glow-amber:rgba(232,160,74,0.14);
-
-  --f-display: 'Fraunces', Georgia, serif;
-  --f-sans:    'Space Grotesk', system-ui, sans-serif;
-  --f-mono:    'JetBrains Mono', ui-monospace, monospace;
-
-  --nav-h:     62px;
-  --maxw:      1120px;
+  --bg:#0A0D13; --bg-2:#0E121B; --panel:#121724; --panel-2:#161C2B; --panel-hi:#1B2233;
+  --line:#212940; --line-2:#2B3450;
+  --fg:#ECEFF6; --fg-2:#B4BDD2; --fg-3:#7C879F; --fg-4:#535D75;
+  --cyan:#5BD6D0; --cyan-dim:#2E6E6B;
+  --amber:#E8A04A; --amber-dim:#6E5026;
+  --rose:#E0607A; --rose-dim:#6B2E3C;
+  --violet:#9B8CE8;
+  --glow-cyan:rgba(91,214,208,0.16); --glow-amber:rgba(232,160,74,0.14);
+  --f-display:'Fraunces',Georgia,serif;
+  --f-sans:'Space Grotesk',system-ui,sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  --nav-h:62px; --maxw:1120px;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--fg);
-  font-family:var(--f-sans);
-  font-size:16.5px;
-  line-height:1.65;
-  font-weight:300;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  padding-top:var(--nav-h);
-  position:relative;
-  overflow-x:hidden;
-}
-
-body::before{
-  content:'';
-  position:fixed;inset:0;
-  z-index:0;
-  pointer-events:none;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:54px 54px;
-  background-position:center top;
-  opacity:0.4;
-  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-          mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
-}
-
-body::after{
-  content:'';
-  position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 70% 50% at 75% -5%, var(--glow-cyan), transparent 60%),
-    radial-gradient(ellipse 60% 45% at 15% 0%, var(--glow-amber), transparent 55%);
-}
-.page, nav, #contact{position:relative;z-index:1}
-
+body{background:var(--bg);color:var(--fg);font-family:var(--f-sans);font-size:16.5px;line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-top:var(--nav-h);position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:54px 54px;background-position:center top;opacity:.4;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0%,transparent 75%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 0%,transparent 75%)}
+body::after{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 75% -5%,var(--glow-cyan),transparent 60%),radial-gradient(ellipse 60% 45% at 15% 0%,var(--glow-amber),transparent 55%)}
+.page,nav,#contact{position:relative;z-index:1}
 ::selection{background:var(--cyan-dim);color:var(--fg)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:2px}
 
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:80;
-  background:rgba(11,14,20,0.78);
-  backdrop-filter:blur(14px) saturate(1.2);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{
-  max-width:var(--maxw);margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  height:var(--nav-h);padding:0 2rem;
-}
-.nav-logo{
-  font-family:var(--f-mono);
-  font-size:0.82rem;font-weight:500;
-  color:var(--fg);text-decoration:none;
-  display:flex;align-items:center;gap:0.6rem;letter-spacing:0.02em;
-}
-.nav-logo .blip{
-  width:8px;height:8px;border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 8px var(--cyan);
-  animation:blip 2.6s infinite;
-}
-@keyframes blip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.72)}}
-.nav-logo .tag{color:var(--fg-4);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(10,13,19,.8);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);padding:0 2rem}
+.nav-logo{font-family:var(--f-mono);font-size:.82rem;font-weight:500;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:.6rem;letter-spacing:.02em}
+.nav-logo .blip{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blip 2.6s infinite}
+@keyframes blip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.72)}}
+.nav-logo .tag{color:var(--fg-4);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase}
 .nav-toc{display:flex;gap:1.85rem;list-style:none;align-items:center}
-.nav-toc a{
-  font-family:var(--f-mono);font-size:0.62rem;color:var(--fg-3);
-  text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;
-  transition:color 0.2s;position:relative;
-}
+.nav-toc a{font-family:var(--f-mono);font-size:.62rem;color:var(--fg-3);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
 .nav-toc a:hover{color:var(--cyan)}
-.nav-cta{
-  font-family:var(--f-mono);font-size:0.62rem;letter-spacing:0.08em;
-  text-transform:uppercase;color:var(--bg);background:var(--cyan);
-  padding:7px 14px;border-radius:3px;text-decoration:none;font-weight:500;
-  transition:all 0.2s;box-shadow:0 0 0 transparent;
-}
+.nav-cta{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--cyan);padding:7px 14px;border-radius:3px;text-decoration:none;font-weight:500;transition:all .2s}
 .nav-cta:hover{box-shadow:0 0 18px var(--glow-cyan);transform:translateY(-1px)}
-@media(max-width:860px){.nav-toc li:not(:last-child){display:none}}
+@media(max-width:900px){.nav-toc li:not(:last-child){display:none}}
 
 .page{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
 section{padding:100px 0 76px;position:relative}
-section + section{border-top:1px solid var(--line)}
-
-.eyebrow{
-  font-family:var(--f-mono);font-size:0.62rem;color:var(--fg-4);
-  letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.1rem;
-  display:flex;align-items:center;gap:0.7rem;
-}
-.eyebrow::before{content:'';width:26px;height:1px;background:var(--amber);opacity:0.6}
-.eyebrow-num{color:var(--amber);font-weight:500}
-
-h2{
-  font-family:var(--f-display);font-weight:300;
-  font-variation-settings:'opsz' 144;color:var(--fg);
-  font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;
-  letter-spacing:-0.02em;margin-bottom:2.6rem;
-}
+section+section{border-top:1px solid var(--line)}
+.eyebrow{font-family:var(--f-mono);font-size:.62rem;color:var(--fg-4);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--amber);opacity:.6}
+h2{font-family:var(--f-display);font-weight:300;font-variation-settings:'opsz' 144;color:var(--fg);font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:2.6rem}
 h2 em{font-style:italic;color:var(--amber);font-weight:400}
 em{font-style:italic}
-
-a{color:var(--cyan);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s,color 0.2s}
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
 a:hover{border-bottom-color:var(--cyan)}
-code{
-  font-family:var(--f-mono);font-size:0.78em;background:var(--panel-2);
-  border:1px solid var(--line);padding:1px 6px;border-radius:3px;color:var(--cyan);
-}
+code{font-family:var(--f-mono);font-size:.78em;background:var(--panel-2);border:1px solid var(--line);padding:1px 6px;border-radius:3px;color:var(--cyan)}
 strong{font-weight:500;color:var(--fg)}
 
-.fleuron{
-  text-align:center;font-family:var(--f-mono);color:var(--fg-4);
-  font-size:0.7rem;letter-spacing:0.6em;margin:3rem 0 0;user-select:none;
-}
-
-#hero{
-  min-height:calc(100vh - var(--nav-h));
-  display:flex;align-items:center;padding:48px 0;border-top:none;
-}
-.hero-grid{display:grid;grid-template-columns:1.08fr 0.92fr;gap:4rem;align-items:center;width:100%}
-.hero-eyebrow{
-  font-family:var(--f-mono);font-size:0.64rem;color:var(--fg-4);
-  letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.7rem;
-  display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;
-}
+#hero{min-height:calc(100vh - var(--nav-h));display:flex;align-items:center;padding:48px 0;border-top:none}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:4rem;align-items:center;width:100%}
+.hero-eyebrow{font-family:var(--f-mono);font-size:.64rem;color:var(--fg-4);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.7rem;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
 .avail{display:inline-flex;align-items:center;gap:7px;color:var(--cyan);font-weight:500}
 .avail .dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blip 2.6s infinite}
-.hero-eyebrow .sep{color:var(--fg-4)}
-
-.hero-title{
-  font-family:var(--f-display);font-size:clamp(3rem,6.4vw,5.2rem);
-  font-weight:300;line-height:0.98;letter-spacing:-0.04em;
-  margin-bottom:1.6rem;color:var(--fg);
-}
+.hero-title{font-family:var(--f-display);font-size:clamp(3rem,6.4vw,5.2rem);font-weight:300;line-height:.98;letter-spacing:-.04em;margin-bottom:1.6rem;color:var(--fg)}
 .hero-title .ln{display:block}
 .hero-title em{font-style:italic;font-weight:400;color:var(--amber);font-variation-settings:'opsz' 144}
-.hero-lead{font-family:var(--f-sans);font-size:1.1rem;font-weight:300;line-height:1.7;color:var(--fg-2);max-width:550px;margin-bottom:1.9rem}
+.hero-lead{font-size:1.1rem;font-weight:300;line-height:1.7;color:var(--fg-2);max-width:550px;margin-bottom:1.9rem}
 .hero-lead strong{font-weight:500;color:var(--fg)}
-.hero-meta{
-  font-family:var(--f-mono);font-size:0.68rem;color:var(--fg-3);
-  letter-spacing:0.04em;margin-bottom:2.1rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;
-}
+.hero-meta{font-family:var(--f-mono);font-size:.68rem;color:var(--fg-3);letter-spacing:.04em;margin-bottom:2.1rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
 .hero-meta .sep{color:var(--fg-4)}
-
-.hero-actions{display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:2.3rem}
-.btn{
-  display:inline-flex;align-items:center;gap:0.45rem;font-family:var(--f-mono);
-  font-size:0.66rem;letter-spacing:0.09em;text-transform:uppercase;
-  padding:11px 18px;border-radius:3px;text-decoration:none;transition:all 0.2s;border:1px solid;font-weight:500;
-}
+.hero-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.3rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;padding:11px 18px;border-radius:3px;text-decoration:none;transition:all .2s;border:1px solid;font-weight:500}
 .btn-p{color:var(--bg);background:var(--cyan);border-color:var(--cyan)}
 .btn-p:hover{box-shadow:0 0 20px var(--glow-cyan);transform:translateY(-1px)}
 .btn-s{color:var(--fg-2);background:transparent;border-color:var(--line-2)}
 .btn-s:hover{border-color:var(--cyan);color:var(--cyan)}
-
-.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0;max-width:560px}
+.stat-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0;max-width:600px}
 .stat-cell{padding:0 1.3rem;border-right:1px solid var(--line)}
 .stat-cell:last-child{border-right:none}.stat-cell:first-child{padding-left:0}
-.stat-v{font-family:var(--f-mono);font-size:1.45rem;font-weight:700;color:var(--cyan);line-height:1.1;letter-spacing:-0.02em}
-.stat-k{font-family:var(--f-mono);font-size:0.55rem;color:var(--fg-4);letter-spacing:0.07em;text-transform:uppercase;margin-top:0.4rem;line-height:1.4}
-
-.hero-fig{
-  background:linear-gradient(160deg,var(--panel) 0%,var(--bg-2) 100%);
-  border:1px solid var(--line-2);border-radius:6px;
-  padding:0.5rem;
-  box-shadow:0 30px 70px -30px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.03);
-  position:relative;
-}
-.fig-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0.5rem 0.7rem 0.55rem;border-bottom:1px solid var(--line);margin-bottom:0.3rem;
-}
+.stat-v{font-family:var(--f-mono);font-size:1.45rem;font-weight:700;color:var(--cyan);line-height:1.1;letter-spacing:-.02em}
+.stat-k{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-4);letter-spacing:.07em;text-transform:uppercase;margin-top:.4rem;line-height:1.4}
+.hero-fig{background:linear-gradient(160deg,var(--panel) 0%,var(--bg-2) 100%);border:1px solid var(--line-2);border-radius:6px;padding:.5rem;box-shadow:0 30px 70px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.03)}
+.fig-bar{display:flex;align-items:center;justify-content:space-between;padding:.5rem .7rem .55rem;border-bottom:1px solid var(--line);margin-bottom:.3rem}
 .fig-bar .dots{display:flex;gap:5px}
 .fig-bar .dots i{width:8px;height:8px;border-radius:50%;display:block}
 .fig-bar .dots i:nth-child(1){background:var(--rose)}
 .fig-bar .dots i:nth-child(2){background:var(--amber)}
 .fig-bar .dots i:nth-child(3){background:var(--cyan)}
-.fig-bar .id{font-family:var(--f-mono);font-size:0.56rem;color:var(--fg-4);letter-spacing:0.08em;text-transform:uppercase}
-.hero-fig svg{width:100%;height:auto;display:block;padding:0.4rem 0.6rem}
-.fig-cap{
-  font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-3);text-align:center;
-  padding:0.6rem 0.7rem 0.65rem;border-top:1px solid var(--line);letter-spacing:0.03em;line-height:1.5;
-}
+.fig-bar .id{font-family:var(--f-mono);font-size:.56rem;color:var(--fg-4);letter-spacing:.08em;text-transform:uppercase}
+.hero-fig svg{width:100%;height:auto;display:block;padding:.4rem .6rem}
+.fig-cap{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-3);text-align:center;padding:.6rem .7rem .65rem;border-top:1px solid var(--line);letter-spacing:.03em;line-height:1.5}
 .fig-cap b{color:var(--cyan);font-weight:500}
 @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:2.8rem}.hero-fig{order:-1;max-width:460px}}
 
-.about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:4rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:start}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:2.6rem}}
 .prose p{font-size:1.02rem;font-weight:300;line-height:1.8;color:var(--fg-2);margin-bottom:1.1rem}
 .prose p:last-child{margin-bottom:0}
 .prose em{font-style:italic;color:var(--cyan)}
-.prose > p:first-of-type::first-letter{
-  font-family:var(--f-display);font-style:italic;font-size:3.4rem;font-weight:300;
-  float:left;line-height:0.82;margin:0.3rem 0.45rem 0 0;color:var(--amber);
-}
-
+.prose>p:first-of-type::first-letter{font-family:var(--f-display);font-style:italic;font-size:3.4rem;font-weight:300;float:left;line-height:.82;margin:.3rem .45rem 0 0;color:var(--amber)}
 .awards{list-style:none;margin-top:1.7rem;padding-top:1.1rem;border-top:1px solid var(--line)}
-.awards li{font-size:0.9rem;font-weight:300;color:var(--fg-2);line-height:1.5;padding:0.78rem 0 0.78rem 1.9rem;border-bottom:1px solid var(--line);position:relative}
+.awards li{font-size:.9rem;font-weight:300;color:var(--fg-2);line-height:1.5;padding:.78rem 0 .78rem 1.9rem;border-bottom:1px solid var(--line);position:relative}
 .awards li:last-child{border-bottom:none}
-.awards li::before{content:'✦';position:absolute;left:0.3rem;top:0.78rem;color:var(--amber);font-size:0.78rem}
-.awards li strong{font-weight:500;color:var(--fg);display:block;font-family:var(--f-display);font-size:0.98rem}
-.awards li .yr{font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-4);letter-spacing:0.05em}
-
+.awards li::before{content:'✦';position:absolute;left:.3rem;top:.78rem;color:var(--amber);font-size:.78rem}
+.awards li strong{font-weight:500;color:var(--fg);display:block;font-family:var(--f-display);font-size:.98rem}
+.awards li .yr{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-4);letter-spacing:.05em}
 .skills{display:flex;flex-direction:column;gap:1.2rem}
 .sk-group{border-bottom:1px solid var(--line);padding-bottom:1.05rem}
 .sk-group:last-child{border-bottom:none;padding-bottom:0}
-.sk-label{font-family:var(--f-mono);font-size:0.58rem;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.65rem;display:flex;align-items:baseline;gap:0.6rem}
+.sk-label{font-family:var(--f-mono);font-size:.58rem;font-weight:500;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.65rem;display:flex;align-items:baseline;gap:.6rem}
 .sk-label::after{content:'';flex:1;height:1px;background:var(--line)}
 .sk-tags{display:flex;flex-wrap:wrap;gap:5px}
-.sk-tag{font-family:var(--f-mono);font-size:0.66rem;color:var(--fg-2);background:var(--panel);border:1px solid var(--line-2);padding:3px 8px;border-radius:3px;transition:all 0.15s}
+.sk-tag{font-family:var(--f-mono);font-size:.66rem;color:var(--fg-2);background:var(--panel);border:1px solid var(--line-2);padding:3px 8px;border-radius:3px;transition:all .15s}
 .sk-tag:hover{border-color:var(--cyan);color:var(--cyan);background:var(--panel-hi)}
+.sk-tag.learn{color:var(--fg-4);border-style:dashed}
 
 .exp-list{display:flex;flex-direction:column;gap:1.7rem}
-.exp-entry{
-  background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--cyan);
-  padding:1.6rem 1.9rem;border-radius:0 6px 6px 0;transition:all 0.25s;
-}
-.exp-entry:hover{border-color:var(--line-2);border-left-color:var(--cyan);box-shadow:0 20px 50px -30px rgba(0,0,0,0.7);transform:translateY(-2px)}
+.exp-entry{background:var(--panel);border:1px solid var(--line);border-left:2px solid var(--cyan);padding:1.6rem 1.9rem;border-radius:0 6px 6px 0;transition:all .25s}
+.exp-entry:hover{border-color:var(--line-2);border-left-color:var(--cyan);box-shadow:0 20px 50px -30px rgba(0,0,0,.7);transform:translateY(-2px)}
 .exp-entry.green{border-left-color:var(--amber)}
 .exp-entry.muted{border-left-color:var(--fg-4)}
-.exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;padding-bottom:0.9rem;border-bottom:1px solid var(--line)}
-.exp-role{font-family:var(--f-display);font-size:1.18rem;font-weight:400;color:var(--fg);margin-bottom:0.3rem}
-.exp-org{font-family:var(--f-mono);font-size:0.69rem;color:var(--cyan);letter-spacing:0.02em;margin-bottom:0.2rem}
-.exp-loc{font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-4);letter-spacing:0.04em}
-.exp-date{font-family:var(--f-mono);font-size:0.62rem;color:var(--fg-2);background:var(--bg-2);border:1px solid var(--line-2);padding:6px 11px;border-radius:3px;white-space:nowrap;flex-shrink:0;letter-spacing:0.03em}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;padding-bottom:.9rem;border-bottom:1px solid var(--line)}
+.exp-role{font-family:var(--f-display);font-size:1.18rem;font-weight:400;color:var(--fg);margin-bottom:.3rem}
+.exp-org{font-family:var(--f-mono);font-size:.69rem;color:var(--cyan);margin-bottom:.2rem}
+.exp-loc{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-4)}
+.exp-date{font-family:var(--f-mono);font-size:.62rem;color:var(--fg-2);background:var(--bg-2);border:1px solid var(--line-2);padding:6px 11px;border-radius:3px;white-space:nowrap;flex-shrink:0}
 .exp-points{list-style:none}
-.exp-points li{font-size:0.96rem;font-weight:300;line-height:1.7;color:var(--fg-2);padding:0.5rem 0 0.5rem 1.4rem;position:relative;border-bottom:1px solid var(--line)}
+.exp-points li{font-size:.96rem;font-weight:300;line-height:1.7;color:var(--fg-2);padding:.5rem 0 .5rem 1.4rem;position:relative;border-bottom:1px solid var(--line)}
 .exp-points li:last-child{border-bottom:none}
-.exp-points li::before{content:'›';position:absolute;left:0.1rem;top:0.5rem;color:var(--amber);font-family:var(--f-mono);font-size:1rem}
-.metric{display:inline-block;font-family:var(--f-mono);font-weight:500;font-size:0.83em;color:var(--cyan);background:rgba(91,214,208,0.1);border:1px solid var(--cyan-dim);padding:0 5px;border-radius:3px;letter-spacing:-0.01em}
-.exp-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:1.1rem;padding-top:0.9rem;border-top:1px solid var(--line)}
-.tag{font-family:var(--f-mono);font-size:0.6rem;background:var(--panel-2);border:1px solid var(--line-2);color:var(--fg-3);padding:3px 8px;border-radius:3px;letter-spacing:0.02em}
-.tag.blue{background:rgba(91,214,208,0.08);border-color:var(--cyan-dim);color:var(--cyan)}
-.tag.green{background:rgba(232,160,74,0.08);border-color:var(--amber-dim);color:var(--amber)}
+.exp-points li::before{content:'›';position:absolute;left:.1rem;top:.5rem;color:var(--amber);font-family:var(--f-mono);font-size:1rem}
+.metric{display:inline-block;font-family:var(--f-mono);font-weight:500;font-size:.83em;color:var(--cyan);background:rgba(91,214,208,.1);border:1px solid var(--cyan-dim);padding:0 5px;border-radius:3px}
+.exp-stack{display:flex;flex-wrap:wrap;gap:4px;margin-top:1.1rem;padding-top:.9rem;border-top:1px solid var(--line)}
+.tag{font-family:var(--f-mono);font-size:.6rem;background:var(--panel-2);border:1px solid var(--line-2);color:var(--fg-3);padding:3px 8px;border-radius:3px}
+.tag.blue{background:rgba(91,214,208,.08);border-color:var(--cyan-dim);color:var(--cyan)}
+.tag.green{background:rgba(232,160,74,.08);border-color:var(--amber-dim);color:var(--amber)}
 
 .proj-list{display:flex;flex-direction:column;gap:1.7rem}
 .proj{border:1px solid var(--line);border-radius:6px;background:var(--panel);position:relative;overflow:hidden}
-.proj.featured{border-color:var(--cyan-dim);box-shadow:0 30px 70px -40px rgba(91,214,208,0.3)}
-.proj.featured::before{
-  content:'FEATURED';position:absolute;top:18px;right:-30px;transform:rotate(35deg);
-  font-family:var(--f-mono);font-size:0.55rem;letter-spacing:0.17em;color:var(--bg);
-  background:var(--cyan);padding:3px 33px;z-index:5;font-weight:700;
-}
+.proj.featured{border-color:var(--cyan-dim);box-shadow:0 30px 70px -40px rgba(91,214,208,.3)}
 .pc-head{background:var(--panel-2);padding:1.4rem 1.9rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
-.pc-head.blue-head{background:linear-gradient(180deg,rgba(91,214,208,0.07),var(--panel))}
-.pc-title{font-family:var(--f-display);font-size:1.28rem;font-weight:400;color:var(--fg);letter-spacing:-0.01em;margin-bottom:0.35rem;line-height:1.25}
-.pc-sub{font-family:var(--f-mono);font-size:0.62rem;color:var(--fg-3);letter-spacing:0.03em}
-.pc-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.6rem}
-.pc-date{font-family:var(--f-mono);font-size:0.66rem;color:var(--fg-3);white-space:nowrap;flex-shrink:0;letter-spacing:0.03em}
+.pc-head.blue-head{background:linear-gradient(180deg,rgba(91,214,208,.07),var(--panel))}
+.pc-head.amber-head{background:linear-gradient(180deg,rgba(232,160,74,.07),var(--panel))}
+.pc-title{font-family:var(--f-display);font-size:1.28rem;font-weight:400;color:var(--fg);letter-spacing:-.01em;margin-bottom:.35rem;line-height:1.25}
+.pc-sub{font-family:var(--f-mono);font-size:.62rem;color:var(--fg-3)}
+.pc-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:.6rem}
+.pc-date{font-family:var(--f-mono);font-size:.66rem;color:var(--fg-3);white-space:nowrap;flex-shrink:0}
 .pc-body{padding:1.6rem 1.9rem 1.7rem}
 .pc-cols{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem}
-.pc-desc{font-size:0.97rem;font-weight:300;line-height:1.78;color:var(--fg-2);margin-bottom:0.85rem}
-
-.eq-block{background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--amber);padding:0.95rem 1.2rem 1rem;margin:0.9rem 0;border-radius:0 4px 4px 0;overflow-x:auto;color:var(--fg)}
-.eq-label{font-family:var(--f-mono);font-size:0.56rem;color:var(--amber);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.45rem}
-.eq-foot{font-family:var(--f-mono);font-size:0.61rem;color:var(--fg-3);margin-top:0.35rem}
+@media(max-width:760px){.pc-cols{grid-template-columns:1fr;gap:1.6rem}}
+.pc-desc{font-size:.97rem;font-weight:300;line-height:1.78;color:var(--fg-2);margin-bottom:.85rem}
+.eq-block{background:var(--bg-2);border:1px solid var(--line);border-left:2px solid var(--amber);padding:.95rem 1.2rem 1rem;margin:.9rem 0;border-radius:0 4px 4px 0;overflow-x:auto;color:var(--fg)}
+.eq-label{font-family:var(--f-mono);font-size:.56rem;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.45rem}
+.eq-foot{font-family:var(--f-mono);font-size:.61rem;color:var(--fg-3);margin-top:.35rem}
 mjx-container{color:var(--fg)}
-
 .findings{background:var(--bg-2);border:1px solid var(--line);border-radius:5px;padding:1.1rem 1.3rem 1.2rem;margin-bottom:1rem}
-.findings-label{font-family:var(--f-mono);font-size:0.58rem;color:var(--cyan);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+.findings-label{font-family:var(--f-mono);font-size:.58rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .findings-label::before{content:'';display:inline-block;width:14px;height:1px;background:var(--cyan)}
+.findings.caveat .findings-label{color:var(--amber)}
+.findings.caveat .findings-label::before{background:var(--amber)}
 .findings ul{list-style:none}
-.findings li{font-size:0.88rem;font-weight:300;line-height:1.6;color:var(--fg-2);padding:0.45rem 0 0.45rem 1.5rem;position:relative;border-bottom:1px solid var(--line)}
+.findings li{font-size:.88rem;font-weight:300;line-height:1.6;color:var(--fg-2);padding:.45rem 0 .45rem 1.5rem;position:relative;border-bottom:1px solid var(--line)}
 .findings li:last-child{border-bottom:none}
-.findings li::before{content:'✓';position:absolute;left:0.1rem;top:0.45rem;color:var(--cyan);font-weight:500}
-
-.gh-block{display:flex;align-items:center;gap:0.85rem;background:var(--bg-2);border:1px solid var(--line-2);border-radius:5px;padding:0.8rem 1rem;margin-top:0.9rem;text-decoration:none;color:var(--fg);transition:all 0.2s}
+.findings li::before{content:'✓';position:absolute;left:.1rem;top:.45rem;color:var(--cyan);font-weight:500}
+.findings.caveat li::before{content:'!';color:var(--amber)}
+.gh-block{display:flex;align-items:center;gap:.85rem;background:var(--bg-2);border:1px solid var(--line-2);border-radius:5px;padding:.8rem 1rem;margin-top:.9rem;text-decoration:none;color:var(--fg);transition:all .2s}
 .gh-block:hover{border-color:var(--cyan);background:var(--panel-hi)}
 .gh-icon{width:32px;height:32px;border-radius:6px;background:var(--fg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .gh-icon svg{width:18px;height:18px;fill:var(--bg)}
-.gh-info-l{font-family:var(--f-mono);font-size:0.55rem;color:var(--fg-4);text-transform:uppercase;letter-spacing:0.08em}
-.gh-info-v{font-family:var(--f-mono);font-size:0.78rem;color:var(--cyan)}
-
-.qens-sketch{background:var(--bg-2);border:1px solid var(--line-2);border-radius:5px;padding:0.9rem;margin-top:0.9rem}
-.qens-sketch svg{width:100%;height:auto;display:block}
-.qens-cap{font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-3);text-align:center;margin-top:0.55rem;padding-top:0.5rem;border-top:1px solid var(--line);letter-spacing:0.03em}
-.qens-cap b{color:var(--cyan);font-weight:500}
-
-pre{background:#070A10;color:#D8E0F0;font-family:var(--f-mono);font-size:0.71rem;line-height:1.7;padding:1rem 1.2rem;border-radius:5px;overflow-x:auto;margin:0.9rem 0;border:1px solid var(--line-2)}
+.gh-info-l{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-4);text-transform:uppercase;letter-spacing:.08em}
+.gh-info-v{font-family:var(--f-mono);font-size:.78rem;color:var(--cyan)}
+.sketch{background:var(--bg-2);border:1px solid var(--line-2);border-radius:5px;padding:.9rem;margin-top:.9rem}
+.sketch svg{width:100%;height:auto;display:block}
+.sketch-cap{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-3);text-align:center;margin-top:.55rem;padding-top:.5rem;border-top:1px solid var(--line)}
+.sketch-cap b{color:var(--cyan);font-weight:500}
+pre{background:#060910;color:#D8E0F0;font-family:var(--f-mono);font-size:.71rem;line-height:1.7;padding:1rem 1.2rem;border-radius:5px;overflow-x:auto;margin:.9rem 0;border:1px solid var(--line-2)}
 pre .c{color:var(--fg-4);font-style:italic}
 pre .k{color:var(--violet)}
 pre .s{color:var(--amber)}
 pre .n{color:var(--cyan)}
-@media(max-width:760px){.pc-cols{grid-template-columns:1fr}}
+
+/* compact project grid */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.7rem}
+@media(max-width:760px){.proj-grid{grid-template-columns:1fr}}
+.mini{border:1px solid var(--line);border-radius:6px;background:var(--panel);padding:1.4rem 1.6rem;transition:all .25s;display:flex;flex-direction:column}
+.mini:hover{border-color:var(--line-2);transform:translateY(-2px);box-shadow:0 20px 50px -34px rgba(0,0,0,.8)}
+.mini-title{font-family:var(--f-display);font-size:1.06rem;font-weight:400;color:var(--fg);margin-bottom:.3rem;line-height:1.3}
+.mini-sub{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-3);margin-bottom:.85rem}
+.mini-desc{font-size:.9rem;font-weight:300;line-height:1.7;color:var(--fg-2);margin-bottom:1rem;flex:1}
+.mini-foot{display:flex;flex-wrap:wrap;gap:4px;padding-top:.85rem;border-top:1px solid var(--line)}
 
 .bib-list{display:flex;flex-direction:column;gap:1.5rem}
 .bib{display:grid;grid-template-columns:42px 1fr;gap:1rem;align-items:start}
-.bib-num{font-family:var(--f-mono);font-size:0.9rem;color:var(--amber);padding-top:4px;text-align:right}
+.bib-num{font-family:var(--f-mono);font-size:.9rem;color:var(--amber);padding-top:4px;text-align:right}
 .bib-body{border-bottom:1px solid var(--line);padding-bottom:1.4rem}
-.bib-title{font-family:var(--f-display);font-style:italic;font-size:1.1rem;font-weight:400;color:var(--fg);line-height:1.4;margin-bottom:0.4rem}
-.bib-authors{font-size:0.9rem;font-weight:300;color:var(--fg-2);margin-bottom:0.35rem}
+.bib-title{font-family:var(--f-display);font-style:italic;font-size:1.1rem;font-weight:400;color:var(--fg);line-height:1.4;margin-bottom:.4rem}
+.bib-authors{font-size:.9rem;font-weight:300;color:var(--fg-2);margin-bottom:.35rem}
 .bib-authors em{font-weight:500;color:var(--fg);font-style:normal}
-.bib-venue{font-family:var(--f-mono);font-size:0.64rem;color:var(--fg-3);letter-spacing:0.03em;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
-.bib-award{display:inline-flex;align-items:center;gap:4px;font-family:var(--f-mono);font-size:0.57rem;background:rgba(232,160,74,0.1);border:1px solid var(--amber-dim);color:var(--amber);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:0.06em}
-.bib.upcoming{opacity:0.55}
+.bib-venue{font-family:var(--f-mono);font-size:.64rem;color:var(--fg-3);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.bib-award{display:inline-flex;align-items:center;gap:4px;font-family:var(--f-mono);font-size:.57rem;background:rgba(232,160,74,.1);border:1px solid var(--amber-dim);color:var(--amber);padding:2px 8px;border-radius:3px;text-transform:uppercase;letter-spacing:.06em}
+.bib.upcoming{opacity:.55}
 .bib.upcoming .bib-title{font-style:normal;color:var(--fg-3)}
 .bib.upcoming .bib-body{border-bottom-style:dashed}
 
 .edu-list{display:flex;flex-direction:column;gap:1.1rem}
-.edu{display:grid;grid-template-columns:1fr 1.7fr auto;gap:1.6rem;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);align-items:start;transition:all 0.25s}
+.edu{display:grid;grid-template-columns:1fr 1.7fr auto;gap:1.6rem;padding:1.4rem 1.6rem;border:1px solid var(--line);border-radius:6px;background:var(--panel);align-items:start;transition:all .25s}
 .edu:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.edu.active{border-color:var(--cyan-dim);background:linear-gradient(180deg,rgba(91,214,208,0.06),var(--panel))}
-.edu-deg{font-family:var(--f-display);font-size:1.1rem;font-weight:400;color:var(--fg);margin-bottom:0.25rem;line-height:1.3}
-.edu-school{font-family:var(--f-mono);font-size:0.66rem;color:var(--cyan);letter-spacing:0.02em;margin-bottom:0.2rem}
-.edu-year{font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-4);letter-spacing:0.03em}
-.edu-note{font-size:0.9rem;font-weight:300;color:var(--fg-2);line-height:1.65}
+.edu.active{border-color:var(--cyan-dim);background:linear-gradient(180deg,rgba(91,214,208,.06),var(--panel))}
+.edu-deg{font-family:var(--f-display);font-size:1.1rem;font-weight:400;color:var(--fg);margin-bottom:.25rem;line-height:1.3}
+.edu-school{font-family:var(--f-mono);font-size:.66rem;color:var(--cyan);margin-bottom:.2rem}
+.edu-year{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-4)}
+.edu-note{font-size:.9rem;font-weight:300;color:var(--fg-2);line-height:1.65}
 .edu-note em{font-style:italic;color:var(--cyan)}
-.edu-gpa{font-family:var(--f-mono);font-size:1.5rem;font-weight:700;color:var(--cyan);text-align:right;white-space:nowrap;letter-spacing:-0.02em;line-height:1}
-.edu-gpa small{font-size:0.55rem;font-weight:400;color:var(--fg-4);display:block;margin-top:0.4rem;letter-spacing:0.04em}
-.edu-live{display:flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:0.56rem;color:var(--cyan);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:500}
+.edu-gpa{font-family:var(--f-mono);font-size:1.5rem;font-weight:700;color:var(--cyan);text-align:right;white-space:nowrap;line-height:1}
+.edu-gpa small{font-size:.55rem;font-weight:400;color:var(--fg-4);display:block;margin-top:.4rem}
+.edu-live{display:flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.56rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;font-weight:500}
 .dot-live{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 6px var(--cyan);animation:blip 2.6s infinite}
-@media(max-width:760px){.edu{grid-template-columns:1fr;gap:0.75rem}.edu-gpa{text-align:left}}
+@media(max-width:760px){.edu{grid-template-columns:1fr;gap:.75rem}.edu-gpa{text-align:left}}
 
 #contact{background:var(--bg-2);border-top:1px solid var(--line);padding:100px 0}
 .contact-inner{max-width:var(--maxw);margin:0 auto;padding:0 2rem}
 .contact-inner h2{margin-bottom:1.1rem}
 .contact-inner p{color:var(--fg-2);font-size:1.02rem;font-weight:300;line-height:1.78;margin-bottom:2rem;max-width:660px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
-.clink{display:flex;align-items:center;gap:0.85rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:5px;color:var(--fg);text-decoration:none;background:var(--panel);transition:all 0.25s}
-.clink:hover{border-color:var(--cyan);background:var(--panel-hi);transform:translateY(-2px)}
-.clink-icon{font-family:var(--f-mono);font-size:0.85rem;color:var(--cyan);width:24px;text-align:center;flex-shrink:0}
-.clink-label{font-family:var(--f-mono);font-size:0.55rem;color:var(--fg-4);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:3px}
-.clink-val{font-family:var(--f-mono);font-size:0.72rem;color:var(--fg-2)}
-.foot-line{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.foot-copy{font-family:var(--f-mono);font-size:0.6rem;color:var(--fg-4);letter-spacing:0.03em}
-.foot-name{font-family:var(--f-display);font-style:italic;font-size:1.1rem;color:var(--fg-3)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 @media(max-width:600px){.contact-grid{grid-template-columns:1fr}}
+.clink{display:flex;align-items:center;gap:.85rem;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:5px;color:var(--fg);text-decoration:none;background:var(--panel);transition:all .25s}
+.clink:hover{border-color:var(--cyan);background:var(--panel-hi);transform:translateY(-2px)}
+.clink-icon{font-family:var(--f-mono);font-size:.85rem;color:var(--cyan);width:24px;text-align:center;flex-shrink:0}
+.clink-label{font-family:var(--f-mono);font-size:.55rem;color:var(--fg-4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.clink-val{font-family:var(--f-mono);font-size:.72rem;color:var(--fg-2)}
+.foot-line{margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-family:var(--f-mono);font-size:.6rem;color:var(--fg-4)}
+.foot-name{font-family:var(--f-display);font-style:italic;font-size:1.1rem;color:var(--fg-3)}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
 @media print{
   body{background:#fff;color:#111;padding-top:0}
   body::before,body::after,nav,.hero-actions,.nav-cta{display:none}
   section{padding:18pt 0}.reveal{opacity:1;transform:none}
-  .exp-entry,.proj,.edu,.hero-fig{box-shadow:none}
+  .exp-entry,.proj,.edu,.hero-fig,.mini{box-shadow:none}
 }
 </style>
 </head>
@@ -421,51 +276,46 @@ pre .n{color:var(--cyan)}
         <span class="avail"><span class="dot"></span>Open to roles · 2026</span>
         <span class="sep">/</span><span>Bristol, UK</span>
       </div>
-
       <h1 class="hero-title">
         <span class="ln">Scientific</span>
         <span class="ln"><em>software</em></span>
         <span class="ln">engineer.</span>
       </h1>
-
       <p class="hero-lead">
-        I build the software infrastructure that lets science run at scale — from
-        <strong>neutron-scattering analysis pipelines</strong> to parallelised sensor
-        platforms ingesting tens of gigabytes a day. My focus is reproducibility,
-        correctness, and code a fellow scientist can trust under pressure.
+        I build the software that scientific results depend on - neutron-scattering
+        analysis libraries, parallelised data pipelines, and the tests that tell you
+        whether a result is <strong>real or an artifact</strong>. My focus is
+        correctness, reproducibility, and code a colleague can trust without me in the room.
       </p>
-
       <p class="hero-meta">
         MSc Scientific Computing with Data Science
         <span class="sep">·</span> University of Bristol
         <span class="sep">·</span> SARTHI Scholar
       </p>
-
       <div class="hero-actions">
         <a href="mailto:shubham.edu.ms@gmail.com" class="btn btn-p">✉ Email me</a>
-        <a href="https://github.com/ShubhamX57" target="_blank" class="btn btn-s">⌥ GitHub</a>
-        <a href="https://linkedin.com/in/shubhamshinde" target="_blank" class="btn btn-s">↗ LinkedIn</a>
+        <a href="https://github.com/ShubhamX57" target="_blank" rel="noopener" class="btn btn-s">⌥ GitHub</a>
+        <a href="https://linkedin.com/in/shubhams6" target="_blank" rel="noopener" class="btn btn-s">↗ LinkedIn</a>
       </div>
-
       <div class="stat-strip">
         <div class="stat-cell"><div class="stat-v">20GB+</div><div class="stat-k">daily data ingested</div></div>
         <div class="stat-cell"><div class="stat-v">3 yrs</div><div class="stat-k">production engineering</div></div>
-        <div class="stat-cell"><div class="stat-v">&lt;10min</div><div class="stat-k">release cycle built</div></div>
+        <div class="stat-cell"><div class="stat-v">4.7×</div><div class="stat-k">simulation speedup</div></div>
       </div>
     </div>
 
     <div class="hero-fig reveal">
       <div class="fig-bar">
         <div class="dots"><i></i><i></i><i></i></div>
-        <div class="id">det · readout — fig.01</div>
+        <div class="id">det · readout - fig.01</div>
       </div>
-      <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 360 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of a quasi-elastic neutron scattering measurement">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B4BDD2"/></marker>
           <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#5BD6D0"/></marker>
           <filter id="glow"><feGaussianBlur stdDeviation="1.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
-        <g opacity="0.5" stroke="#232B40" stroke-width="0.5">
+        <g opacity="0.5" stroke="#212940" stroke-width="0.5">
           <line x1="0" y1="45" x2="360" y2="45"/><line x1="0" y1="90" x2="360" y2="90"/><line x1="0" y1="135" x2="360" y2="135"/><line x1="0" y1="180" x2="360" y2="180"/><line x1="0" y1="225" x2="360" y2="225"/>
           <line x1="45" y1="0" x2="45" y2="270"/><line x1="90" y1="0" x2="90" y2="270"/><line x1="135" y1="0" x2="135" y2="270"/><line x1="180" y1="0" x2="180" y2="270"/><line x1="225" y1="0" x2="225" y2="270"/><line x1="270" y1="0" x2="270" y2="270"/><line x1="315" y1="0" x2="315" y2="270"/>
         </g>
@@ -494,10 +344,10 @@ pre .n{color:var(--cyan)}
           <text x="205" y="71" font-size="8">scattered</text>
         </g>
         <g transform="translate(20,200)">
-          <rect x="0" y="0" width="100" height="50" fill="#0B0E14" stroke="#232B40" stroke-width="0.6" rx="2"/>
+          <rect x="0" y="0" width="100" height="50" fill="#0A0D13" stroke="#212940" stroke-width="0.6" rx="2"/>
           <path d="M 5,40 Q 25,40 40,30 Q 50,8 60,30 Q 75,40 95,40" stroke="#5BD6D0" stroke-width="1.3" fill="none" filter="url(#glow)"/>
           <path d="M 5,42 Q 25,42 40,38 Q 50,28 60,38 Q 75,42 95,42" stroke="#E0607A" stroke-width="0.9" fill="none" stroke-dasharray="2 2"/>
-          <text x="50" y="48" font-family="JetBrains Mono, monospace" font-size="6" fill="#545E76" text-anchor="middle">S(Q,ω)</text>
+          <text x="50" y="48" font-family="JetBrains Mono, monospace" font-size="6" fill="#535D75" text-anchor="middle">S(Q,ω)</text>
         </g>
         <g font-family="JetBrains Mono, monospace" fill="#5BD6D0" font-size="8">
           <text x="128" y="220">QENS spectrum</text>
@@ -510,7 +360,7 @@ pre .n{color:var(--cyan)}
 </section>
 
 <section id="about">
-  <div class="eyebrow"><span class="eyebrow-num">01</span> Background &amp; skills</div>
+  <div class="eyebrow">Background &amp; skills</div>
   <h2>From mechanical engineering<br>to <em>research software</em>.</h2>
 
   <div class="about-grid">
@@ -519,26 +369,26 @@ pre .n{color:var(--cyan)}
         I trained first as a mechanical engineer in Pune, India, and discovered partway
         through simulating wind-turbine blades in CFD that the problems I cared most about
         were the computational ones. That pulled me toward a <strong>PG Diploma in Data
-        Science &amp; AI</strong>, award winning research in aerial image analysis, and now
+        Science &amp; AI</strong>, award-winning research in aerial image analysis, and now
         an MSc at the University of Bristol, funded by the competitive SARTHI National
         Scholarship.
       </p>
       <p>
-        Three years across a defence aerodynamics R&amp;D laboratory, an ML startup, and
-        clinical imaging taught me what production software actually demands: thorough
-        testing, reproducible environments, and systems a colleague can understand and
-        operate without me in the room.
+        Three years across a defence R&amp;D laboratory, an ML startup, and clinical imaging
+        taught me what production software actually demands: thorough testing, reproducible
+        environments, and systems a colleague can operate without me in the room.
       </p>
       <p>
-        My current research is in <strong>quasi elastic neutron scattering (QENS)</strong>,
-        where I'm building open source analysis tools that follow the conventions used at
-        large-scale facilities such as the ISIS Neutron Source. The appeal is the
-        combination  physics models that live or die against experimental data, and the
-        engineering discipline of making that analysis fast, correct, and shareable.
+        My current work sits in <strong>quasi-elastic neutron scattering</strong>, where I
+        have written an open-source analysis library, and inside <em>kinisi</em>, an
+        established scientific library where I am tracking down a numerical-stability defect
+        under the supervision of its author. Both taught me the same lesson from opposite
+        directions: the interesting decisions in scientific software are usually about what
+        the code refuses to approximate.
       </p>
       <p>
-        Outside the work itself, I serve as the academic representative for my MSc cohort
-        and maintain digital platforms for two professional engineering societies. I remain
+        Outside the work itself, I serve as academic representative for my MSc cohort and
+        maintain digital platforms for two professional engineering societies. I remain
         quietly convinced that <em>a good README is an act of kindness</em>.
       </p>
 
@@ -553,25 +403,28 @@ pre .n{color:var(--cyan)}
     <div class="reveal">
       <div class="skills">
         <div class="sk-group"><div class="sk-label">Languages</div><div class="sk-tags">
-          <span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">JavaScript</span><span class="sk-tag">Bash</span><span class="sk-tag">MATLAB</span><span class="sk-tag">C++</span>
+          <span class="sk-tag">Python</span><span class="sk-tag">SQL</span><span class="sk-tag">Bash</span><span class="sk-tag">JavaScript</span><span class="sk-tag">TypeScript</span><span class="sk-tag">MATLAB</span><span class="sk-tag">Java</span>
         </div></div>
         <div class="sk-group"><div class="sk-label">Scientific stack</div><div class="sk-tags">
-          <span class="sk-tag">NumPy</span><span class="sk-tag">SciPy</span><span class="sk-tag">HDF5 / h5py</span><span class="sk-tag">PySpark</span><span class="sk-tag">Dask</span><span class="sk-tag">Matplotlib</span><span class="sk-tag">Plotly</span><span class="sk-tag">LaTeX</span>
+          <span class="sk-tag">NumPy</span><span class="sk-tag">SciPy</span><span class="sk-tag">HDF5 / h5py</span><span class="sk-tag">MDAnalysis</span><span class="sk-tag">emcee</span><span class="sk-tag">PySpark</span><span class="sk-tag">Dask</span><span class="sk-tag">Matplotlib</span><span class="sk-tag">LaTeX</span>
+        </div></div>
+        <div class="sk-group"><div class="sk-label">Numerics &amp; statistics</div><div class="sk-tags">
+          <span class="sk-tag">Bayesian MCMC</span><span class="sk-tag">Numerical linear algebra</span><span class="sk-tag">Monte Carlo</span><span class="sk-tag">Uncertainty quantification</span><span class="sk-tag">Model validation</span>
         </div></div>
         <div class="sk-group"><div class="sk-label">High-performance computing</div><div class="sk-tags">
-          <span class="sk-tag">MPI</span><span class="sk-tag">SLURM</span><span class="sk-tag">OpenMP</span><span class="sk-tag">CUDA</span><span class="sk-tag">Cython</span><span class="sk-tag">Multi-GPU</span><span class="sk-tag">Parallel I/O</span>
+          <span class="sk-tag">Cython</span><span class="sk-tag">MPI</span><span class="sk-tag">OpenMP</span><span class="sk-tag">CUDA</span><span class="sk-tag">SLURM</span><span class="sk-tag">Numba</span><span class="sk-tag">Multi-GPU</span><span class="sk-tag">Parallel I/O</span>
         </div></div>
         <div class="sk-group"><div class="sk-label">Machine learning</div><div class="sk-tags">
-          <span class="sk-tag">PyTorch</span><span class="sk-tag">scikit-learn</span><span class="sk-tag">XGBoost</span><span class="sk-tag">LightGBM</span><span class="sk-tag">MLflow</span><span class="sk-tag">DVC</span><span class="sk-tag">OpenCV</span>
+          <span class="sk-tag">PyTorch</span><span class="sk-tag">scikit-learn</span><span class="sk-tag">XGBoost</span><span class="sk-tag">LightGBM</span><span class="sk-tag">MLflow</span><span class="sk-tag">DVC</span><span class="sk-tag">OpenCV</span><span class="sk-tag">Retrieval / RAG</span>
         </div></div>
         <div class="sk-group"><div class="sk-label">APIs &amp; services</div><div class="sk-tags">
-          <span class="sk-tag">FastAPI</span><span class="sk-tag">Flask</span><span class="sk-tag">REST design</span><span class="sk-tag">OpenAPI</span><span class="sk-tag">JWT auth</span>
+          <span class="sk-tag">FastAPI</span><span class="sk-tag">Flask</span><span class="sk-tag">Spring Boot</span><span class="sk-tag">REST design</span><span class="sk-tag">OpenAPI</span><span class="sk-tag">React</span>
         </div></div>
-        <div class="sk-group"><div class="sk-label">DevOps &amp; tooling</div><div class="sk-tags">
-          <span class="sk-tag">Docker</span><span class="sk-tag">Kubernetes</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">Terraform</span><span class="sk-tag">CMake</span><span class="sk-tag">Git</span>
+        <div class="sk-group"><div class="sk-label">Engineering practice</div><div class="sk-tags">
+          <span class="sk-tag">Git</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">Docker</span><span class="sk-tag">Kubernetes</span><span class="sk-tag">Pytest</span><span class="sk-tag">JUnit</span><span class="sk-tag">mypy</span><span class="sk-tag">Terraform</span>
         </div></div>
         <div class="sk-group"><div class="sk-label">Databases</div><div class="sk-tags">
-          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">Redis</span><span class="sk-tag">SQLite</span>
+          <span class="sk-tag">PostgreSQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">Neo4j</span><span class="sk-tag">Redis</span><span class="sk-tag">SQLite</span>
         </div></div>
       </div>
     </div>
@@ -579,25 +432,25 @@ pre .n{color:var(--cyan)}
 </section>
 
 <section id="experience">
-  <div class="eyebrow"><span class="eyebrow-num">02</span> Professional experience</div>
+  <div class="eyebrow">Professional experience</div>
   <h2>Where I've <em>shipped</em>.</h2>
 
   <div class="exp-list">
     <div class="exp-entry reveal">
       <div class="exp-head">
         <div>
-          <div class="exp-role">Data Scientist — Project Engineer</div>
-          <div class="exp-org">ARDE · AERO Lab, Armament Research &amp; Development Establishment</div>
+          <div class="exp-role">Data Scientist - Project Engineer</div>
+          <div class="exp-org">ARDE research programme · Raj Security &amp; Facility Management</div>
           <div class="exp-loc">Pune, India</div>
         </div>
         <span class="exp-date">Jun 2024 – Aug 2025</span>
       </div>
       <ul class="exp-points">
-        <li>Designed a <strong>service-oriented data platform</strong> — FastAPI microservices, JWT auth, versioned endpoints — delivering processed sensor data to React dashboards at typically <span class="metric">sub-100 ms</span> response times, entirely within a restricted offline network.</li>
+        <li>Designed a <strong>service-oriented data platform</strong> - FastAPI microservices, JWT auth, versioned endpoints - delivering processed sensor data to React dashboards at typically <span class="metric">sub-100 ms</span> response times, entirely within a restricted offline network.</li>
         <li>Built a CI/CD pipeline (GitHub Actions + Docker) that cut release and validation time from hours to <span class="metric">under 10 minutes</span>.</li>
-        <li>Engineered a parallelised offline data pipeline (<code>PySpark</code> + <code>SLURM</code>) ingesting <span class="metric">over 20 GB</span> of daily sensor data with automated failure recovery, schema validation, and audit logging into PostgreSQL.</li>
-        <li>Cut ML iteration time substantially via multi-GPU training; an ensemble model (XGBoost + LightGBM) reduced targeting error by a reported <span class="metric">~42%</span> against the legacy analytical baseline.</li>
-        <li>Provided on-call production support — fault diagnosis, incident resolution, root-cause analysis, and post-mortems for live data services.</li>
+        <li>Engineered a parallelised offline pipeline (<code>PySpark</code> + <code>SLURM</code>) ingesting <span class="metric">over 20 GB</span> of daily sensor data with automated failure recovery, schema validation, and audit logging into PostgreSQL - full traceability from raw measurement to result.</li>
+        <li>Cut ML iteration time substantially via multi-GPU training; an ensemble model (XGBoost + LightGBM) reduced targeting error by <span class="metric">~42%</span> against the legacy analytical baseline.</li>
+        <li>Provided on-call production support - fault diagnosis, incident resolution, root-cause analysis, and post-mortems for live services scientists relied on during measurement campaigns.</li>
       </ul>
       <div class="exp-stack">
         <span class="tag blue">FastAPI</span><span class="tag blue">PySpark</span><span class="tag blue">SLURM</span><span class="tag">PostgreSQL</span><span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">Multi-GPU</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span>
@@ -615,7 +468,7 @@ pre .n{color:var(--cyan)}
       </div>
       <ul class="exp-points">
         <li>Built a full-stack scientific data service: FastAPI inference endpoints with a React monitoring dashboard, backed by Pytest and Jest suites at <span class="metric">over 90% coverage</span>.</li>
-        <li>Delivered a reproducible research artefact — Docker environment, DVC data versioning, CI pipeline — letting peer scientists replicate every result from a single <code>docker-compose up</code>. The work was <strong>published in a peer-reviewed journal</strong>.</li>
+        <li>Delivered a reproducible research artefact - Docker environment, DVC data versioning, CI pipeline - letting peer scientists replicate every result from a single <code>docker-compose up</code>. The work was <strong>published in a peer-reviewed journal</strong>.</li>
         <li>Developed a hybrid <strong>CNN-Transformer classifier</strong> reaching <span class="metric">89.7% accuracy</span> on NASA lunar-terrain data, with interfaces to NASA dataset APIs and internal annotation systems.</li>
       </ul>
       <div class="exp-stack">
@@ -634,7 +487,7 @@ pre .n{color:var(--cyan)}
       </div>
       <ul class="exp-points">
         <li>Built and managed 3D models, assemblies, and engineering drawings in <strong>SolidWorks and CATIA V5</strong>; ran tolerance stack-up analysis across 200+ prototype test cycles.</li>
-        <li>Automated test-bench data logging in Python, cutting post-processing time by roughly <span class="metric">60%</span> — my first taste of how software reshapes scientific workflows.</li>
+        <li>Automated test-bench data logging in Python, cutting post-processing time by roughly <span class="metric">60%</span> - my first taste of how software reshapes scientific workflows.</li>
       </ul>
       <div class="exp-stack">
         <span class="tag">SolidWorks</span><span class="tag">CATIA V5</span><span class="tag">Python</span><span class="tag">CFD</span>
@@ -644,19 +497,20 @@ pre .n{color:var(--cyan)}
 </section>
 
 <section id="projects">
-  <div class="eyebrow"><span class="eyebrow-num">03</span> Selected projects</div>
+  <div class="eyebrow">Selected projects</div>
   <h2>Things I've <em>built</em>.</h2>
 
   <div class="proj-list">
 
+    <!-- ============ kinisi ============ -->
     <div class="proj featured reveal">
-      <div class="pc-head blue-head">
+      <div class="pc-head amber-head">
         <div>
           <div class="pc-badges">
-            <span class="tag blue">Neutron Physics</span><span class="tag blue">Bayesian MCMC</span><span class="tag blue">FastAPI</span><span class="tag green">Open Source</span>
+            <span class="tag green">MSc Dissertation</span><span class="tag green">Numerical Analysis</span><span class="tag blue">Open Source</span>
           </div>
-          <div class="pc-title">QENS Analysis &amp; Visualisation Suite</div>
-          <div class="pc-sub">MSc capstone · University of Bristol · methodology aligned with ISIS Neutron Source workflows</div>
+          <div class="pc-title">Numerical Stability of Covariance-Matrix Inversion in <em>kinisi</em></div>
+          <div class="pc-sub">University of Bristol · supervised by the library's author, Dr Andrew McCluskey</div>
         </div>
         <div class="pc-date">2025 – present</div>
       </div>
@@ -664,33 +518,126 @@ pre .n{color:var(--cyan)}
         <div class="pc-cols">
           <div>
             <p class="pc-desc">
-              An open-source pipeline for quasi-elastic neutron scattering (QENS) analysis — my
-              MSc capstone. It implements the full physics chain from raw <code>HDF5</code>
-              files through resolution correction, model fitting, and Bayesian parameter
-              estimation, surfaced through a FastAPI + React interface.
+              <em>kinisi</em> extracts diffusion coefficients from molecular-dynamics
+              trajectories. It does something unusually careful: it propagates the
+              <strong>full covariance matrix</strong> through its fitting, rather than
+              treating variance estimates at different lag times as independent. That is
+              harder, slower - and the direct cause of the fragility I was asked to
+              investigate. Its matrices were collapsing into non-positive-definite states,
+              which silently degrades fitted coefficients and their uncertainties without
+              raising any error.
             </p>
             <p class="pc-desc">
-              The core model is the <strong>Chudley Elliott jump-diffusion</strong> framework,
-              describing how molecules hop between sites in a liquid or confined geometry.
-              Getting the resolution-function deconvolution right was the decisive challenge —
-              a naive approach inflates the diffusion coefficient by roughly 20%.
+              Rather than patch it, I built a controlled testbed with known
+              <strong>analytical ground truth</strong>, so numerical artifact could be
+              separated from real physical signal. Everything downstream depends on that
+              control existing.
             </p>
 
             <div class="eq-block">
+              <div class="eq-label">Generalised least squares - requires $\Sigma^{-1}$</div>
+              $$\hat{\beta} = \left(X^{\top}\Sigma^{-1}X\right)^{-1}X^{\top}\Sigma^{-1}y$$
+              <div class="eq-foot">$\Sigma$ = MSD covariance · inversion fails when $\lambda_{\min}\!\le\!0$</div>
+            </div>
+
+            <a href="https://github.com/bjmorgan/kinisi" target="_blank" rel="noopener" class="gh-block">
+              <div class="gh-icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
+              <div><div class="gh-info-l">Upstream library</div><div class="gh-info-v">github.com/bjmorgan/kinisi</div></div>
+            </a>
+          </div>
+
+          <div>
+            <div class="findings">
+              <div class="findings-label">What the investigation found</div>
+              <ul>
+                <li>Matrix failure rate fell from <span class="metric">90% → 2%</span> as the atom count increased - the matrices were <strong>under-determined</strong>, not wrong</li>
+                <li>Root cause isolated to sample noise in long-lag-time variance estimates, via a systematic convergence study</li>
+                <li>Reconditioning strategies (minimum-eigenvalue, ridge, linear &amp; non-linear shrinkage) benchmarked against the analytical matrix</li>
+                <li>A <strong>data-adaptive eigenvalue floor</strong> improved parameter recovery over the library's fixed-threshold default</li>
+              </ul>
+            </div>
+
+            <div class="sketch">
+              <svg viewBox="0 0 300 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eigenvalue spectrum showing collapse below the numerical floor">
+                <g stroke="#2B3450" stroke-width="0.5" opacity="0.55">
+                  <line x1="38" y1="22" x2="288" y2="22"/><line x1="38" y1="48" x2="288" y2="48"/><line x1="38" y1="74" x2="288" y2="74"/>
+                </g>
+                <line x1="38" y1="100" x2="288" y2="100" stroke="#7C879F" stroke-width="1"/>
+                <line x1="38" y1="100" x2="38" y2="14" stroke="#7C879F" stroke-width="1"/>
+                <line x1="38" y1="88" x2="288" y2="88" stroke="#E8A04A" stroke-width="1" stroke-dasharray="4 3"/>
+                <text x="284" y="84" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#E8A04A" text-anchor="end">fixed floor κ</text>
+                <path d="M 46,20 L 70,26 L 94,34 L 118,44 L 142,55 L 166,66 L 190,76 L 214,86 L 238,95 L 262,99"
+                      stroke="#E0607A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <g fill="#E0607A">
+                  <circle cx="46" cy="20" r="2"/><circle cx="94" cy="34" r="2"/><circle cx="142" cy="55" r="2"/><circle cx="190" cy="76" r="2"/><circle cx="238" cy="95" r="2"/><circle cx="262" cy="99" r="2.6"/>
+                </g>
+                <path d="M 46,19 L 70,24 L 94,31 L 118,39 L 142,48 L 166,56 L 190,64 L 214,71 L 238,77 L 262,82"
+                      stroke="#5BD6D0" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                <g fill="#5BD6D0">
+                  <circle cx="46" cy="19" r="2"/><circle cx="142" cy="48" r="2"/><circle cx="262" cy="82" r="2"/>
+                </g>
+                <g font-family="JetBrains Mono, monospace" font-size="7" fill="#7C879F">
+                  <text x="163" y="118" text-anchor="middle">eigenvalue index (ordered)</text>
+                  <text x="200" y="112" font-size="6.5" fill="#E0607A">✕ low sampling</text>
+                  <text x="60" y="112" font-size="6.5" fill="#5BD6D0">● converged</text>
+                </g>
+                <text x="14" y="60" font-family="JetBrains Mono, monospace" font-size="7" fill="#7C879F" transform="rotate(-90 14 60)" text-anchor="middle">log λ</text>
+              </svg>
+              <div class="sketch-cap"><b>Fig. 2</b> &nbsp; Eigenvalue spectrum: trailing modes collapse below the floor under low sampling</div>
+            </div>
+
+            <div class="findings caveat" style="margin-top:.9rem">
+              <div class="findings-label">Status - stated honestly</div>
+              <ul>
+                <li>Results hold on a controlled random-walk testbed; validation across noise levels is ongoing</li>
+                <li>The adaptive rule is proposed and tested offline; the contribution is not yet merged upstream</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="exp-stack" style="margin-top:1.25rem">
+          <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">MDAnalysis</span><span class="tag">Eigenvalue analysis</span><span class="tag">Matrix conditioning</span><span class="tag">Git</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ QENS ============ -->
+    <div class="proj featured reveal">
+      <div class="pc-head blue-head">
+        <div>
+          <div class="pc-badges">
+            <span class="tag blue">Neutron Physics</span><span class="tag blue">Bayesian MCMC</span><span class="tag blue">FastAPI</span><span class="tag green">Open Source</span>
+          </div>
+          <div class="pc-title">QENS Analysis &amp; Visualisation Library</div>
+          <div class="pc-sub">Author · methodology aligned with ISIS Neutron Source workflows</div>
+        </div>
+        <div class="pc-date">2025 – present</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cols">
+          <div>
+            <p class="pc-desc">
+              An open-source library for quasi-elastic neutron scattering analysis that I
+              designed and wrote. It implements the full physics chain from raw
+              <code>HDF5</code> files through resolution correction, model fitting, and
+              Bayesian parameter estimation, surfaced through a FastAPI + React interface.
+            </p>
+            <p class="pc-desc">
+              The core model is the <strong>Chudley–Elliott jump-diffusion</strong>
+              framework, describing how molecules hop between sites in a liquid or confined
+              geometry. Getting the resolution-function deconvolution right was the decisive
+              challenge - a naive approach inflates the diffusion coefficient substantially.
+            </p>
+            <div class="eq-block">
               <div class="eq-label">Chudley–Elliott structure factor</div>
               $$S(Q,\omega) = \frac{1}{\pi}\cdot\frac{\Gamma(Q)}{\omega^2 + \Gamma^2(Q)}$$
-              <div class="eq-foot">where $\Gamma(Q)=\dfrac{D\,Q^2}{1+Q^2 l^2}$ — $D$ = diffusion coefficient, $l$ = jump length</div>
+              <div class="eq-foot">where $\Gamma(Q)=\dfrac{D\,Q^2}{1+Q^2 l^2}$ - $D$ = diffusion coefficient, $l$ = jump length</div>
             </div>
             <div class="eq-block">
               <div class="eq-label">Resolution-corrected measured spectrum</div>
               $$I(Q,\omega) = S(Q,\omega)\otimes R(Q,\omega) + B(Q)$$
               <div class="eq-foot">$R(Q,\omega)$ = instrumental resolution · $B(Q)$ = background</div>
             </div>
-
-            <a href="https://github.com/ShubhamX57/QENS" target="_blank" class="gh-block">
-              <div class="gh-icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
-              <div><div class="gh-info-l">Open source repository</div><div class="gh-info-v">github.com/ShubhamX57/QENS</div></div>
-            </a>
           </div>
 
           <div>
@@ -700,14 +647,13 @@ pre .n{color:var(--cyan)}
                 <li><span class="metric">~16%</span> reduction in systematic error on the diffusion coefficient via physics-correct resolution correction</li>
                 <li><span class="metric">3×</span> better χ² goodness-of-fit for Chudley–Elliott vs a Fickian diffusion model</li>
                 <li>Bayesian MCMC across 4 independent chains, convergence verified at Gelman–Rubin $\hat{R}<1.01$</li>
-                <li>FastAPI + React interface with planned cloud deployment</li>
+                <li>Calibrated uncertainties on fitted parameters, not bare point estimates</li>
               </ul>
             </div>
-
-            <div class="qens-sketch">
-              <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg">
+            <div class="sketch">
+              <svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QENS spectrum with Chudley-Elliott fit">
                 <defs><filter id="glow2"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-                <g stroke="#2C3550" stroke-width="0.5" opacity="0.6">
+                <g stroke="#2B3450" stroke-width="0.5" opacity="0.6">
                   <line x1="35" y1="25" x2="285" y2="25"/><line x1="35" y1="50" x2="285" y2="50"/><line x1="35" y1="75" x2="285" y2="75"/>
                   <line x1="100" y1="15" x2="100" y2="105"/><line x1="160" y1="15" x2="160" y2="105"/><line x1="220" y1="15" x2="220" y2="105"/>
                 </g>
@@ -718,7 +664,7 @@ pre .n{color:var(--cyan)}
                 <g fill="#B4BDD2">
                   <circle cx="50" cy="98" r="1.5"/><circle cx="65" cy="96" r="1.5"/><circle cx="80" cy="93" r="1.5"/><circle cx="95" cy="88" r="1.5"/><circle cx="110" cy="80" r="1.5"/><circle cx="125" cy="65" r="1.5"/><circle cx="140" cy="42" r="1.5"/><circle cx="155" cy="22" r="1.5"/><circle cx="160" cy="20" r="1.5"/><circle cx="170" cy="28" r="1.5"/><circle cx="185" cy="48" r="1.5"/><circle cx="200" cy="68" r="1.5"/><circle cx="215" cy="82" r="1.5"/><circle cx="230" cy="91" r="1.5"/><circle cx="245" cy="96" r="1.5"/><circle cx="260" cy="100" r="1.5"/><circle cx="275" cy="102" r="1.5"/>
                 </g>
-                <g stroke="#545E76" stroke-width="0.6">
+                <g stroke="#535D75" stroke-width="0.6">
                   <line x1="125" y1="61" x2="125" y2="69"/><line x1="140" y1="38" x2="140" y2="46"/><line x1="160" y1="16" x2="160" y2="24"/><line x1="185" y1="44" x2="185" y2="52"/><line x1="200" y1="64" x2="200" y2="72"/>
                 </g>
                 <path d="M 35,103 Q 90,103 130,80 Q 160,18 190,80 Q 230,103 285,103" stroke="#5BD6D0" stroke-width="1.5" fill="none" stroke-linecap="round" filter="url(#glow2)"/>
@@ -736,9 +682,8 @@ pre .n{color:var(--cyan)}
                   <line x1="212" y1="52" x2="200" y2="73" stroke="#E0607A" stroke-width="0.8" stroke-dasharray="2 2"/>
                 </g>
               </svg>
-              <div class="qens-cap"><b>Fig. 2</b> &nbsp; QENS spectrum: data + Chudley–Elliott fit · χ²/dof ≈ 1.04</div>
+              <div class="sketch-cap"><b>Fig. 3</b> &nbsp; QENS spectrum: data + Chudley–Elliott fit · χ²/dof ≈ 1.04</div>
             </div>
-
             <pre><span class="c"># Chudley–Elliott HWHM</span>
 <span class="k">def</span> gamma_CE(Q, D, l):
     <span class="k">return</span> (D * Q**<span class="n">2</span>) / (<span class="n">1</span> + Q**<span class="n">2</span> * l**<span class="n">2</span>)
@@ -756,82 +701,246 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
       </div>
     </div>
 
+    <!-- ============ Lebwohl-Lasher ============ -->
     <div class="proj reveal">
-      <div class="pc-head">
+      <div class="pc-head blue-head">
         <div>
-          <div class="pc-badges"><span class="tag blue">HPC</span><span class="tag blue">Microservices</span><span class="tag">Production</span></div>
-          <div class="pc-title">AERO Lab Sensor Data Pipeline &amp; Monitoring</div>
-          <div class="pc-sub">ARDE · AERO Lab, Pune</div>
+          <div class="pc-badges"><span class="tag blue">HPC</span><span class="tag blue">Monte Carlo</span><span class="tag green">Open Source</span></div>
+          <div class="pc-title">Lebwohl–Lasher Accelerated</div>
+          <div class="pc-sub">Performance engineering study · seven implementations, one physics</div>
         </div>
-        <div class="pc-date">2024 – 2025</div>
+        <div class="pc-date">2025</div>
       </div>
       <div class="pc-body">
-        <p class="pc-desc">
-          A local data-management system processing <strong>15+ environmental data streams</strong>
-          from heterogeneous sensors in a restricted, fully offline environment. It enforces
-          automated validation and structured archiving, and held a <span class="metric">&lt; 4 hr</span>
-          mean-time-to-resolution for data-service issues during active measurement campaigns.
-          With no internet and no cloud, robust local architecture was non-negotiable.
-        </p>
-        <div class="exp-stack" style="margin-top:1rem;border-top:none;padding-top:0">
-          <span class="tag blue">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">PySpark</span><span class="tag">React</span><span class="tag">GitHub Actions</span><span class="tag">Docker</span>
+        <div class="pc-cols">
+          <div>
+            <p class="pc-desc">
+              A Monte Carlo simulation of the Lebwohl–Lasher liquid-crystal model, taken
+              through seven progressively faster implementations - pure Python, NumPy
+              vectorisation, Numba, Cython, Cython + OpenMP, MPI, and hybrid MPI + Cython -
+              reaching roughly <strong>4.7× the baseline</strong>.
+            </p>
+            <p class="pc-desc">
+              The part I cared about most was not the speedup but the
+              <strong>cross-version consistency tests</strong>: every optimised
+              implementation is verified to reproduce the reference physics. A faster wrong
+              answer is worse than a slow right one, and optimisation is exactly where that
+              failure hides.
+            </p>
+            <p class="pc-desc">
+              Benchmarked systematically across lattice size, Monte Carlo step count,
+              temperature and process count, to find where parallelisation overheads start
+              to dominate rather than assuming they scale.
+            </p>
+            <a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener" class="gh-block">
+              <div class="gh-icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
+              <div><div class="gh-info-l">Open source repository</div><div class="gh-info-v">github.com/ShubhamX57/LebwohlLasher-Accelerated</div></div>
+            </a>
+          </div>
+          <div>
+            <div class="sketch">
+              <svg viewBox="0 0 300 178" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Relative speedup across seven implementations">
+                <g font-family="JetBrains Mono, monospace" font-size="7" fill="#7C879F">
+                  <text x="4" y="19">Python</text>
+                  <text x="4" y="41">NumPy</text>
+                  <text x="4" y="63">Numba</text>
+                  <text x="4" y="85">Cython</text>
+                  <text x="4" y="107">Cy+OMP</text>
+                  <text x="4" y="129">MPI</text>
+                  <text x="4" y="151" fill="#5BD6D0">MPI+Cy</text>
+                </g>
+                <g stroke="#2B3450" stroke-width="0.5" opacity="0.5">
+                  <line x1="62" y1="8" x2="62" y2="160"/><line x1="118" y1="8" x2="118" y2="160"/><line x1="174" y1="8" x2="174" y2="160"/><line x1="230" y1="8" x2="230" y2="160"/><line x1="286" y1="8" x2="286" y2="160"/>
+                </g>
+                <g>
+                  <rect x="62" y="12" width="14" height="10" fill="#535D75" rx="1"/>
+                  <rect x="62" y="34" width="46" height="10" fill="#7C879F" rx="1"/>
+                  <rect x="62" y="56" width="82" height="10" fill="#7C879F" rx="1"/>
+                  <rect x="62" y="78" width="112" height="10" fill="#E8A04A" rx="1"/>
+                  <rect x="62" y="100" width="158" height="10" fill="#E8A04A" rx="1"/>
+                  <rect x="62" y="122" width="182" height="10" fill="#5BD6D0" rx="1"/>
+                  <rect x="62" y="144" width="212" height="10" fill="#5BD6D0" rx="1"/>
+                </g>
+                <g font-family="JetBrains Mono, monospace" font-size="6.5" fill="#B4BDD2">
+                  <text x="80" y="20">1.0×</text>
+                  <text x="112" y="42">~1.9×</text>
+                  <text x="148" y="64">~2.6×</text>
+                  <text x="178" y="86">~3.2×</text>
+                  <text x="224" y="108">~3.9×</text>
+                  <text x="248" y="130">~4.3×</text>
+                  <text x="278" y="152" fill="#5BD6D0" font-weight="700">4.7×</text>
+                </g>
+                <line x1="62" y1="160" x2="290" y2="160" stroke="#7C879F" stroke-width="0.8"/>
+                <text x="176" y="174" font-family="JetBrains Mono, monospace" font-size="7" fill="#7C879F" text-anchor="middle">relative speedup vs pure-Python baseline</text>
+              </svg>
+              <div class="sketch-cap"><b>Fig. 4</b> &nbsp; Speedup by implementation - indicative shape; exact figures in the repository</div>
+            </div>
+            <div class="findings" style="margin-top:.9rem">
+              <div class="findings-label">Engineering emphasis</div>
+              <ul>
+                <li>Cross-version consistency tests confirm identical physics at every optimisation level</li>
+                <li>Parameter sweeps over lattice size, steps, temperature and process count</li>
+                <li>Interactive dashboard published for inspecting and comparing runs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="exp-stack" style="margin-top:1.25rem">
+          <span class="tag blue">Cython</span><span class="tag blue">MPI</span><span class="tag blue">OpenMP</span><span class="tag">Numba</span><span class="tag">NumPy</span><span class="tag">Benchmarking</span>
         </div>
       </div>
     </div>
 
+    <!-- ============ arxiv-rag ============ -->
     <div class="proj reveal">
       <div class="pc-head">
         <div>
-          <div class="pc-badges"><span class="tag green">Clinical</span><span class="tag">DICOM</span><span class="tag">RBAC</span></div>
-          <div class="pc-title">Cervical Cancer Screening Portal</div>
-          <div class="pc-sub">Clinical data management · Docker-deployed</div>
+          <div class="pc-badges"><span class="tag blue">Retrieval / RAG</span><span class="tag green">Evaluation</span><span class="tag">mypy strict</span></div>
+          <div class="pc-title">ArXiv RAG - retrieval with adversarial evaluation</div>
+          <div class="pc-sub">Personal project · 204 papers indexed · 224 tests · CI on every push</div>
         </div>
-        <div class="pc-date">2023</div>
+        <div class="pc-date">2026</div>
       </div>
       <div class="pc-body">
-        <p class="pc-desc">
-          A clinical data-management system handling <strong>DICOM image ingestion</strong> and
-          structured report storage, with role-based access control enforcing patient
-          confidentiality. The backend was validated through unit and integration tests
-          covering all API routes and database transactions, and deployed via Docker under
-          institutional data-governance policies.
-        </p>
-        <div class="exp-stack" style="margin-top:1rem;border-top:none;padding-top:0">
-          <span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">DICOM</span><span class="tag">Pytest</span><span class="tag">Docker</span>
+        <div class="pc-cols">
+          <div>
+            <p class="pc-desc">
+              A retrieval-augmented generation system over ArXiv machine-learning papers.
+              What started as a retrieval exercise became a question about trust.
+            </p>
+            <p class="pc-desc">
+              During smoke testing I asked it a question with no answer in the corpus,
+              expecting abstention. Instead it answered confidently from the model's own
+              parametric knowledge and attached a <strong>real citation to a chunk that did
+              not support the claim</strong>. The striking part was not the hallucination,
+              which is expected - it was that the citation made the failure look like
+              success. Every surface signal said the system was working.
+            </p>
+            <p class="pc-desc">
+              So I built a deterministic defence rather than a prompt-based one: verbatim
+              quote verification against the source chunk, with forced abstention when no
+              citation survives. Then, because a defence you have not tried to break is not
+              a defence, I built an adversarial evaluation set and measured it.
+            </p>
+            <a href="https://github.com/ShubhamX57/arxiv-rag" target="_blank" rel="noopener" class="gh-block">
+              <div class="gh-icon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></div>
+              <div><div class="gh-info-l">Open source repository</div><div class="gh-info-v">github.com/ShubhamX57/arxiv-rag</div></div>
+            </a>
+          </div>
+          <div>
+            <div class="sketch">
+              <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Verification gate: answers without a surviving citation are refused">
+                <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7C879F"/></marker></defs>
+                <rect x="10" y="16" width="66" height="26" rx="3" fill="#161C2B" stroke="#2B3450"/>
+                <text x="43" y="32" font-family="JetBrains Mono, monospace" font-size="7" fill="#B4BDD2" text-anchor="middle">query</text>
+                <rect x="10" y="62" width="66" height="26" rx="3" fill="#161C2B" stroke="#2B3450"/>
+                <text x="43" y="74" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#B4BDD2" text-anchor="middle">hybrid</text>
+                <text x="43" y="83" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#B4BDD2" text-anchor="middle">retrieval</text>
+                <rect x="106" y="39" width="70" height="26" rx="3" fill="#161C2B" stroke="#2B3450"/>
+                <text x="141" y="55" font-family="JetBrains Mono, monospace" font-size="7" fill="#B4BDD2" text-anchor="middle">generator</text>
+                <rect x="106" y="88" width="70" height="34" rx="3" fill="rgba(232,160,74,0.1)" stroke="#E8A04A"/>
+                <text x="141" y="101" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#E8A04A" text-anchor="middle">verbatim quote</text>
+                <text x="141" y="112" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#E8A04A" text-anchor="middle">verification</text>
+                <rect x="206" y="16" width="82" height="30" rx="3" fill="rgba(91,214,208,0.1)" stroke="#2E6E6B"/>
+                <text x="247" y="28" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#5BD6D0" text-anchor="middle">answer +</text>
+                <text x="247" y="39" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#5BD6D0" text-anchor="middle">verified citation</text>
+                <rect x="206" y="98" width="82" height="30" rx="3" fill="rgba(224,96,122,0.1)" stroke="#6B2E3C"/>
+                <text x="247" y="110" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#E0607A" text-anchor="middle">refuse -</text>
+                <text x="247" y="121" font-family="JetBrains Mono, monospace" font-size="6.5" fill="#E0607A" text-anchor="middle">no support found</text>
+                <g stroke="#7C879F" stroke-width="0.9" fill="none" marker-end="url(#a3)">
+                  <line x1="43" y1="42" x2="43" y2="58"/>
+                  <line x1="76" y1="72" x2="102" y2="58"/>
+                  <line x1="141" y1="65" x2="141" y2="84"/>
+                  <line x1="176" y1="98" x2="202" y2="42"/>
+                  <line x1="176" y1="112" x2="202" y2="112"/>
+                </g>
+                <text x="192" y="72" font-family="JetBrains Mono, monospace" font-size="6" fill="#5BD6D0">pass</text>
+                <text x="180" y="128" font-family="JetBrains Mono, monospace" font-size="6" fill="#E0607A">fail</text>
+              </svg>
+              <div class="sketch-cap"><b>Fig. 5</b> &nbsp; Verification gate - an answer ships only if a citation survives verbatim checking</div>
+            </div>
+            <div class="findings" style="margin-top:.9rem">
+              <div class="findings-label">Measured, including what didn't work</div>
+              <ul>
+                <li>Defence held even when retrieval was <strong>deliberately steered into the trap chunk</strong> - verification checks real chunk text, not the model's reasoning about it</li>
+                <li>Multi-query expansion: <span class="metric">no improvement</span></li>
+                <li>HyDE: <span class="metric">−5 pp</span>, actively harmful for this corpus</li>
+                <li>Both negative results published in the repository, with limitations documented</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="proj reveal">
-      <div class="pc-head">
-        <div>
-          <div class="pc-badges"><span class="tag blue">Computer Vision</span><span class="tag green">Published</span><span class="tag">NASA Data</span></div>
-          <div class="pc-title">CNN-Transformer Classifier — NASA Lunar Terrain</div>
-          <div class="pc-sub">Spartifical Pvt Ltd · peer-reviewed publication</div>
-        </div>
-        <div class="pc-date">2023</div>
-      </div>
-      <div class="pc-body">
-        <p class="pc-desc">
-          A hybrid CNN-Transformer classifier reaching <span class="metric">89.7% accuracy</span>
-          on NASA lunar-terrain data, packaged as a fully reproducible research artefact —
-          Docker environment, DVC data versioning, CI pipeline — so peer scientists could
-          replicate every result from a single <code>docker-compose up</code>. The work was
-          peer-reviewed and published.
-        </p>
-        <div class="exp-stack" style="margin-top:1rem;border-top:none;padding-top:0">
-          <span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">DVC</span><span class="tag">Docker</span><span class="tag">NASA APIs</span><span class="tag">Pytest</span>
+        <div class="exp-stack" style="margin-top:1.25rem">
+          <span class="tag">Python</span><span class="tag">LanceDB</span><span class="tag">BM25</span><span class="tag">Hybrid retrieval</span><span class="tag">pytest</span><span class="tag">mypy strict</span><span class="tag">GitHub Actions</span>
         </div>
       </div>
     </div>
 
   </div>
+
+  <!-- ============ compact grid ============ -->
+  <div class="proj-grid">
+    <div class="mini reveal">
+      <div class="mini-title">Specimen Search</div>
+      <div class="mini-sub">Java 17 · Spring Boot · JUnit · MockMvc</div>
+      <p class="mini-desc">
+        A REST data-discovery service that indexes specimen records and serves free-text
+        search, taxon-faceted filtering and by-id retrieval. Written deliberately to port
+        the data-discovery pattern from my Python and FastAPI services into the JVM
+        ecosystem, with an integration test suite covering every endpoint.
+      </p>
+      <div class="mini-foot">
+        <span class="tag blue">Java</span><span class="tag">Spring Boot</span><span class="tag">JUnit</span><span class="tag">Maven</span>
+      </div>
+    </div>
+
+    <div class="mini reveal">
+      <div class="mini-title">AERO Lab Sensor Pipeline</div>
+      <div class="mini-sub">ARDE · Pune · production system</div>
+      <p class="mini-desc">
+        A data-management system processing 15+ environmental streams from heterogeneous
+        sensors in a fully offline, restricted environment, with automated validation and
+        structured archiving. Held under 4 hr mean-time-to-resolution during active
+        measurement campaigns. No internet and no cloud made robust local architecture
+        non-negotiable.
+      </p>
+      <div class="mini-foot">
+        <span class="tag blue">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">PySpark</span><span class="tag">React</span>
+      </div>
+    </div>
+
+    <div class="mini reveal">
+      <div class="mini-title">Cervical Cancer Screening Portal</div>
+      <div class="mini-sub">Clinical data management · Docker-deployed</div>
+      <p class="mini-desc">
+        A clinical system handling DICOM image ingestion and structured report storage,
+        with role-based access control enforcing patient confidentiality. Backend validated
+        through unit and integration tests across all API routes and database transactions,
+        deployed under institutional data-governance policies.
+      </p>
+      <div class="mini-foot">
+        <span class="tag green">DICOM</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">RBAC</span>
+      </div>
+    </div>
+
+    <div class="mini reveal">
+      <div class="mini-title">CNN-Transformer - NASA Lunar Terrain</div>
+      <div class="mini-sub">Spartifical · peer-reviewed publication</div>
+      <p class="mini-desc">
+        A hybrid CNN-Transformer classifier reaching 89.7% accuracy on NASA lunar-terrain
+        data, packaged as a fully reproducible artefact - Docker, DVC versioning, CI - so
+        peer scientists could replicate every result from a single command.
+      </p>
+      <div class="mini-foot">
+        <span class="tag">PyTorch</span><span class="tag">OpenCV</span><span class="tag">DVC</span><span class="tag">Docker</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="publications">
-  <div class="eyebrow"><span class="eyebrow-num">04</span> Publications</div>
+  <div class="eyebrow">Publications</div>
   <h2>Peer-reviewed <em>work</em>.</h2>
-
   <div class="bib-list">
     <div class="bib reveal">
       <div class="bib-num">[1]</div>
@@ -840,7 +949,7 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
         <div class="bib-authors"><em>Shinde, S.</em>, et al.</div>
         <div class="bib-venue">
           <span>JETIR, Vol. 10, Issue 9, 2023</span>
-          <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank">jetir.org/papers/JETIR2309292</a>
+          <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" rel="noopener">jetir.org/papers/JETIR2309292</a>
           <span class="bib-award">★ Best Research Paper</span>
         </div>
       </div>
@@ -848,20 +957,17 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
     <div class="bib upcoming reveal">
       <div class="bib-num">[2]</div>
       <div class="bib-body">
-        <div class="bib-title">QENS Analysis Suite -- MSc thesis (in preparation)</div>
+        <div class="bib-title">Numerical Stability of Covariance-Matrix Inversion in Diffusion Analysis - MSc dissertation (in preparation)</div>
         <div class="bib-authors"><em>Shinde, S.</em> · University of Bristol, 2026</div>
-        <div class="bib-venue">
-          <span>Expected 2026</span><span>·</span><span>Open source: github.com/ShubhamX57/QENS</span>
-        </div>
+        <div class="bib-venue"><span>Expected 2026</span><span>·</span><span>Supervised by Dr Andrew McCluskey</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <section id="education">
-  <div class="eyebrow"><span class="eyebrow-num">05</span> Education</div>
+  <div class="eyebrow">Education</div>
   <h2>Academic <em>record</em>.</h2>
-
   <div class="edu-list">
     <div class="edu active reveal">
       <div>
@@ -871,26 +977,25 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
         <div class="edu-year">2025 – 2026 (expected) · Bristol, UK</div>
       </div>
       <div class="edu-note">
-        Academic representative for the MSc cohort. Research in neutron-scattering analysis,
-        numerical methods, and HPC pipelines. Funded by the competitive
+        Academic representative for the MSc cohort. Dissertation on numerical stability in
+        diffusion analysis; coursework in HPC, numerical methods, and statistical data
+        analysis. Funded by the competitive
         <strong>SARTHI Maharashtra Government Foreign Scholarship</strong>.
       </div>
       <div class="edu-gpa">MSc<small>in progress</small></div>
     </div>
-
     <div class="edu reveal">
       <div>
         <div class="edu-deg">PG Diploma in Data Science &amp; AI</div>
-        <div class="edu-school">Savitribai Phule Pune University — DOT</div>
+        <div class="edu-school">Savitribai Phule Pune University - DOT</div>
         <div class="edu-year">2022 – 2023 · Pune, India</div>
       </div>
       <div class="edu-note">
         Thesis: <em>Building Shadow Detection Using Aerial Imagery</em>. Awarded Best Research
-        Project by the department — the foundation for my subsequent ML and data-science work.
+        Project by the department - the foundation for my subsequent ML and data-science work.
       </div>
       <div class="edu-gpa">8.5<small>/ 10</small></div>
     </div>
-
     <div class="edu reveal">
       <div>
         <div class="edu-deg">B.E. Mechanical Engineering</div>
@@ -910,35 +1015,33 @@ sampler.run_mcmc(p0, <span class="n">5000</span>, progress=<span class="k">True<
 
 <section id="contact">
   <div class="contact-inner">
-    <div class="eyebrow"><span class="eyebrow-num">06</span> Get in touch</div>
+    <div class="eyebrow">Get in touch</div>
     <h2>Let's <em>build</em> something.</h2>
     <p>
-      I'm open to scientific software engineering, HPC, and data engineering roles —
-      particularly at the intersection of computational physics, reproducible science, and
-      production-grade software. Currently based in Bristol, UK, and happy to talk.
+      I'm open to scientific software engineering, research software, and data engineering
+      roles - particularly at the intersection of computational physics, reproducible
+      science, and production-grade software. Currently based in Bristol, UK, and happy to talk.
     </p>
-
     <div class="contact-grid">
       <a href="mailto:shubham.edu.ms@gmail.com" class="clink">
         <div class="clink-icon">✉</div>
         <div><div class="clink-label">Email</div><div class="clink-val">shubham.edu.ms@gmail.com</div></div>
       </a>
       <a href="mailto:dg25301@bristol.ac.uk" class="clink">
-        <div class="clink-icon">🎓</div>
+        <div class="clink-icon">◎</div>
         <div><div class="clink-label">University</div><div class="clink-val">dg25301@bristol.ac.uk</div></div>
       </a>
-      <a href="https://github.com/ShubhamX57" target="_blank" class="clink">
+      <a href="https://github.com/ShubhamX57" target="_blank" rel="noopener" class="clink">
         <div class="clink-icon">⌥</div>
         <div><div class="clink-label">GitHub</div><div class="clink-val">github.com/ShubhamX57</div></div>
       </a>
-      <a href="https://linkedin.com/in/shubhams6" target="_blank" class="clink">
+      <a href="https://linkedin.com/in/shubhams6" target="_blank" rel="noopener" class="clink">
         <div class="clink-icon">↗</div>
         <div><div class="clink-label">LinkedIn</div><div class="clink-val">linkedin.com/in/shubhams6</div></div>
       </a>
     </div>
-
     <div class="foot-line">
-      <span class="foot-copy">+44 7352 671872 · Bristol, UK ·  2026</span>
+      <span class="foot-copy">+44 7352 671872 · Bristol, UK · 2026</span>
       <span class="foot-name">Shubham Shinde</span>
     </div>
   </div>
