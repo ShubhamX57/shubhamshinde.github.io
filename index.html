@@ -3,229 +3,254 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shubham Shinde, scientific software engineer</title>
-<meta name="description" content="Shubham Shinde, scientific software engineer. MSc Scientific Computing with Data Science, University of Bristol. Neutron scattering analysis, numerical stability, HPC pipelines, reproducible research software.">
+<title>Shubham Shinde · Research software and machine learning engineer</title>
+<meta name="description" content="Shubham Shinde, research software and machine learning engineer in Bristol. Numerical stability in scientific libraries, neutron scattering analysis, verified ML systems, and HPC pipelines.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}};</script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<script>MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$']]},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 <style>
 :root{
-  --paper:#FCFCFB;
-  --fill:#F3F3F0;
-  --ink:#141C26;
-  --ink-2:#4A5666;
-  --ink-3:#8B94A1;
-  --rule:#DFE1DE;
-  --accent:#2A4B8D;
-  --flag:#9A3B33;
+  --paper:#F6F7F9;
+  --surface:#FFFFFF;
+  --ink:#17212B;
+  --ink-2:#4F5B69;
+  --ink-3:#86909D;
+  --rule:#DDE2E8;
+  --signal:#0E6B6B;
+  --signal-tint:#E3F0EF;
+  --caveat:#A8650F;
+  --caveat-tint:#FAF0E1;
 
-  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
-  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
 
-  --rail:8.5rem;
-  --gap:2.5rem;
-  --measure:40rem;
-  --page:calc(var(--rail) + var(--gap) + var(--measure));
+  --wrap:68rem;
+  --measure:38rem;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--serif);
-  font-size:17px;
-  line-height:1.62;
-  font-weight:400;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.62;
   -webkit-font-smoothing:antialiased;
-  font-feature-settings:"onum" 1;
 }
-::selection{background:#D8E0F0}
-a{color:var(--accent);text-decoration:none;border-bottom:1px solid #C2CCE2}
-a:hover{border-bottom-color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+::selection{background:var(--signal-tint)}
+a{color:var(--signal);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:#9CC3C1}
+a:hover{text-decoration-color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+img,svg{max-width:100%}
 
-.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:.6rem 1rem;border:0;z-index:20}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:30}
 .skip:focus{left:0}
 
-/* ---------- masthead ---------- */
-.masthead{
-  position:sticky;top:0;z-index:10;
-  background:var(--paper);
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 1.75rem}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:20;
+  background:rgba(246,247,249,.94);
+  backdrop-filter:saturate(1.4) blur(8px);-webkit-backdrop-filter:saturate(1.4) blur(8px);
   border-bottom:1px solid var(--rule);
 }
-.masthead-in{
-  max-width:var(--page);margin:0 auto;padding:.85rem 1.75rem;
-  display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;
-}
-.masthead-name{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--ink);border:0}
-.masthead-name:hover{border:0;color:var(--accent)}
-.masthead-nav{display:flex;gap:1.35rem;list-style:none}
-.masthead-nav a{font-family:var(--mono);font-size:.76rem;color:var(--ink-2);border:0}
-.masthead-nav a:hover{color:var(--accent)}
-@media(max-width:700px){.masthead-nav li:nth-child(-n+3){display:none}}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:3.75rem}
+.brand{font-family:var(--serif);font-size:1.12rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-.005em}
+.site-nav{display:flex;align-items:center;gap:1.6rem}
+.site-nav ul{display:flex;gap:1.35rem;list-style:none}
+.site-nav a{font-size:.9rem;color:var(--ink-2);text-decoration:none}
+.site-nav a:hover{color:var(--ink)}
+@media(max-width:820px){.site-nav ul{display:none}}
 
-/* ---------- page shell ---------- */
-.page{max-width:var(--page);margin:0 auto;padding:0 1.75rem}
-section{padding:3.5rem 0}
-.section-head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-  border-bottom:1px solid var(--ink);padding-bottom:.5rem;margin-bottom:.5rem;
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--sans);font-size:.92rem;font-weight:500;line-height:1;
+  padding:.72rem 1.1rem;border-radius:6px;text-decoration:none;
+  border:1px solid var(--ink);transition:background .15s,color .15s,border-color .15s;
 }
-h2{font-size:1.5rem;font-weight:600;letter-spacing:-.012em;line-height:1.2}
-.section-note{font-family:var(--mono);font-size:.74rem;color:var(--ink-3)}
-
-/* ---------- the rail grid ---------- */
-.entry{
-  display:grid;grid-template-columns:var(--rail) minmax(0,1fr);
-  gap:0 var(--gap);padding:1.9rem 0;
-}
-.entry + .entry{border-top:1px solid var(--rule)}
-.meta{font-family:var(--mono);font-size:.74rem;line-height:1.55;color:var(--ink-3);padding-top:.32rem}
-.meta b{display:block;font-weight:500;color:var(--ink-2)}
-@media(max-width:760px){
-  .entry{grid-template-columns:1fr;gap:0}
-  .meta{padding-top:0;margin-bottom:.6rem}
-  .meta b{display:inline;margin-right:.6rem}
-}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:#26323F}
+.btn-quiet{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-quiet:hover{border-color:var(--ink-3);background:var(--surface)}
+.btn-sm{padding:.5rem .85rem;font-size:.85rem}
 
 /* ---------- hero ---------- */
-.hero{padding:4.5rem 0 3.25rem}
-.hero h1{
-  font-size:clamp(2.1rem,5.2vw,3rem);font-weight:600;
-  letter-spacing:-.022em;line-height:1.08;margin-bottom:.7rem;
+.hero{padding:5.5rem 0 4.5rem}
+.hero-name{font-size:1rem;font-weight:500;color:var(--ink)}
+.hero-role{font-size:1rem;color:var(--ink-2);margin-bottom:2.25rem}
+.hero-statement{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.05rem,4.6vw,3.25rem);line-height:1.12;letter-spacing:-.018em;
+  max-width:21ch;margin-bottom:1.75rem;
+  font-variation-settings:"opsz" 72;
 }
-.hero .role{font-size:1.2rem;color:var(--ink-2);margin-bottom:1.5rem}
-.lead{max-width:var(--measure);margin-bottom:1.5rem}
-.lead p + p{margin-top:.85rem}
-.hero-links{display:flex;flex-wrap:wrap;gap:1.4rem;font-family:var(--mono);font-size:.8rem;margin-bottom:2.75rem}
+.hero-lead{max-width:var(--measure);color:var(--ink-2);font-size:1.08rem;margin-bottom:2rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:3.5rem}
+
 .now{
-  display:grid;grid-template-columns:var(--rail) minmax(0,1fr);gap:0 var(--gap);
-  border-top:1px solid var(--ink);padding-top:.85rem;max-width:var(--page);
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;
+  border-top:1px solid var(--rule);padding-top:1.5rem;
 }
-.now-label{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);padding-top:.15rem}
-.now ul{list-style:none}
-.now li{padding:.3rem 0;font-size:.96rem;color:var(--ink-2)}
-.now li + li{border-top:1px solid var(--rule)}
-.now li span{color:var(--ink)}
-@media(max-width:760px){.now{grid-template-columns:1fr}.now-label{margin-bottom:.4rem}}
+.now p{font-size:.93rem;color:var(--ink-2);line-height:1.5}
+.now strong{display:block;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+@media(max-width:760px){.now{grid-template-columns:1fr;gap:1rem}}
 
-/* ---------- prose ---------- */
-.prose{max-width:var(--measure)}
-.prose p + p{margin-top:.9rem}
-h3{font-size:1.14rem;font-weight:600;line-height:1.35;letter-spacing:-.008em}
-.org{color:var(--ink-2);margin-bottom:.9rem}
-.sub{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-top:.3rem}
-
-ul.points{list-style:none;max-width:var(--measure)}
-ul.points li{padding:.55rem 0;border-top:1px solid var(--rule)}
-ul.points li:first-child{border-top:0;padding-top:.1rem}
-.num{font-family:var(--mono);font-size:.88em;font-weight:500;color:var(--accent);white-space:nowrap}
-
-.stack{font-family:var(--mono);font-size:.74rem;color:var(--ink-2);line-height:1.7;margin-top:1.1rem;max-width:var(--measure)}
-.stack span{color:var(--ink-3);margin-right:.55rem}
-
-/* ---------- skills + awards as definition rows ---------- */
-.deflist{border-top:1px solid var(--rule)}
-.defrow{
-  display:grid;grid-template-columns:var(--rail) minmax(0,1fr);gap:0 var(--gap);
-  padding:.7rem 0;border-bottom:1px solid var(--rule);
+/* ---------- sections ---------- */
+section{padding:4.5rem 0;border-top:1px solid var(--rule);scroll-margin-top:3.75rem}
+.hero{scroll-margin-top:3.75rem}
+.section-title{
+  font-family:var(--serif);font-weight:500;font-size:clamp(1.65rem,3vw,2.1rem);
+  letter-spacing:-.014em;line-height:1.15;margin-bottom:.6rem;
 }
-.defrow dt{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);padding-top:.18rem}
-.defrow dd{font-size:.95rem;color:var(--ink-2)}
-.defrow dd b{font-weight:600;color:var(--ink)}
-@media(max-width:760px){.defrow{grid-template-columns:1fr}.defrow dt{margin-bottom:.15rem}}
+.section-intro{color:var(--ink-2);max-width:var(--measure);margin-bottom:2.5rem}
 
-/* ---------- blocks ---------- */
-.eq{
-  background:var(--fill);border-left:2px solid var(--accent);
-  padding:.85rem 1.15rem;margin:1.2rem 0;max-width:var(--measure);overflow-x:auto;
+/* evidence legend: the page's one device */
+.legend{display:flex;flex-wrap:wrap;gap:1.4rem;font-size:.86rem;color:var(--ink-2);margin:-1.25rem 0 2.75rem}
+.legend span{display:inline-flex;align-items:center;gap:.5rem}
+
+.mark{flex:none;width:.6rem;height:.6rem;border-radius:50%;display:inline-block}
+.mark-measured{background:var(--signal)}
+.mark-progress{border:2px solid var(--caveat);background:transparent}
+
+/* ---------- feature projects ---------- */
+.feature{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);gap:3rem;
+  padding:2.75rem 0;
 }
-.eq-label{font-family:var(--mono);font-size:.73rem;color:var(--ink-2);margin-bottom:.15rem}
-.eq-note{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);margin-top:.1rem}
+.feature + .feature{border-top:1px solid var(--rule)}
+@media(max-width:900px){.feature{grid-template-columns:1fr;gap:1.75rem}}
+
+.kicker{font-size:.86rem;color:var(--ink-3);margin-bottom:.55rem}
+h3{font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.22;letter-spacing:-.01em;margin-bottom:1rem}
+.feature-body p{color:var(--ink-2);max-width:var(--measure)}
+.feature-body p + p{margin-top:.85rem}
+.feature-body em{font-style:italic;color:var(--ink)}
+
+.findings{list-style:none;margin-top:1.6rem;max-width:var(--measure)}
+.findings li{display:grid;grid-template-columns:.9rem minmax(0,1fr);gap:.65rem;padding:.6rem 0;border-top:1px solid var(--rule);font-size:.95rem;color:var(--ink-2)}
+.findings li:last-child{border-bottom:1px solid var(--rule)}
+.findings .mark{margin-top:.5em}
+.num{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.links{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:1.4rem;font-size:.92rem}
+.stack{font-size:.85rem;color:var(--ink-3);margin-top:1rem}
+
+/* aside: figures and equations */
+.aside{display:flex;flex-direction:column;gap:1.25rem}
+figure{background:var(--surface);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.figbox{padding:1.1rem 1.1rem .5rem;overflow-x:auto}
+figure svg{display:block;width:100%;min-width:400px;height:auto}
+figcaption{font-size:.82rem;color:var(--ink-3);line-height:1.5;padding:.75rem 1.1rem;border-top:1px solid var(--rule)}
+figcaption strong{color:var(--ink-2);font-weight:600}
+
+.eq{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1rem 1.2rem;overflow-x:auto}
+.eq-label{font-size:.82rem;color:var(--ink-2);margin-bottom:.1rem}
+.eq-note{font-size:.8rem;color:var(--ink-3)}
 mjx-container{color:var(--ink)}
-mjx-container[display="true"]{margin:.35rem 0!important}
-
-.findings{margin:1.3rem 0;max-width:var(--measure)}
-.findings h4{font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--ink-2);padding-bottom:.4rem;border-bottom:1px solid var(--ink)}
-.findings ul{list-style:none}
-.findings li{font-size:.95rem;color:var(--ink-2);padding:.5rem 0;border-bottom:1px solid var(--rule)}
-.findings.caveat li{color:var(--ink-3)}
-.findings.caveat h4{color:var(--ink-3);border-bottom-color:var(--rule)}
-
-figure{border:1px solid var(--rule);background:#fff;margin:1.4rem 0;max-width:var(--measure)}
-.figbox{overflow-x:auto;padding:.9rem .9rem .3rem}
-figure svg{display:block;width:100%;min-width:430px;height:auto}
-figcaption{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.5;padding:.6rem .9rem;border-top:1px solid var(--rule)}
-figcaption b{color:var(--ink-2);font-weight:500}
+mjx-container[display="true"]{margin:.4rem 0!important}
 
 pre{
-  background:var(--fill);border-left:2px solid var(--rule);
-  font-family:var(--mono);font-size:.76rem;line-height:1.75;color:var(--ink);
-  padding:.9rem 1.15rem;margin:1.2rem 0;overflow-x:auto;max-width:var(--measure);
+  background:var(--surface);border:1px solid var(--rule);border-radius:8px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.7;
+  padding:1rem 1.2rem;overflow-x:auto;color:var(--ink);
 }
 pre .c{color:var(--ink-3)}
-pre .k{color:var(--accent)}
-pre .s{color:var(--flag)}
+pre .k{color:var(--signal)}
+pre .s{color:var(--caveat)}
 
-.repo{font-family:var(--mono);font-size:.76rem;margin-top:1.1rem}
-.repo span{color:var(--ink-3);margin-right:.5rem}
-
-/* figure internals */
+/* svg internals */
 .ax{stroke:var(--ink-3);stroke-width:1;fill:none}
-.grid{stroke:var(--rule);stroke-width:1}
+.gridl{stroke:var(--rule);stroke-width:1}
 .tick{stroke:var(--ink-3);stroke-width:1}
-.lbl{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
-.lbl-a{font-family:var(--mono);font-size:11px;fill:var(--accent)}
-.lbl-f{font-family:var(--mono);font-size:11px;fill:var(--flag)}
-.lbl-i{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
-.fit{stroke:var(--accent);stroke-width:1.6;fill:none}
-.bad{stroke:var(--flag);stroke-width:1.5;fill:none}
+.lbl{font-family:var(--sans);font-size:11px;fill:var(--ink-3)}
+.lbl-i{font-family:var(--sans);font-size:11px;fill:var(--ink-2)}
+.lbl-s{font-family:var(--sans);font-size:11px;fill:var(--signal)}
+.lbl-c{font-family:var(--sans);font-size:11px;fill:var(--caveat)}
+.line-s{stroke:var(--signal);stroke-width:1.7;fill:none}
+.line-c{stroke:var(--caveat);stroke-width:1.6;fill:none}
 .dash{stroke:var(--ink-3);stroke-width:1.2;fill:none;stroke-dasharray:5 4}
-.pt{fill:var(--ink-2)}
-.box{fill:#fff;stroke:var(--ink-3);stroke-width:1}
-.box-a{fill:#EDF1F9;stroke:var(--accent);stroke-width:1}
-.box-f{fill:#F7EDEC;stroke:var(--flag);stroke-width:1}
-.bar{fill:var(--ink-3)}
-.bar-a{fill:var(--accent)}
+.box{fill:var(--surface);stroke:var(--ink-3);stroke-width:1}
+.box-s{fill:var(--signal-tint);stroke:var(--signal);stroke-width:1}
+.box-c{fill:var(--caveat-tint);stroke:var(--caveat);stroke-width:1}
 
-/* ---------- publications ---------- */
-.ref-title{font-size:1.05rem;line-height:1.4;margin-bottom:.25rem}
-.ref-authors{color:var(--ink-2);font-size:.95rem}
-.ref-authors em{font-style:normal;font-weight:600;color:var(--ink)}
-.ref-venue{font-family:var(--mono);font-size:.74rem;color:var(--ink-3);margin-top:.35rem;line-height:1.7}
-.award{color:var(--flag)}
-.pending .ref-title{color:var(--ink-2)}
+/* ---------- compact projects ---------- */
+.compact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:.5rem}
+@media(max-width:760px){.compact{grid-template-columns:1fr}}
+.compact article{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:1.5rem}
+.compact h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;line-height:1.3;margin-bottom:.55rem}
+.compact p{font-size:.94rem;color:var(--ink-2)}
+.compact .links{margin-top:.9rem}
+
+.other{margin-top:2.5rem;max-width:48rem}
+.other h4{font-size:1rem;font-weight:600;margin-bottom:.9rem}
+.other dl div{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:1.25rem;padding:.8rem 0;border-top:1px solid var(--rule)}
+.other dt{font-weight:500;font-size:.93rem}
+.other dd{font-size:.93rem;color:var(--ink-2)}
+@media(max-width:640px){.other dl div{grid-template-columns:1fr;gap:.2rem}}
+
+/* ---------- experience timeline ---------- */
+.timeline{list-style:none}
+.job{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem;padding:2rem 0}
+.job + .job{border-top:1px solid var(--rule)}
+.when{font-size:.9rem;color:var(--ink-2);padding-top:.25rem;font-variant-numeric:tabular-nums}
+.when span{display:block;color:var(--ink-3)}
+.job h3{font-size:1.28rem;margin-bottom:.15rem}
+.org{color:var(--ink-2);margin-bottom:1rem}
+.points{list-style:none;max-width:var(--measure)}
+.points li{position:relative;padding:.35rem 0 .35rem 1.1rem;color:var(--ink-2);font-size:.96rem}
+.points li::before{content:"";position:absolute;left:0;top:.95em;width:.4rem;height:1px;background:var(--ink-3)}
+@media(max-width:700px){.job{grid-template-columns:1fr;gap:.5rem}}
+
+/* ---------- skills ---------- */
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 3rem}
+@media(max-width:760px){.skills{grid-template-columns:1fr}}
+.skill{padding:1rem 0;border-top:1px solid var(--rule)}
+.skill h4{font-size:.95rem;font-weight:600;margin-bottom:.25rem}
+.skill p{font-size:.93rem;color:var(--ink-2)}
+
+/* ---------- publications / education ---------- */
+.refs{list-style:none;max-width:48rem}
+.refs li{padding:1.25rem 0;border-top:1px solid var(--rule)}
+.refs li:last-child{border-bottom:1px solid var(--rule)}
+.ref-type{font-size:.84rem;color:var(--ink-3);margin-bottom:.3rem}
+.ref-title{font-family:var(--serif);font-size:1.18rem;line-height:1.35;margin-bottom:.25rem}
+.ref-meta{font-size:.92rem;color:var(--ink-2)}
+.award{color:var(--signal);font-weight:500}
+
+.edu{list-style:none;max-width:48rem}
+.edu li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:2rem;padding:1.4rem 0;border-top:1px solid var(--rule)}
+.edu h4{font-family:var(--serif);font-weight:500;font-size:1.18rem;line-height:1.3}
+.edu .org{margin-bottom:.35rem}
+.edu p{font-size:.94rem;color:var(--ink-2)}
+@media(max-width:700px){.edu li{grid-template-columns:1fr;gap:.35rem}}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem}
+.about p{color:var(--ink-2)}
+.about p + p{margin-top:.9rem}
+.service{list-style:none}
+.service li{padding:.75rem 0;border-top:1px solid var(--rule);font-size:.94rem;color:var(--ink-2)}
+.service strong{color:var(--ink);font-weight:600}
+@media(max-width:800px){.about{grid-template-columns:1fr;gap:2rem}}
 
 /* ---------- contact ---------- */
-.contact{border-top:1px solid var(--ink);margin-top:1rem;padding:3.25rem 0 4rem}
-.contact p{max-width:var(--measure);margin-bottom:1.6rem}
-.contact-rows{border-top:1px solid var(--rule);max-width:var(--measure)}
-.contact-rows div{
-  display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1rem;
-  padding:.6rem 0;border-bottom:1px solid var(--rule);
-  font-family:var(--mono);font-size:.8rem;
-}
-.contact-rows dt{color:var(--ink-3)}
-.colophon{
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-  font-family:var(--mono);font-size:.72rem;color:var(--ink-3);
-  margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--rule);
-}
+.contact{padding:5rem 0 3rem}
+.contact .section-title{max-width:22ch}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.75rem 0 3rem}
+.contact-list{display:flex;flex-wrap:wrap;gap:.5rem 2rem;font-size:.95rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.84rem;color:var(--ink-3);margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
 
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 @media print{
-  :root{--paper:#fff}
-  body{font-size:10.5pt}
-  .masthead,.skip,.hero-links{display:none}
-  section{padding:10pt 0;break-inside:avoid}
-  .entry,figure,.findings{break-inside:avoid}
-  a{color:var(--ink);border:0}
-  figure{border-color:#ccc}
+  body{font-size:10.5pt;background:#fff}
+  .site-head,.skip,.hero-actions,.contact-actions{display:none}
+  section{padding:14pt 0;break-inside:avoid-page}
+  .feature,.job,figure{break-inside:avoid}
+  a{color:var(--ink);text-decoration:none}
 }
 </style>
 </head>
@@ -233,172 +258,229 @@ pre .s{color:var(--flag)}
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <div class="masthead-in">
-    <a href="#top" class="masthead-name">Shubham Shinde</a>
-    <nav>
-      <ul class="masthead-nav">
-        <li><a href="#about">About</a></li>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">Shubham Shinde</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a class="btn btn-quiet btn-sm" href="cv.pdf" download>Download CV</a>
     </nav>
   </div>
 </header>
 
-<main id="main" class="page">
+<main id="main">
 
 <!-- ============================== HERO ============================== -->
-<section id="top" class="hero">
-  <h1>Shubham Shinde</h1>
-  <p class="role">Scientific software engineer, Bristol</p>
+<div class="wrap">
+  <header class="hero" id="top">
+    <p class="hero-name">Shubham Shinde</p>
+    <p class="hero-role">Research software and machine learning engineer, Bristol</p>
 
-  <div class="lead">
-    <p>I build and test the software that scientific results depend on: neutron
-    scattering analysis, numerical stability work inside established research
-    libraries, and parallel data pipelines that run without supervision.</p>
-    <p>Most of what I do reduces to one question, which is whether a number on a
-    plot is a real physical effect or an artefact of the code that produced it.
-    Answering it well takes controlled test cases, honest uncertainties, and code
-    a colleague can operate without me in the room.</p>
-  </div>
+    <h1 class="hero-statement">I build scientific and machine learning software, and I check whether its numbers can be trusted.</h1>
 
-  <p class="hero-links">
-    <a href="mailto:shubham.edu.ms@gmail.com">shubham.edu.ms@gmail.com</a>
-    <a href="https://github.com/ShubhamX57" target="_blank" rel="noopener">github.com/ShubhamX57</a>
-    <a href="https://linkedin.com/in/shubhams6" target="_blank" rel="noopener">linkedin.com/in/shubhams6</a>
-  </p>
+    <p class="hero-lead">Most of my work comes down to one question: is a result a real effect, or an artefact of the code that produced it? Answering that well takes controlled test cases, honest uncertainties, and software a colleague can run without me in the room.</p>
 
-  <div class="now">
-    <div class="now-label">Currently</div>
-    <ul>
-      <li><span>MSc dissertation</span> on covariance matrix conditioning in <em>kinisi</em>, University of Bristol</li>
-      <li><span>Author</span> of an open source quasi-elastic neutron scattering analysis library</li>
-      <li><span>Lightning talk</span> at RSECon26, Sheffield, September 2026</li>
-      <li><span>Open to</span> research software and scientific computing roles from 2026</li>
-    </ul>
-  </div>
-
-  <figure>
-    <div class="figbox">
-      <svg viewBox="0 0 560 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of a quasi-elastic neutron scattering measurement: an incident beam strikes a sample and is scattered onto a detector bank.">
-        <defs>
-          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#8B94A1"/>
-          </marker>
-          <marker id="arA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#2A4B8D"/>
-          </marker>
-        </defs>
-
-        <!-- incident beam -->
-        <line x1="34" y1="125" x2="188" y2="125" class="ax" marker-end="url(#ar)"/>
-        <text x="34" y="115" class="lbl">incident neutrons</text>
-
-        <!-- sample -->
-        <rect x="198" y="105" width="40" height="40" fill="#F3F3F0" stroke="#4A5666" stroke-width="1"/>
-        <g stroke="#8B94A1" stroke-width=".8">
-          <line x1="202" y1="141" x2="234" y2="109"/>
-          <line x1="202" y1="131" x2="224" y2="109"/>
-          <line x1="212" y1="141" x2="234" y2="119"/>
-        </g>
-        <text x="198" y="161" class="lbl-i">sample</text>
-
-        <!-- scattered rays -->
-        <g class="dash" stroke-dasharray="3 4">
-          <line x1="238" y1="125" x2="432" y2="42"/>
-          <line x1="238" y1="125" x2="459" y2="86"/>
-          <line x1="238" y1="125" x2="468" y2="125"/>
-          <line x1="238" y1="125" x2="459" y2="164"/>
-          <line x1="238" y1="125" x2="432" y2="208"/>
-        </g>
-
-        <!-- detector bank -->
-        <path d="M 432 42 Q 496 125 432 208" class="ax" stroke-width="1.4"/>
-        <g class="tick">
-          <line x1="432" y1="42" x2="443" y2="34"/>
-          <line x1="459" y1="86" x2="471" y2="81"/>
-          <line x1="468" y1="125" x2="481" y2="125"/>
-          <line x1="459" y1="164" x2="471" y2="169"/>
-          <line x1="432" y1="208" x2="443" y2="216"/>
-        </g>
-        <text x="486" y="128" class="lbl">detectors</text>
-
-        <!-- Q vector -->
-        <line x1="238" y1="125" x2="352" y2="76" class="fit" marker-end="url(#arA)"/>
-        <text x="300" y="70" class="lbl-a">Q</text>
-        <path d="M 288 125 A 50 50 0 0 0 283 104" class="ax" stroke-width=".9"/>
-        <text x="292" y="118" class="lbl">2θ</text>
-
-        <text x="34" y="200" class="lbl-i">each detector angle gives one spectrum S(Q, ω)</text>
-        <text x="34" y="216" class="lbl">linewidth against Q is what carries the diffusion coefficient</text>
-      </svg>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="mailto:shubham.edu.ms@gmail.com">Email me</a>
+      <a class="btn btn-quiet" href="cv.pdf" download>Download CV</a>
+      <a class="btn btn-quiet" href="https://github.com/ShubhamX57" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <figcaption><b>Figure 1.</b> Quasi-elastic neutron scattering geometry. The measurement I write analysis software for.</figcaption>
-  </figure>
-</section>
 
-<!-- ============================== ABOUT ============================== -->
-<section id="about">
-  <div class="section-head">
-    <h2>About</h2>
-    <span class="section-note">background and skills</span>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>Route</b>Mechanical engineering to research software</div>
-    <div class="prose">
-      <p>I trained first as a mechanical engineer in Pune, India, and discovered
-      partway through simulating wind turbine blades in CFD that the problems I
-      cared about most were the computational ones. That pulled me toward a PG
-      Diploma in Data Science and AI, award winning research in aerial image
-      analysis, and now an MSc at the University of Bristol funded by the SARTHI
-      National Scholarship.</p>
-      <p>Three years across a defence R&amp;D laboratory, an ML startup, and
-      clinical imaging taught me what production software actually demands:
-      thorough testing, reproducible environments, and systems a colleague can
-      operate without me in the room.</p>
-      <p>My current work sits in quasi-elastic neutron scattering, where I have
-      written an open source analysis library, and inside <em>kinisi</em>, an
-      established scientific library where I am tracking down a numerical
-      stability defect under the supervision of its author. Both taught me the
-      same lesson from opposite directions: the interesting decisions in
-      scientific software are usually about what the code refuses to
-      approximate.</p>
-      <p>Outside the work itself I serve as academic representative for my MSc
-      cohort and maintain digital platforms for two professional engineering
-      societies. I remain quietly convinced that a good README is an act of
-      kindness.</p>
+    <div class="now">
+      <p><strong>MSc, University of Bristol</strong>Scientific Computing with Data Science, completed 2026, Distinction expected</p>
+      <p><strong>RSECon26 speaker</strong>Lightning talk on silent numerical failure, Sheffield, September 2026</p>
+      <p><strong>Available now</strong>For research software, scientific computing and machine learning roles in the UK</p>
     </div>
-  </div>
+  </header>
+</div>
 
-  <div class="entry">
-    <div class="meta"><b>Awards</b>2018 to 2026</div>
-    <div>
-      <dl class="deflist">
-        <div class="defrow"><dt>2025/26</dt><dd><b>SARTHI Maharashtra Government Foreign Scholarship.</b> Competitive award supporting postgraduate study abroad.</dd></div>
-        <div class="defrow"><dt>2025/26</dt><dd><b>Student academic representative.</b> MSc cohort liaison, University of Bristol.</dd></div>
-        <div class="defrow"><dt>2023</dt><dd><b>Best Research Paper Award.</b> Department of Technology, Savitribai Phule Pune University.</dd></div>
-        <div class="defrow"><dt>2018</dt><dd><b>University Merit Scholarship.</b> Savitribai Phule Pune University.</dd></div>
-      </dl>
+<!-- ============================== WORK ============================== -->
+<section id="work">
+  <div class="wrap">
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-intro">Each result below is marked by where it stands. I would rather show an unfinished result honestly than a finished-looking one that isn't.</p>
+    <div class="legend" aria-label="Key">
+      <span><i class="mark mark-measured" aria-hidden="true"></i>Measured result</span>
+      <span><i class="mark mark-progress" aria-hidden="true"></i>In progress or not yet validated</span>
     </div>
-  </div>
 
-  <div class="entry">
-    <div class="meta"><b>Skills</b>Working proficiency</div>
-    <div>
-      <dl class="deflist">
-        <div class="defrow"><dt>Languages</dt><dd>Python, SQL, Bash, JavaScript, TypeScript, MATLAB, Java</dd></div>
-        <div class="defrow"><dt>Scientific</dt><dd>NumPy, SciPy, HDF5 and h5py, MDAnalysis, emcee, PySpark, Dask, Matplotlib, LaTeX</dd></div>
-        <div class="defrow"><dt>Numerics</dt><dd>Bayesian MCMC, numerical linear algebra, Monte Carlo, uncertainty quantification, model validation</dd></div>
-        <div class="defrow"><dt>HPC</dt><dd>Cython, MPI, OpenMP, CUDA, SLURM, Numba, multi-GPU training, parallel I/O</dd></div>
-        <div class="defrow"><dt>Machine learning</dt><dd>PyTorch, scikit-learn, XGBoost, LightGBM, MLflow, DVC, OpenCV, retrieval and RAG</dd></div>
-        <div class="defrow"><dt>Services</dt><dd>FastAPI, Flask, Spring Boot, REST design, OpenAPI, React</dd></div>
-        <div class="defrow"><dt>Practice</dt><dd>Git, GitHub Actions, Docker, Kubernetes, pytest, JUnit, mypy, Terraform</dd></div>
-        <div class="defrow"><dt>Databases</dt><dd>PostgreSQL, MongoDB, Neo4j, Redis, SQLite</dd></div>
+    <!-- kinisi -->
+    <article class="feature">
+      <div class="feature-body">
+        <p class="kicker">MSc dissertation, University of Bristol, 2025 to 2026</p>
+        <h3>Why kinisi’s covariance matrices fail without warning</h3>
+        <p><em>kinisi</em> extracts diffusion coefficients from molecular dynamics trajectories. It does something unusually careful: it carries the full covariance matrix through its fit instead of treating each lag time as independent. That care is also the source of a fragility. In a minority of runs the matrix stops being positive definite, which quietly degrades the fitted coefficient and its uncertainty without raising any error.</p>
+        <p>Rather than patch the symptom, I built a random-walk testbed with a known analytical answer, so that a numerical artefact could be separated from a real physical signal. The work is supervised by Dr Andrew McCluskey, one of kinisi’s developers.</p>
+
+        <ul class="findings">
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Matrix failure rate fell from <span class="num">90% to 2%</span> as sampling increased, showing the matrices were under-determined rather than wrong.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Root cause isolated to sample noise in long lag-time variance estimates, through a systematic convergence study.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Minimum-eigenvalue, ridge, linear and non-linear shrinkage reconditioning benchmarked against the analytical matrix.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>A data-adaptive eigenvalue floor recovered parameters better than the library’s fixed default on the testbed.</span></li>
+          <li><i class="mark mark-progress" aria-label="In progress"></i><span>Validation across noise levels is ongoing, and the adaptive rule has only been tested offline.</span></li>
+          <li><i class="mark mark-progress" aria-label="In progress"></i><span>A consistency check is open upstream as pull request #222, awaiting maintainer review.</span></li>
+        </ul>
+
+        <div class="links"><a href="https://github.com/kinisi-dev/kinisi" target="_blank" rel="noopener">kinisi on GitHub</a></div>
+        <p class="stack">Python, NumPy, MDAnalysis, eigenvalue analysis, matrix conditioning</p>
+      </div>
+
+      <div class="aside">
+        <div class="eq">
+          <p class="eq-label">Generalised least squares needs the inverse covariance</p>
+          $$\hat{\beta} = \left(X^{\top}\Sigma^{-1}X\right)^{-1}X^{\top}\Sigma^{-1}y$$
+          <p class="eq-note">Σ is the MSD covariance. Inversion fails once the smallest eigenvalue reaches zero.</p>
+        </div>
+
+        <figure>
+          <div class="figbox">
+            <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of eigenvalue spectra on a log scale. Under low sampling the trailing eigenvalues fall below the numerical floor, while the converged spectrum stays above it.">
+              <g class="gridl"><line x1="64" y1="40" x2="520" y2="40"/><line x1="64" y1="85" x2="520" y2="85"/><line x1="64" y1="130" x2="520" y2="130"/></g>
+              <line x1="64" y1="196" x2="520" y2="196" class="ax"/>
+              <line x1="64" y1="26" x2="64" y2="196" class="ax"/>
+              <text x="292" y="226" class="lbl" text-anchor="middle">eigenvalue index, largest to smallest</text>
+              <text x="24" y="112" class="lbl" transform="rotate(-90 24 112)" text-anchor="middle">log λ</text>
+              <line x1="64" y1="170" x2="520" y2="170" class="dash"/>
+              <text x="516" y="163" class="lbl" text-anchor="end">numerical floor</text>
+              <polyline class="line-s" points="78,38 121,48 164,60 207,73 250,86 293,99 336,112 379,124 422,136 465,146 508,155"/>
+              <polyline class="line-c" points="78,40 121,54 164,71 207,90 250,110 293,131 336,150 379,168 422,182 465,191 508,194"/>
+              <g fill="#A8650F"><circle cx="379" cy="168" r="2.8"/><circle cx="422" cy="182" r="2.8"/><circle cx="465" cy="191" r="2.8"/><circle cx="508" cy="194" r="2.8"/></g>
+              <line x1="340" y1="56" x2="360" y2="56" class="line-s"/><text x="368" y="60" class="lbl-i">converged sampling</text>
+              <line x1="340" y1="76" x2="360" y2="76" class="line-c"/><text x="368" y="80" class="lbl-c">low sampling</text>
+            </svg>
+          </div>
+          <figcaption><strong>Schematic.</strong> Under low sampling the trailing eigenvalues drop below the floor and the matrix stops being invertible. The failure is in the estimate, not the physics.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- QENS -->
+    <article class="feature">
+      <div class="feature-body">
+        <p class="kicker">Author and maintainer, 2025 to present</p>
+        <h3>An open source library for quasi-elastic neutron scattering</h3>
+        <p>A library I designed and wrote that takes the full analysis chain from raw HDF5 files through resolution correction, model fitting and Bayesian parameter estimation, with a FastAPI and React interface on top. It follows ISIS Neutron and Muon Source workflows and is validated on benzene data from the LET spectrometer.</p>
+        <p>The core model is Chudley–Elliott jump diffusion, which describes molecules hopping between sites. Getting the deconvolution of the instrument resolution right was the decisive problem, because a naive approach inflates the diffusion coefficient substantially.</p>
+
+        <ul class="findings">
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>About <span class="num">16%</span> less systematic error on the diffusion coefficient from physics-correct resolution correction.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span><span class="num">3×</span> better χ² goodness of fit for Chudley–Elliott than a Fickian diffusion model.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Four independent MCMC chains, convergence verified at Gelman–Rubin <span class="num">R̂ &lt; 1.01</span>.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Calibrated uncertainties on every fitted parameter rather than bare point estimates.</span></li>
+        </ul>
+        <p class="stack">Python, NumPy, SciPy, h5py, emcee, FastAPI, React, pytest</p>
+      </div>
+
+      <div class="aside">
+        <figure>
+          <div class="figbox">
+            <svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic of a quasi-elastic neutron scattering measurement: an incident beam strikes a sample and scatters onto a detector bank.">
+              <defs>
+                <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#86909D"/></marker>
+                <marker id="arS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0E6B6B"/></marker>
+              </defs>
+              <line x1="34" y1="118" x2="188" y2="118" class="ax" marker-end="url(#ar)"/>
+              <text x="34" y="108" class="lbl">incident neutrons</text>
+              <rect x="198" y="98" width="40" height="40" rx="3" fill="#F6F7F9" stroke="#4F5B69" stroke-width="1"/>
+              <text x="198" y="156" class="lbl-i">sample</text>
+              <g class="dash" stroke-dasharray="3 4">
+                <line x1="238" y1="118" x2="432" y2="38"/><line x1="238" y1="118" x2="459" y2="80"/>
+                <line x1="238" y1="118" x2="468" y2="118"/><line x1="238" y1="118" x2="459" y2="156"/>
+                <line x1="238" y1="118" x2="432" y2="198"/>
+              </g>
+              <path d="M 432 38 Q 496 118 432 198" class="ax" stroke-width="1.5"/>
+              <text x="486" y="121" class="lbl">detectors</text>
+              <line x1="238" y1="118" x2="352" y2="70" class="line-s" marker-end="url(#arS)"/>
+              <text x="300" y="64" class="lbl-s">Q</text>
+              <text x="34" y="196" class="lbl-i">each detector angle gives one spectrum S(Q, ω)</text>
+              <text x="34" y="212" class="lbl">the linewidth against Q carries the diffusion coefficient</text>
+            </svg>
+          </div>
+          <figcaption><strong>Schematic.</strong> Quasi-elastic neutron scattering geometry, the measurement this library analyses.</figcaption>
+        </figure>
+
+        <div class="eq">
+          <p class="eq-label">Chudley–Elliott linewidth</p>
+          $$\Gamma(Q)=\frac{D\,Q^2}{1+Q^2 l^2}$$
+          <p class="eq-note">D is the diffusion coefficient and l the jump length.</p>
+        </div>
+
+<pre><span class="c"># Bayesian parameter estimation with emcee</span>
+sampler = emcee.EnsembleSampler(
+    nwalkers, ndim, log_posterior,
+    args=[Q_vals, S_exp, R_exp])
+sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True</span>)</pre>
+      </div>
+    </article>
+
+    <!-- arxiv-rag -->
+    <article class="feature">
+      <div class="feature-body">
+        <p class="kicker">Personal project, 2026 · 204 papers indexed, 224 tests, CI on every push</p>
+        <h3>A retrieval system that refuses to answer without evidence</h3>
+        <p>A retrieval-augmented generation system over machine learning papers, which turned into a question about trust. During testing I asked it something with no answer in the corpus. Instead of abstaining, it answered confidently from the model’s own knowledge and attached a real citation to a passage that didn’t support the claim.</p>
+        <p>The hallucination wasn’t the surprise. The citation was: it made a failure look like success. So I built a deterministic defence instead of a prompt-based one. Every answer must quote its source verbatim, the quote is checked against the retrieved text, and the system refuses when no citation survives. Then I built an adversarial test set to try to break it.</p>
+
+        <ul class="findings">
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>The defence held even when retrieval was deliberately steered into the trap passage, because it checks real text rather than the model’s account of it.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Multi-query expansion gave <span class="num">no improvement</span>.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>HyDE <span class="num">lowered accuracy by 5 points</span> on this corpus. Both negative results are published in the repository.</span></li>
+        </ul>
+
+        <div class="links"><a href="https://github.com/ShubhamX57/arxiv-rag" target="_blank" rel="noopener">arxiv-rag on GitHub</a></div>
+        <p class="stack">Python, LanceDB, BM25 and dense hybrid retrieval, pytest, mypy strict, GitHub Actions</p>
+      </div>
+
+      <div class="aside">
+        <figure>
+          <div class="figbox">
+            <svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline diagram: a query passes through hybrid retrieval and a generator into verbatim quote verification, which either returns a verified answer or refuses.">
+              <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#86909D"/></marker></defs>
+              <rect x="20" y="22" width="110" height="34" rx="4" class="box"/><text x="75" y="43" class="lbl-i" text-anchor="middle">query</text>
+              <rect x="20" y="106" width="110" height="34" rx="4" class="box"/><text x="75" y="127" class="lbl-i" text-anchor="middle">hybrid retrieval</text>
+              <rect x="172" y="64" width="110" height="34" rx="4" class="box"/><text x="227" y="85" class="lbl-i" text-anchor="middle">generator</text>
+              <rect x="172" y="128" width="110" height="44" rx="4" class="box-s"/><text x="227" y="146" class="lbl-s" text-anchor="middle">verbatim quote</text><text x="227" y="162" class="lbl-s" text-anchor="middle">verification</text>
+              <rect x="340" y="22" width="152" height="44" rx="4" class="box-s"/><text x="416" y="40" class="lbl-s" text-anchor="middle">answer with a</text><text x="416" y="56" class="lbl-s" text-anchor="middle">verified citation</text>
+              <rect x="340" y="128" width="152" height="44" rx="4" class="box-c"/><text x="416" y="146" class="lbl-c" text-anchor="middle">refuse to answer,</text><text x="416" y="162" class="lbl-c" text-anchor="middle">no support found</text>
+              <g class="ax" marker-end="url(#ar2)">
+                <line x1="75" y1="56" x2="75" y2="100"/><line x1="130" y1="118" x2="166" y2="96"/>
+                <line x1="227" y1="98" x2="227" y2="122"/><line x1="282" y1="140" x2="334" y2="60"/>
+                <line x1="282" y1="152" x2="334" y2="152"/>
+              </g>
+              <text x="304" y="96" class="lbl-s">pass</text><text x="297" y="145" class="lbl-c">fail</text>
+            </svg>
+          </div>
+          <figcaption><strong>The verification gate.</strong> An answer ships only if at least one citation survives verbatim checking against the retrieved text.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <div class="compact">
+      <article>
+        <p class="kicker">Open source, MIT</p>
+        <h4>scisolve: numerical answers that have to be computed, not generated</h4>
+        <p>An agentic system that solves ODE, optimisation, curve-fitting and linear algebra problems by running NumPy and SciPy code. No number can be reported unless it traces back to a value the session actually computed, enforced in code rather than by prompting, and each result is confirmed by an independent method. 51 unit tests, CI on Python 3.10 to 3.13.</p>
+        <div class="links"><a href="https://github.com/ShubhamX57/scisolve" target="_blank" rel="noopener">scisolve on GitHub</a></div>
+      </article>
+      <article>
+        <p class="kicker">Performance study, 2025</p>
+        <h4>Lebwohl–Lasher: seven implementations of the same physics</h4>
+        <p>A Monte Carlo liquid crystal simulation taken from pure Python through NumPy, Numba, Cython, OpenMP and MPI to hybrid MPI with Cython, reaching roughly 4.7 times the baseline. The part that mattered most was the cross-version tests confirming every faster version still produced the same physics.</p>
+        <div class="links"><a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener">Repository and benchmarks</a></div>
+      </article>
+    </div>
+
+    <div class="other">
+      <h4>Earlier work</h4>
+      <dl>
+        <div><dt>Lunar terrain classifier</dt><dd>A hybrid CNN and Transformer classifier reaching 89.7% accuracy on NASA lunar terrain data, packaged with Docker, DVC and CI so every result could be reproduced from a single command. PyTorch, OpenCV.</dd></div>
+        <div><dt>Screening data portal</dt><dd>DICOM image ingestion and structured report storage for cervical cancer screening, with role-based access control protecting patient confidentiality and tests across every API route. Flask, PostgreSQL, Docker.</dd></div>
       </dl>
     </div>
   </div>
@@ -406,577 +488,152 @@ pre .s{color:var(--flag)}
 
 <!-- ============================== EXPERIENCE ============================== -->
 <section id="experience">
-  <div class="section-head">
-    <h2>Experience</h2>
-    <span class="section-note">2020 to 2025</span>
-  </div>
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-intro">Three years across a defence research programme, a machine learning company and an engineering firm.</p>
 
-  <div class="entry">
-    <div class="meta"><b>Jun 2024 to Aug 2025</b>Pune, India</div>
-    <div>
-      <h3>Data scientist and project engineer</h3>
-      <p class="org">ARDE research programme, Raj Security &amp; Facility Management</p>
-      <ul class="points">
-        <li>Designed a service oriented data platform of FastAPI microservices with JWT auth and versioned endpoints, delivering processed sensor data to React dashboards at typically <span class="num">sub-100 ms</span> response times, entirely within a restricted offline network.</li>
-        <li>Built a CI/CD pipeline on GitHub Actions and Docker that cut release and validation time from hours to <span class="num">under 10 minutes</span>.</li>
-        <li>Engineered a parallelised offline pipeline in PySpark and SLURM ingesting <span class="num">over 20 GB</span> of daily sensor data with automated failure recovery, schema validation, and audit logging into PostgreSQL, giving full traceability from raw measurement to result.</li>
-        <li>Cut model iteration time substantially with multi-GPU training. An XGBoost and LightGBM ensemble reduced targeting error by <span class="num">roughly 42%</span> against the legacy analytical baseline.</li>
-        <li>Provided on-call production support: fault diagnosis, incident resolution, root cause analysis, and post-mortems for live services scientists relied on during measurement campaigns.</li>
-      </ul>
-      <p class="stack"><span>Stack</span>FastAPI, PySpark, SLURM, PostgreSQL, XGBoost, LightGBM, multi-GPU, Docker, GitHub Actions</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>Feb 2023 to May 2023</b>Remote</div>
-    <div>
-      <h3>Machine learning research engineer</h3>
-      <p class="org">Spartifical Pvt Ltd</p>
-      <ul class="points">
-        <li>Built a full stack scientific data service with FastAPI inference endpoints and a React monitoring dashboard, backed by pytest and Jest suites at <span class="num">over 90% coverage</span>.</li>
-        <li>Delivered a reproducible research artefact of Docker environment, DVC data versioning, and CI pipeline, letting peer scientists replicate every result from a single <code>docker-compose up</code>. The work was published in a peer reviewed journal.</li>
-        <li>Developed a hybrid CNN and Transformer classifier reaching <span class="num">89.7% accuracy</span> on NASA lunar terrain data, with interfaces to NASA dataset APIs and internal annotation systems.</li>
-      </ul>
-      <p class="stack"><span>Stack</span>PyTorch, CNN-Transformer, FastAPI, React, DVC, Docker, NASA APIs</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>Nov 2020 to May 2022</b>Satara, India</div>
-    <div>
-      <h3>Design engineer</h3>
-      <p class="org">Gurudatta Enterprises Pvt Ltd</p>
-      <ul class="points">
-        <li>Built and managed 3D models, assemblies, and engineering drawings in SolidWorks and CATIA V5, running tolerance stack-up analysis across 200+ prototype test cycles.</li>
-        <li>Automated test bench data logging in Python, cutting post-processing time by roughly <span class="num">60%</span>. My first look at how software reshapes a scientific workflow.</li>
-      </ul>
-      <p class="stack"><span>Stack</span>SolidWorks, CATIA V5, Python, CFD</p>
-    </div>
+    <ol class="timeline">
+      <li class="job">
+        <p class="when">Jun 2024 to Aug 2025<span>Pune, India</span></p>
+        <div>
+          <h3>Data scientist and project engineer</h3>
+          <p class="org">ARDE research programme, Raj Security and Facility Management</p>
+          <ul class="points">
+            <li>Designed a platform of FastAPI microservices with authentication and versioned endpoints, serving processed sensor data to dashboards at typically sub-100 ms response times on a restricted offline network.</li>
+            <li>Built a PySpark and SLURM pipeline ingesting over 20 GB of sensor data a day, with failure recovery, schema validation and audit logging into PostgreSQL for full traceability from raw measurement to result.</li>
+            <li>Built CI/CD on GitHub Actions and Docker that cut release and validation time from hours to under ten minutes.</li>
+            <li>Trained models on multi-GPU compute; an XGBoost and LightGBM ensemble reduced prediction error by roughly 42% against the legacy analytical baseline.</li>
+            <li>Provided on-call production support, including fault diagnosis, root-cause analysis and post-mortems for services scientists relied on.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">Feb 2023 to May 2023<span>Remote</span></p>
+        <div>
+          <h3>Machine learning research engineer</h3>
+          <p class="org">Spartifical</p>
+          <ul class="points">
+            <li>Developed a hybrid CNN and Transformer classifier reaching 89.7% accuracy on NASA lunar terrain data.</li>
+            <li>Built a full-stack data service with FastAPI inference endpoints and a React monitoring dashboard, with pytest and Jest suites at over 90% coverage.</li>
+            <li>Delivered a reproducible research artefact with Docker, DVC and CI, so colleagues could replicate every result with one command.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">Nov 2020 to May 2022<span>Satara, India</span></p>
+        <div>
+          <h3>Design engineer</h3>
+          <p class="org">Gurudatta Enterprises</p>
+          <ul class="points">
+            <li>Built 3D models, assemblies and engineering drawings in SolidWorks and CATIA V5, with tolerance stack-up analysis across more than 200 prototype test cycles.</li>
+            <li>Automated test-bench data logging in Python, cutting post-processing time by roughly 60%.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- ============================== PROJECTS ============================== -->
-<section id="projects">
-  <div class="section-head">
-    <h2>Projects</h2>
-    <span class="section-note">selected work</span>
-  </div>
-
-  <!-- kinisi -->
-  <div class="entry">
-    <div class="meta"><b>2025 to present</b>MSc dissertation<br>Open source</div>
-    <div>
-      <h3>Numerical stability of covariance matrix inversion in <em>kinisi</em></h3>
-      <p class="org">University of Bristol, supervised by the library's author, Dr Andrew McCluskey</p>
-
-      <div class="prose">
-        <p><em>kinisi</em> extracts diffusion coefficients from molecular dynamics
-        trajectories. It does something unusually careful: it propagates the full
-        covariance matrix through its fitting rather than treating variance
-        estimates at different lag times as independent. That is harder, slower,
-        and the direct cause of the fragility I was asked to investigate. The
-        matrices were collapsing into non positive definite states, which
-        silently degrades fitted coefficients and their uncertainties without
-        raising any error.</p>
-        <p>Rather than patch it, I built a controlled testbed with known
-        analytical ground truth, so that numerical artefact could be separated
-        from real physical signal. Everything downstream depends on that control
-        existing.</p>
-      </div>
-
-      <div class="eq">
-        <div class="eq-label">Generalised least squares, which requires the inverse covariance</div>
-        $$\hat{\beta} = \left(X^{\top}\Sigma^{-1}X\right)^{-1}X^{\top}\Sigma^{-1}y$$
-        <div class="eq-note">Σ is the MSD covariance. Inversion fails when the smallest eigenvalue reaches zero.</div>
-      </div>
-
-      <figure>
-        <div class="figbox">
-          <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eigenvalue spectra on a log scale. Under low sampling the trailing eigenvalues fall below the fixed numerical floor, while the converged spectrum stays above it.">
-            <g class="grid">
-              <line x1="64" y1="40" x2="520" y2="40"/>
-              <line x1="64" y1="85" x2="520" y2="85"/>
-              <line x1="64" y1="130" x2="520" y2="130"/>
-            </g>
-            <line x1="64" y1="196" x2="520" y2="196" class="ax"/>
-            <line x1="64" y1="26" x2="64" y2="196" class="ax"/>
-            <g class="tick">
-              <line x1="64" y1="196" x2="64" y2="201"/>
-              <line x1="178" y1="196" x2="178" y2="201"/>
-              <line x1="292" y1="196" x2="292" y2="201"/>
-              <line x1="406" y1="196" x2="406" y2="201"/>
-              <line x1="520" y1="196" x2="520" y2="201"/>
-            </g>
-            <g class="lbl">
-              <text x="64" y="214" text-anchor="middle">0</text>
-              <text x="178" y="214" text-anchor="middle">8</text>
-              <text x="292" y="214" text-anchor="middle">16</text>
-              <text x="406" y="214" text-anchor="middle">24</text>
-              <text x="520" y="214" text-anchor="middle">32</text>
-              <text x="292" y="236" text-anchor="middle">eigenvalue index, ordered</text>
-            </g>
-            <text x="22" y="112" class="lbl" transform="rotate(-90 22 112)" text-anchor="middle">log λ</text>
-
-            <line x1="64" y1="170" x2="520" y2="170" class="dash"/>
-            <text x="516" y="164" class="lbl" text-anchor="end">fixed floor κ</text>
-
-            <polyline class="fit" points="78,38 121,48 164,60 207,73 250,86 293,99 336,112 379,124 422,136 465,146 508,155"/>
-            <polyline class="bad" points="78,40 121,54 164,71 207,90 250,110 293,131 336,150 379,168 422,182 465,191 508,194"/>
-
-            <g class="pt">
-              <circle cx="78" cy="38" r="2.4"/><circle cx="207" cy="73" r="2.4"/><circle cx="336" cy="112" r="2.4"/><circle cx="508" cy="155" r="2.4"/>
-            </g>
-            <g fill="#9A3B33">
-              <circle cx="379" cy="168" r="2.6"/><circle cx="422" cy="182" r="2.6"/><circle cx="465" cy="191" r="2.6"/><circle cx="508" cy="194" r="2.6"/>
-            </g>
-
-            <line x1="366" y1="60" x2="386" y2="60" class="fit"/>
-            <text x="394" y="64" class="lbl-i">converged sampling</text>
-            <line x1="366" y1="80" x2="386" y2="80" class="bad"/>
-            <text x="394" y="84" class="lbl-f">low sampling</text>
-          </svg>
-        </div>
-        <figcaption><b>Figure 2.</b> Under low sampling the trailing eigenvalues fall below the fixed floor and the matrix stops being invertible. The failure is in the estimate, not the physics.</figcaption>
-      </figure>
-
-      <div class="findings">
-        <h4>What the investigation found</h4>
-        <ul>
-          <li>Matrix failure rate fell from <span class="num">90% to 2%</span> as the atom count increased, showing the matrices were under-determined rather than wrong.</li>
-          <li>Root cause isolated to sample noise in long lag time variance estimates, through a systematic convergence study.</li>
-          <li>Reconditioning strategies benchmarked against the analytical matrix: minimum eigenvalue, ridge, linear and non-linear shrinkage.</li>
-          <li>A data-adaptive eigenvalue floor improved parameter recovery over the library's fixed threshold default.</li>
-        </ul>
-      </div>
-
-      <div class="findings caveat">
-        <h4>Current status</h4>
-        <ul>
-          <li>Results hold on a controlled random walk testbed. Validation across noise levels is ongoing.</li>
-          <li>The adaptive rule is proposed and tested offline. The contribution is not yet merged upstream.</li>
-        </ul>
-      </div>
-
-      <p class="repo"><span>Upstream</span><a href="https://github.com/bjmorgan/kinisi" target="_blank" rel="noopener">github.com/bjmorgan/kinisi</a></p>
-      <p class="stack"><span>Stack</span>Python, NumPy, MDAnalysis, eigenvalue analysis, matrix conditioning, Git</p>
-    </div>
-  </div>
-
-  <!-- QENS -->
-  <div class="entry">
-    <div class="meta"><b>2025 to present</b>Author<br>Open source</div>
-    <div>
-      <h3>QENS analysis and visualisation library</h3>
-      <p class="org">Methodology aligned with ISIS Neutron Source workflows</p>
-
-      <div class="prose">
-        <p>An open source library for quasi-elastic neutron scattering analysis
-        that I designed and wrote. It implements the full physics chain from raw
-        HDF5 files through resolution correction, model fitting, and Bayesian
-        parameter estimation, surfaced through a FastAPI and React interface.</p>
-        <p>The core model is Chudley-Elliott jump diffusion, describing how
-        molecules hop between sites in a liquid or a confined geometry. Getting
-        the resolution function deconvolution right was the decisive challenge,
-        since a naive approach inflates the diffusion coefficient substantially.</p>
-      </div>
-
-      <div class="eq">
-        <div class="eq-label">Chudley-Elliott structure factor</div>
-        $$S(Q,\omega) = \frac{1}{\pi}\cdot\frac{\Gamma(Q)}{\omega^2 + \Gamma^2(Q)}, \qquad \Gamma(Q)=\frac{D\,Q^2}{1+Q^2 l^2}$$
-        <div class="eq-note">D is the diffusion coefficient and l the jump length.</div>
-      </div>
-
-      <div class="eq">
-        <div class="eq-label">Resolution corrected measured spectrum</div>
-        $$I(Q,\omega) = S(Q,\omega)\otimes R(Q,\omega) + B(Q)$$
-        <div class="eq-note">R is the instrumental resolution and B the background.</div>
-      </div>
-
-      <figure>
-        <div class="figbox">
-          <svg viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Measured quasi-elastic spectrum with error bars, the fitted Chudley-Elliott model, and the narrower instrumental resolution function.">
-            <g class="grid">
-              <line x1="64" y1="40" x2="520" y2="40"/>
-              <line x1="64" y1="85" x2="520" y2="85"/>
-              <line x1="64" y1="130" x2="520" y2="130"/>
-            </g>
-            <line x1="64" y1="175" x2="520" y2="175" class="ax"/>
-            <line x1="64" y1="26" x2="64" y2="175" class="ax"/>
-            <g class="tick">
-              <line x1="64" y1="175" x2="64" y2="180"/>
-              <line x1="178" y1="175" x2="178" y2="180"/>
-              <line x1="292" y1="175" x2="292" y2="180"/>
-              <line x1="406" y1="175" x2="406" y2="180"/>
-              <line x1="520" y1="175" x2="520" y2="180"/>
-            </g>
-            <g class="lbl">
-              <text x="64" y="193" text-anchor="middle">-0.4</text>
-              <text x="178" y="193" text-anchor="middle">-0.2</text>
-              <text x="292" y="193" text-anchor="middle">0</text>
-              <text x="406" y="193" text-anchor="middle">0.2</text>
-              <text x="520" y="193" text-anchor="middle">0.4</text>
-              <text x="292" y="215" text-anchor="middle">energy transfer ω, meV</text>
-            </g>
-            <text x="22" y="100" class="lbl" transform="rotate(-90 22 100)" text-anchor="middle">S(Q, ω)</text>
-
-            <path d="M 66,172 C 140,170 200,160 250,126 C 275,60 292,34 292,34 C 292,34 309,60 334,126 C 384,160 444,170 518,172" class="fit"/>
-            <path d="M 66,174 C 170,173 240,170 270,140 C 283,105 292,96 292,96 C 292,96 301,105 314,140 C 344,170 414,173 518,174" class="dash"/>
-
-            <g class="pt">
-              <circle cx="88" cy="171" r="2"/><circle cx="122" cy="169" r="2"/><circle cx="156" cy="165" r="2"/>
-              <circle cx="190" cy="159" r="2"/><circle cx="224" cy="148" r="2"/><circle cx="252" cy="124" r="2"/>
-              <circle cx="272" cy="83" r="2"/><circle cx="292" cy="37" r="2"/><circle cx="312" cy="83" r="2"/>
-              <circle cx="332" cy="124" r="2"/><circle cx="360" cy="148" r="2"/><circle cx="394" cy="159" r="2"/>
-              <circle cx="428" cy="165" r="2"/><circle cx="462" cy="169" r="2"/><circle cx="496" cy="171" r="2"/>
-            </g>
-            <g stroke="#8B94A1" stroke-width=".9">
-              <line x1="224" y1="142" x2="224" y2="154"/><line x1="252" y1="117" x2="252" y2="131"/>
-              <line x1="272" y1="75" x2="272" y2="91"/><line x1="292" y1="29" x2="292" y2="45"/>
-              <line x1="312" y1="75" x2="312" y2="91"/><line x1="332" y1="117" x2="332" y2="131"/>
-              <line x1="360" y1="142" x2="360" y2="154"/>
-            </g>
-
-            <line x1="366" y1="52" x2="386" y2="52" class="fit"/>
-            <text x="394" y="56" class="lbl-i">measured, with fit</text>
-            <line x1="366" y1="72" x2="386" y2="72" class="dash"/>
-            <text x="394" y="76" class="lbl">instrument resolution</text>
-          </svg>
-        </div>
-        <figcaption><b>Figure 3.</b> Quasi-elastic broadening beyond the instrument resolution is the diffusion signal. Fitted Chudley-Elliott model, χ² per degree of freedom ≈ 1.04.</figcaption>
-      </figure>
-
-      <div class="findings">
-        <h4>Results</h4>
-        <ul>
-          <li><span class="num">Roughly 16%</span> reduction in systematic error on the diffusion coefficient through physics-correct resolution correction.</li>
-          <li><span class="num">3 times</span> better χ² goodness of fit for Chudley-Elliott against a Fickian diffusion model.</li>
-          <li>Bayesian MCMC across 4 independent chains, convergence verified at Gelman-Rubin R̂ below 1.01.</li>
-          <li>Calibrated uncertainties on every fitted parameter rather than bare point estimates.</li>
-        </ul>
-      </div>
-
-<pre><span class="c"># Chudley-Elliott half width at half maximum</span>
-<span class="k">def</span> gamma_CE(Q, D, l):
-    <span class="k">return</span> (D * Q**<span class="s">2</span>) / (<span class="s">1</span> + Q**<span class="s">2</span> * l**<span class="s">2</span>)
-
-<span class="c"># Bayesian parameter estimation with emcee</span>
-sampler = emcee.EnsembleSampler(
-    nwalkers, ndim, log_posterior,
-    args=[Q_vals, S_exp, R_exp])
-sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True</span>)</pre>
-
-      <p class="stack"><span>Stack</span>Python, NumPy, SciPy, h5py, emcee, FastAPI, React, pytest, HDF5</p>
-    </div>
-  </div>
-
-  <!-- Lebwohl-Lasher -->
-  <div class="entry">
-    <div class="meta"><b>2025</b>Performance study<br>Open source</div>
-    <div>
-      <h3>Lebwohl-Lasher accelerated</h3>
-      <p class="org">Seven implementations, one set of physics</p>
-
-      <div class="prose">
-        <p>A Monte Carlo simulation of the Lebwohl-Lasher liquid crystal model,
-        taken through seven progressively faster implementations: pure Python,
-        NumPy vectorisation, Numba, Cython, Cython with OpenMP, MPI, and hybrid
-        MPI with Cython, reaching roughly 4.7 times the baseline.</p>
-        <p>The part I cared about most was not the speedup but the cross-version
-        consistency tests. Every optimised implementation is verified to
-        reproduce the reference physics. A faster wrong answer is worse than a
-        slow right one, and optimisation is exactly where that failure hides.</p>
-        <p>Benchmarks sweep lattice size, Monte Carlo step count, temperature,
-        and process count, to find where parallelisation overhead starts to
-        dominate rather than assuming it scales.</p>
-      </div>
-
-      <figure>
-        <div class="figbox">
-          <svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Relative speedup by implementation, from pure Python at one times to hybrid MPI with Cython at 4.7 times.">
-            <g class="grid">
-              <line x1="150" y1="18" x2="150" y2="206"/>
-              <line x1="238" y1="18" x2="238" y2="206"/>
-              <line x1="326" y1="18" x2="326" y2="206"/>
-              <line x1="414" y1="18" x2="414" y2="206"/>
-              <line x1="502" y1="18" x2="502" y2="206"/>
-            </g>
-            <line x1="150" y1="206" x2="520" y2="206" class="ax"/>
-
-            <g class="bar">
-              <rect x="150" y="22" width="0.5" height="16"/>
-              <rect x="150" y="22" width="18" height="16"/>
-              <rect x="150" y="48" width="79" height="16"/>
-              <rect x="150" y="74" width="141" height="16"/>
-            </g>
-            <g fill="#4A5666">
-              <rect x="150" y="100" width="194" height="16"/>
-              <rect x="150" y="126" width="255" height="16"/>
-            </g>
-            <g class="bar-a">
-              <rect x="150" y="152" width="290" height="16"/>
-              <rect x="150" y="178" width="325" height="16"/>
-            </g>
-
-            <g class="lbl" text-anchor="end">
-              <text x="140" y="34">pure Python</text>
-              <text x="140" y="60">NumPy</text>
-              <text x="140" y="86">Numba</text>
-              <text x="140" y="112">Cython</text>
-              <text x="140" y="138">Cython + OpenMP</text>
-              <text x="140" y="164">MPI</text>
-            </g>
-            <text x="140" y="190" class="lbl-a" text-anchor="end">MPI + Cython</text>
-
-            <g class="lbl-i">
-              <text x="176" y="34">1.0×</text>
-              <text x="237" y="60">1.9×</text>
-              <text x="299" y="86">2.6×</text>
-              <text x="352" y="112">3.2×</text>
-              <text x="413" y="138">3.9×</text>
-              <text x="448" y="164">4.3×</text>
-            </g>
-            <text x="483" y="190" class="lbl-a">4.7×</text>
-
-            <g class="lbl">
-              <text x="150" y="224" text-anchor="middle">1×</text>
-              <text x="238" y="224" text-anchor="middle">2×</text>
-              <text x="326" y="224" text-anchor="middle">3×</text>
-              <text x="414" y="224" text-anchor="middle">4×</text>
-              <text x="502" y="224" text-anchor="middle">5×</text>
-              <text x="326" y="243" text-anchor="middle">relative speedup against the pure Python baseline</text>
-            </g>
-          </svg>
-        </div>
-        <figcaption><b>Figure 4.</b> Speedup by implementation. Indicative shape, with exact figures and benchmark conditions in the repository.</figcaption>
-      </figure>
-
-      <div class="findings">
-        <h4>Engineering emphasis</h4>
-        <ul>
-          <li>Cross-version consistency tests confirm identical physics at every optimisation level.</li>
-          <li>Parameter sweeps across lattice size, step count, temperature, and process count.</li>
-          <li>Interactive dashboard published for inspecting and comparing runs.</li>
-        </ul>
-      </div>
-
-      <p class="repo"><span>Repository</span><a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener">github.com/ShubhamX57/LebwohlLasher-Accelerated</a></p>
-      <p class="stack"><span>Stack</span>Cython, MPI, OpenMP, Numba, NumPy, benchmarking</p>
-    </div>
-  </div>
-
-  <!-- arxiv-rag -->
-  <div class="entry">
-    <div class="meta"><b>2026</b>Personal project<br>Open source</div>
-    <div>
-      <h3>ArXiv RAG, retrieval with adversarial evaluation</h3>
-      <p class="org">204 papers indexed, 224 tests, CI on every push</p>
-
-      <div class="prose">
-        <p>A retrieval augmented generation system over ArXiv machine learning
-        papers. What started as a retrieval exercise became a question about
-        trust.</p>
-        <p>During smoke testing I asked it a question with no answer in the
-        corpus, expecting abstention. Instead it answered confidently from the
-        model's own parametric knowledge and attached a real citation to a chunk
-        that did not support the claim. The striking part was not the
-        hallucination, which is expected. It was that the citation made the
-        failure look like success. Every surface signal said the system was
-        working.</p>
-        <p>So I built a deterministic defence rather than a prompt based one:
-        verbatim quote verification against the source chunk, with forced
-        abstention when no citation survives. Then, because a defence you have
-        not tried to break is not a defence, I built an adversarial evaluation
-        set and measured it.</p>
-      </div>
-
-      <figure>
-        <div class="figbox">
-          <svg viewBox="0 0 560 190" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pipeline diagram. A query goes through hybrid retrieval and a generator into verbatim quote verification, which either returns a verified answer or refuses.">
-            <defs>
-              <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                <path d="M0,0 L10,5 L0,10 z" fill="#8B94A1"/>
-              </marker>
-            </defs>
-
-            <rect x="20" y="22" width="104" height="34" class="box"/>
-            <text x="72" y="43" class="lbl-i" text-anchor="middle">query</text>
-
-            <rect x="20" y="106" width="104" height="34" class="box"/>
-            <text x="72" y="127" class="lbl-i" text-anchor="middle">hybrid retrieval</text>
-
-            <rect x="172" y="64" width="104" height="34" class="box"/>
-            <text x="224" y="85" class="lbl-i" text-anchor="middle">generator</text>
-
-            <rect x="172" y="128" width="104" height="44" class="box-a"/>
-            <text x="224" y="146" class="lbl-a" text-anchor="middle">verbatim quote</text>
-            <text x="224" y="162" class="lbl-a" text-anchor="middle">verification</text>
-
-            <rect x="336" y="22" width="150" height="44" class="box-a"/>
-            <text x="411" y="40" class="lbl-a" text-anchor="middle">answer with a</text>
-            <text x="411" y="56" class="lbl-a" text-anchor="middle">verified citation</text>
-
-            <rect x="336" y="128" width="150" height="44" class="box-f"/>
-            <text x="411" y="146" class="lbl-f" text-anchor="middle">refuse to answer,</text>
-            <text x="411" y="162" class="lbl-f" text-anchor="middle">no support found</text>
-
-            <g class="ax" marker-end="url(#ar2)">
-              <line x1="72" y1="56" x2="72" y2="100"/>
-              <line x1="124" y1="118" x2="166" y2="96"/>
-              <line x1="224" y1="98" x2="224" y2="122"/>
-              <line x1="276" y1="140" x2="330" y2="60"/>
-              <line x1="276" y1="152" x2="330" y2="152"/>
-            </g>
-            <text x="300" y="96" class="lbl-a">pass</text>
-            <text x="292" y="146" class="lbl-f">fail</text>
-          </svg>
-        </div>
-        <figcaption><b>Figure 5.</b> The verification gate. An answer ships only if at least one citation survives verbatim checking against the retrieved text.</figcaption>
-      </figure>
-
-      <div class="findings">
-        <h4>Measured, including what did not work</h4>
-        <ul>
-          <li>The defence held even when retrieval was deliberately steered into the trap chunk, because verification checks real chunk text rather than the model's reasoning about it.</li>
-          <li>Multi-query expansion gave <span class="num">no improvement</span>.</li>
-          <li>HyDE cost <span class="num">5 percentage points</span> and was actively harmful for this corpus.</li>
-          <li>Both negative results are published in the repository, with limitations documented.</li>
-        </ul>
-      </div>
-
-      <p class="repo"><span>Repository</span><a href="https://github.com/ShubhamX57/arxiv-rag" target="_blank" rel="noopener">github.com/ShubhamX57/arxiv-rag</a></p>
-      <p class="stack"><span>Stack</span>Python, LanceDB, BM25, hybrid retrieval, pytest, mypy strict, GitHub Actions</p>
-    </div>
-  </div>
-
-  <!-- smaller work -->
-  <div class="entry">
-    <div class="meta"><b>Also</b>Earlier and smaller work</div>
-    <div>
-      <dl class="deflist">
-        <div class="defrow">
-          <dt>Java 17</dt>
-          <dd><b>Specimen Search.</b> A REST data discovery service indexing specimen records, serving free text search, taxon faceted filtering, and retrieval by id. Written to port the data discovery pattern from my Python and FastAPI services into the JVM ecosystem, with integration tests covering every endpoint. Spring Boot, JUnit, MockMvc, Maven.</dd>
-        </div>
-        <div class="defrow">
-          <dt>Production</dt>
-          <dd><b>AERO Lab sensor pipeline.</b> A data management system processing 15+ environmental streams from heterogeneous sensors in a fully offline restricted environment, with automated validation and structured archiving. Held under 4 hour mean time to resolution during active measurement campaigns. No internet and no cloud made robust local architecture non-negotiable. FastAPI, PostgreSQL, PySpark, React.</dd>
-        </div>
-        <div class="defrow">
-          <dt>Clinical</dt>
-          <dd><b>Cervical cancer screening portal.</b> DICOM image ingestion and structured report storage with role based access control enforcing patient confidentiality. Backend validated through unit and integration tests across all API routes and database transactions, deployed under institutional data governance policies. Flask, PostgreSQL, Docker.</dd>
-        </div>
-        <div class="defrow">
-          <dt>Research</dt>
-          <dd><b>CNN-Transformer for NASA lunar terrain.</b> A hybrid classifier reaching 89.7% accuracy, packaged as a fully reproducible artefact with Docker, DVC versioning, and CI, so peer scientists could replicate every result from a single command. PyTorch, OpenCV, DVC.</dd>
-        </div>
-      </dl>
+<!-- ============================== SKILLS ============================== -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill"><h4>Scientific computing</h4><p>Python, NumPy, SciPy, HDF5 and h5py, MDAnalysis, emcee, Matplotlib</p></div>
+      <div class="skill"><h4>Numerical methods</h4><p>Bayesian MCMC, numerical linear algebra, Monte Carlo methods, uncertainty quantification, model validation</p></div>
+      <div class="skill"><h4>High-performance computing</h4><p>SLURM, MPI, OpenMP, Cython, Numba, multi-GPU training, PySpark, Dask</p></div>
+      <div class="skill"><h4>Machine learning</h4><p>PyTorch, scikit-learn, XGBoost, LightGBM, OpenCV, MLflow, DVC, retrieval-augmented generation</p></div>
+      <div class="skill"><h4>Engineering practice</h4><p>FastAPI, PostgreSQL, Docker, Kubernetes, GitHub Actions, pytest, mypy, Git</p></div>
+      <div class="skill"><h4>Languages</h4><p>Python, SQL, Bash, JavaScript and TypeScript, MATLAB</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============================== PUBLICATIONS ============================== -->
 <section id="publications">
-  <div class="section-head">
-    <h2>Publications and talks</h2>
-    <span class="section-note">peer reviewed and invited</span>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>[1]</b>Journal article<br>2023</div>
-    <div>
-      <p class="ref-title">Building shadow detection using aerial imagery with attention enhanced YOLOv4</p>
-      <p class="ref-authors"><em>Shinde, S.</em>, et al.</p>
-      <p class="ref-venue">
-        JETIR, volume 10, issue 9, 2023<br>
-        <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" rel="noopener">jetir.org/papers/JETIR2309292</a><br>
-        <span class="award">Best Research Paper Award</span>
-      </p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>[2]</b>Conference talk<br>2026</div>
-    <div>
-      <p class="ref-title">When a covariance matrix silently breaks your diffusion analysis</p>
-      <p class="ref-authors"><em>Shinde, S.</em></p>
-      <p class="ref-venue">Lightning talk, RSECon26, Research Software Engineering Conference, Sheffield, September 2026</p>
-    </div>
-  </div>
-
-  <div class="entry pending">
-    <div class="meta"><b>[3]</b>In preparation<br>Expected 2026</div>
-    <div>
-      <p class="ref-title">Numerical stability of covariance matrix inversion in diffusion analysis</p>
-      <p class="ref-authors"><em>Shinde, S.</em></p>
-      <p class="ref-venue">MSc dissertation, University of Bristol, supervised by Dr Andrew McCluskey</p>
-    </div>
+  <div class="wrap">
+    <h2 class="section-title">Publications and talks</h2>
+    <ul class="refs">
+      <li>
+        <p class="ref-type">Conference talk, 2026</p>
+        <p class="ref-title">When a covariance matrix silently breaks your diffusion analysis</p>
+        <p class="ref-meta">Lightning talk, RSECon26, the UK Research Software Engineering Conference, University of Sheffield, September 2026</p>
+      </li>
+      <li>
+        <p class="ref-type">Journal article, 2023</p>
+        <p class="ref-title">Building shadow detection using aerial imagery with attention-enhanced YOLOv4</p>
+        <p class="ref-meta">Shinde, S., et al. JETIR, volume 10, issue 9. <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" rel="noopener">Read the paper</a> · <span class="award">Best Research Paper Award</span>, Savitribai Phule Pune University</p>
+      </li>
+    </ul>
   </div>
 </section>
 
-<!-- ============================== EDUCATION ============================== -->
+<!-- ============================== EDUCATION & ABOUT ============================== -->
 <section id="education">
-  <div class="section-head">
-    <h2>Education</h2>
-    <span class="section-note">2017 to 2026</span>
-  </div>
+  <div class="wrap">
+    <h2 class="section-title">Education</h2>
+    <ul class="edu">
+      <li>
+        <p class="when">2025 to 2026<span>Bristol, UK</span></p>
+        <div>
+          <h4>MSc Scientific Computing with Data Science</h4>
+          <p class="org">University of Bristol · Distinction expected</p>
+          <p>Dissertation on numerical stability in diffusion analysis, with coursework in high-performance computing, numerical methods and statistical data analysis. Funded by the SARTHI Maharashtra Government Foreign Scholarship.</p>
+        </div>
+      </li>
+      <li>
+        <p class="when">2022 to 2023<span>Pune, India</span></p>
+        <div>
+          <h4>PG Diploma in Data Science and Artificial Intelligence</h4>
+          <p class="org">Savitribai Phule Pune University · GPA 8.5 / 10</p>
+          <p>Thesis on building shadow detection from aerial imagery, which received the Best Research Paper Award.</p>
+        </div>
+      </li>
+      <li>
+        <p class="when">2017 to 2020<span>Pune, India</span></p>
+        <div>
+          <h4>BE Mechanical Engineering</h4>
+          <p class="org">Savitribai Phule Pune University</p>
+          <p>Capstone on optimising wind turbine blades using CFD. University Merit Scholarship, 2018.</p>
+        </div>
+      </li>
+    </ul>
 
-  <div class="entry">
-    <div class="meta"><b>2025 to 2026</b>Bristol, UK<br>In progress</div>
-    <div>
-      <h3>MSc Scientific Computing with Data Science</h3>
-      <p class="org">University of Bristol</p>
-      <p class="prose">Academic representative for the MSc cohort. Dissertation on
-      numerical stability in diffusion analysis, with coursework in high
-      performance computing, numerical methods, and statistical data analysis.
-      Funded by the SARTHI Maharashtra Government Foreign Scholarship.</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>2022 to 2023</b>Pune, India<br>8.5 / 10</div>
-    <div>
-      <h3>PG Diploma in Data Science and AI</h3>
-      <p class="org">Savitribai Phule Pune University, Department of Technology</p>
-      <p class="prose">Thesis on building shadow detection using aerial imagery,
-      awarded Best Research Project by the department. The foundation for my
-      later machine learning and data science work.</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <div class="meta"><b>2017 to 2020</b>Pune, India</div>
-    <div>
-      <h3>BE Mechanical Engineering</h3>
-      <p class="org">Savitribai Phule Pune University</p>
-      <p class="prose">Capstone on optimisation of wind turbine blades using CFD.
-      University Merit Scholarship in 2018. The engineering rigour from this
-      degree still shapes how I approach software reliability.</p>
+    <div class="about" style="margin-top:3.5rem">
+      <div>
+        <h2 class="section-title">About</h2>
+        <p>I trained first as a mechanical engineer, and partway through simulating wind turbine blades in CFD realised the problems I cared about most were the computational ones. That led to a PG Diploma in data science, research in aerial image analysis, and an MSc at Bristol.</p>
+        <p>My current work sits in neutron scattering analysis and inside kinisi, an established scientific library. Both taught me the same thing from opposite directions: the interesting decisions in scientific software are usually about what the code refuses to approximate. I’m also quietly convinced that a good README is an act of kindness.</p>
+      </div>
+      <div>
+        <h2 class="section-title">Service</h2>
+        <ul class="service">
+          <li><strong>Student academic representative</strong>, MSc cohort, University of Bristol</li>
+          <li><strong>Digital platforms</strong> for the Pune chapters of the Aeronautical Society of India and the Indian Society of Systems for Science and Engineering</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============================== CONTACT ============================== -->
 <section id="contact" class="contact">
-  <div class="section-head">
-    <h2>Contact</h2>
-    <span class="section-note">Bristol, UK</span>
-  </div>
-
-  <p>I am open to research software, scientific computing, and data engineering
-  roles, particularly where computational physics, reproducible science, and
-  production software meet. Happy to talk about neutron scattering analysis,
-  covariance conditioning, or anything else on this page.</p>
-
-  <dl class="contact-rows">
-    <div><dt>Email</dt><dd><a href="mailto:shubham.edu.ms@gmail.com">shubham.edu.ms@gmail.com</a></dd></div>
-    <div><dt>University</dt><dd><a href="mailto:dg25301@bristol.ac.uk">dg25301@bristol.ac.uk</a></dd></div>
-    <div><dt>GitHub</dt><dd><a href="https://github.com/ShubhamX57" target="_blank" rel="noopener">github.com/ShubhamX57</a></dd></div>
-    <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/shubhams6" target="_blank" rel="noopener">linkedin.com/in/shubhams6</a></dd></div>
-  </dl>
-
-  <div class="colophon">
-    <span>Shubham Shinde, Bristol, 2026</span>
-    <span>Set in Source Serif 4 and IBM Plex Mono</span>
+  <div class="wrap">
+    <h2 class="section-title">Looking for someone to build software you can trust?</h2>
+    <p class="section-intro">I’m open to research software, scientific computing and machine learning engineering roles, particularly where computational science and production software meet.</p>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="mailto:shubham.edu.ms@gmail.com">Email me</a>
+      <a class="btn btn-quiet" href="cv.pdf" download>Download CV</a>
+    </div>
+    <div class="contact-list">
+      <a href="mailto:shubham.edu.ms@gmail.com">shubham.edu.ms@gmail.com</a>
+      <a href="https://github.com/ShubhamX57" target="_blank" rel="noopener">github.com/ShubhamX57</a>
+      <a href="https://linkedin.com/in/shubhams6" target="_blank" rel="noopener">linkedin.com/in/shubhams6</a>
+    </div>
+    <div class="foot">
+      <span>Shubham Shinde, Bristol, 2026</span>
+      <span>Set in Newsreader and IBM Plex Sans</span>
+    </div>
   </div>
 </section>
 
