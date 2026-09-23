@@ -374,7 +374,8 @@ pre .s{color:var(--caveat)}
           <li><i class="mark mark-measured" aria-label="Measured"></i><span>Four independent MCMC chains, convergence verified at Gelman–Rubin <span class="num">R̂ &lt; 1.01</span>.</span></li>
           <li><i class="mark mark-measured" aria-label="Measured"></i><span>Calibrated uncertainties on every fitted parameter rather than bare point estimates.</span></li>
         </ul>
-        <p class="stack">Python, NumPy, SciPy, h5py, emcee, FastAPI, React, pytest</p>
+        <div class="links"><a href="https://qens.readthedocs.io" target="_blank" rel="noopener">Documentation</a><a href="https://github.com/ShubhamX57/QENS" target="_blank" rel="noopener">qens on GitHub</a></div>
+        <p class="stack">Python, NumPy, SciPy, h5py, emcee, pytest</p>
       </div>
 
       <div class="aside">
@@ -429,12 +430,13 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
 
         <ul class="findings">
           <li><i class="mark mark-measured" aria-label="Measured"></i><span>The defence held even when retrieval was deliberately steered into the trap passage, because it checks real text rather than the model’s account of it.</span></li>
+          <li><i class="mark mark-measured" aria-label="Measured"></i><span>Cross-encoder reranking lifted MRR@10 from <span class="num">0.801 to 0.955</span> across six ablated configurations.</span></li>
           <li><i class="mark mark-measured" aria-label="Measured"></i><span>Multi-query expansion gave <span class="num">no improvement</span>.</span></li>
           <li><i class="mark mark-measured" aria-label="Measured"></i><span>HyDE <span class="num">lowered accuracy by 5 points</span> on this corpus. Both negative results are published in the repository.</span></li>
         </ul>
 
         <div class="links"><a href="https://github.com/ShubhamX57/arxiv-rag" target="_blank" rel="noopener">arxiv-rag on GitHub</a></div>
-        <p class="stack">Python, LanceDB, BM25 and dense hybrid retrieval, pytest, mypy strict, GitHub Actions</p>
+        <p class="stack">Python, LanceDB, BM25 and dense hybrid retrieval, cross-encoder reranking, pytest, mypy strict, GitHub Actions</p>
       </div>
 
       <div class="aside">
@@ -465,14 +467,27 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
       <article>
         <p class="kicker">Open source, MIT</p>
         <h4>scisolve: numerical answers that have to be computed, not generated</h4>
-        <p>An agentic system that solves ODE, optimisation, curve-fitting and linear algebra problems by running NumPy and SciPy code. No number can be reported unless it traces back to a value the session actually computed, enforced in code rather than by prompting, and each result is confirmed by an independent method. 51 unit tests, CI on Python 3.10 to 3.13.</p>
+        <p>An agentic system that solves ODE, optimisation, curve-fitting and linear algebra problems by running NumPy and SciPy code. No number can be reported unless it traces back to a value the session actually computed, enforced in code rather than by prompting, and each answer is checked by one of six independent verification methods. 122 tests on Python 3.10 to 3.13.</p>
+        <p style="margin-top:.7rem;display:flex;gap:.55rem;align-items:baseline;font-size:.88rem;color:var(--caveat)"><i class="mark mark-progress" aria-label="In progress" style="transform:translateY(.1em)"></i><span>Five of seven milestones complete. Tested through a scripted harness; not yet run against a live model API.</span></p>
         <div class="links"><a href="https://github.com/ShubhamX57/scisolve" target="_blank" rel="noopener">scisolve on GitHub</a></div>
       </article>
       <article>
         <p class="kicker">Performance study, 2025</p>
         <h4>Lebwohl–Lasher: seven implementations of the same physics</h4>
-        <p>A Monte Carlo liquid crystal simulation taken from pure Python through NumPy, Numba, Cython, OpenMP and MPI to hybrid MPI with Cython, reaching roughly 4.7 times the baseline. The part that mattered most was the cross-version tests confirming every faster version still produced the same physics.</p>
-        <div class="links"><a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener">Repository and benchmarks</a></div>
+        <p>A Monte Carlo liquid crystal simulation taken from pure Python through NumPy, Numba, Cython, OpenMP and MPI to hybrid MPI with Cython. The fastest version runs 4.7 times faster than the vectorised NumPy one. The part that mattered most was the cross-version tests confirming every faster version still produced the same physics.</p>
+        <div class="links"><a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener">Repository and benchmarks</a><a href="https://ll-dashboard-delta.vercel.app/" target="_blank" rel="noopener">Live dashboard</a></div>
+      </article>
+      <article>
+        <p class="kicker">Distributed computing, 2026</p>
+        <h4>Distributed ATLAS Higgs analysis</h4>
+        <p>A reproduction of the ATLAS H → ZZ* → 4ℓ Higgs analysis that reaches the official 4.5σ, distributing 40 ROOT files across horizontally scaled Docker workers through RabbitMQ. Built for failure: exponential-backoff retries, a dead-letter queue, coordinator checkpointing and Prometheus metrics.</p>
+        <div class="links"><a href="https://github.com/ShubhamX57/HZZ-Distributed-Computing" target="_blank" rel="noopener">Repository</a></div>
+      </article>
+      <article>
+        <p class="kicker">Physics-informed machine learning</p>
+        <h4>Where machine learning fills in missing physics</h4>
+        <p>The Washburn equation predicts capillary rise almost exactly when pore radius is known. Inverting it into a pore-radius feature lifted a random-forest classifier from 81% to 96%, and a hybrid pipeline raised R² from 0.79 to 0.985. The model supplies the missing input rather than replacing the physics.</p>
+        <div class="links"><a href="https://github.com/ShubhamX57/biscuit-dunking-analysis" target="_blank" rel="noopener">Repository</a></div>
       </article>
     </div>
 
@@ -490,7 +505,7 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
 <section id="experience">
   <div class="wrap">
     <h2 class="section-title">Experience</h2>
-    <p class="section-intro">Three years across a defence research programme, a machine learning company and an engineering firm.</p>
+    <p class="section-intro">Four years across a defence research programme, a science and innovation centre, a machine learning company and an engineering firm.</p>
 
     <ol class="timeline">
       <li class="job">
@@ -504,6 +519,18 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
             <li>Built CI/CD on GitHub Actions and Docker that cut release and validation time from hours to under ten minutes.</li>
             <li>Trained models on multi-GPU compute; an XGBoost and LightGBM ensemble reduced prediction error by roughly 42% against the legacy analytical baseline.</li>
             <li>Provided on-call production support, including fault diagnosis, root-cause analysis and post-mortems for services scientists relied on.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <p class="when">Jun 2023 to May 2024<span>Satara, India</span></p>
+        <div>
+          <h3>Associate fellow in robotics</h3>
+          <p class="org">Rayat Science and Innovation Activity Centre</p>
+          <ul class="points">
+            <li>Developed AI features for educational robotics projects, integrating machine learning into robotic systems.</li>
+            <li>Trained machine learning models for object recognition from robot sensor data, and implemented Python algorithms for path planning and navigation.</li>
+            <li>Built pipelines to process real-time sensor data, tuned models through experiments, and demonstrated the systems to researchers and students.</li>
           </ul>
         </div>
       </li>
@@ -543,7 +570,7 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
       <div class="skill"><h4>Numerical methods</h4><p>Bayesian MCMC, numerical linear algebra, Monte Carlo methods, uncertainty quantification, model validation</p></div>
       <div class="skill"><h4>High-performance computing</h4><p>SLURM, MPI, OpenMP, Cython, Numba, multi-GPU training, PySpark, Dask</p></div>
       <div class="skill"><h4>Machine learning</h4><p>PyTorch, scikit-learn, XGBoost, LightGBM, OpenCV, MLflow, DVC, retrieval-augmented generation</p></div>
-      <div class="skill"><h4>Engineering practice</h4><p>FastAPI, PostgreSQL, Docker, Kubernetes, GitHub Actions, pytest, mypy, Git</p></div>
+      <div class="skill"><h4>Engineering practice</h4><p>FastAPI, PostgreSQL, Docker, Kubernetes, RabbitMQ, Prometheus, GitHub Actions, pytest, mypy, Git</p></div>
       <div class="skill"><h4>Languages</h4><p>Python, SQL, Bash, JavaScript and TypeScript, MATLAB</p></div>
     </div>
   </div>
