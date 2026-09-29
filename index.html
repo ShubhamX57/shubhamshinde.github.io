@@ -365,7 +365,7 @@ pre .s{color:var(--caveat)}
       <div class="feature-body">
         <p class="kicker">Author and maintainer, 2025 to present</p>
         <h3>An open source library for quasi-elastic neutron scattering</h3>
-        <p>A library I designed and wrote that takes the full analysis chain from raw HDF5 files through resolution correction, model fitting and Bayesian parameter estimation, with a FastAPI and React interface on top. It follows ISIS Neutron and Muon Source workflows and is validated on benzene data from the LET spectrometer.</p>
+        <p>A library I designed and wrote that takes the full analysis chain from raw HDF5 files through resolution correction, model fitting and Bayesian parameter estimation, with a FastAPI and React interface on top. I developed it under the supervision of Gøran Nilsen, an instrument scientist at the ISIS Neutron and Muon Source, and Dr Andrew McCluskey at the University of Bristol, and validated it on benzene data from the LET spectrometer.</p>
         <p>The core model is Chudley–Elliott jump diffusion, which describes molecules hopping between sites. Getting the deconvolution of the instrument resolution right was the decisive problem, because a naive approach inflates the diffusion coefficient substantially.</p>
 
         <ul class="findings">
@@ -468,7 +468,7 @@ sampler.run_mcmc(p0, <span class="s">5000</span>, progress=<span class="k">True<
         <p class="kicker">Open source, MIT</p>
         <h4>scisolve: numerical answers that have to be computed, not generated</h4>
         <p>An agentic system that solves ODE, optimisation, curve-fitting and linear algebra problems by running NumPy and SciPy code. No number can be reported unless it traces back to a value the session actually computed, enforced in code rather than by prompting, and each answer is checked by one of six independent verification methods. 122 tests on Python 3.10 to 3.13.</p>
-        <p style="margin-top:.7rem;display:flex;gap:.55rem;align-items:baseline;font-size:.88rem;color:var(--caveat)"><i class="mark mark-progress" aria-label="In progress" style="transform:translateY(.1em)"></i><span>Five of seven milestones complete. Tested through a scripted harness; not yet run against a live model API.</span></p>
+        <p style="margin-top:.7rem;display:flex;gap:.55rem;align-items:baseline;font-size:.88rem;color:var(--caveat)"><i class="mark mark-progress" aria-label="In progress" style="transform:translateY(.1em)"></i><span>Executor, grounding check, agent loop and command line complete. Tested through a scripted harness; not yet run against a live model API.</span></p>
         <div class="links"><a href="https://github.com/ShubhamX57/scisolve" target="_blank" rel="noopener">scisolve on GitHub</a></div>
       </article>
       <article>
