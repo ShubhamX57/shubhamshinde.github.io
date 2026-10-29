@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Shubham Shinde — scientific computing, research software and machine learning.">
+  <meta name="description" content="Shubham Shinde: scientific computing, research software and machine learning.">
   <title>Shubham Shinde</title>
   <style>
     :root { color-scheme: light; --ink:#222; --muted:#666; --line:#e5e5e5; --link:#176b55; }
@@ -32,41 +32,79 @@
     <h1>Shubham Shinde</h1>
     <p class="subtitle">Scientific Computing · Research Software · Machine Learning</p>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#research">Research</a><a href="#open-source">Open source</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
     <section id="about">
       <h2>About</h2>
-      <p>I recently completed an MSc in Scientific Computing with Data Science at the University of Bristol. I enjoy using programming, mathematics and simulation to solve scientific problems.</p>
-      <p>My interests include scientific Python, numerical methods, research software, high-performance computing and machine learning.</p>
+      <p>I recently completed an MSc in Scientific Computing with Data Science at the University of Bristol. I trained as a mechanical engineer, worked on machine learning in industry, and moved into scientific computing, where I found the problem I most enjoy working on: methods that give wrong answers that look right.</p>
+      <p>My interests are uncertainty-aware and probabilistic methods for scientific data, research software for experimental facilities, numerical methods and machine learning for science. I like building tools that other scientists can trust and use without reading the source code first.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <h3>A rare silent failure in Bayesian diffusion analysis</h3>
+      <p class="muted">MSc dissertation · University of Bristol · supervised by Dr Andrew McCluskey · 2026</p>
+      <p><a href="https://github.com/kinisi-dev/kinisi" target="_blank" rel="noopener">kinisi</a> is an open-source Python library that estimates how fast atoms and ions move by fitting the mean squared displacement from molecular dynamics. The fit needs the inverse of a covariance matrix that is itself estimated from the trajectory, and very occasionally it returned a diffusion coefficient wrong by up to three orders of magnitude, with no warning.</p>
+      <ul>
+        <li>Ran 64,000 random-walk fits with a known answer; 14 failed, each reproducible from its seed.</li>
+        <li>Showed the cause is sampling noise in the long-lag variances: more particles (64 to 16,384) cut non-positive-definite covariance matrices from 90.5% to 0.5%.</li>
+        <li>Found that standard diagnostics such as the condition number cannot reliably detect the failures, but that the direction of the instability matters.</li>
+        <li>Developed an independent check, comparing the Bayesian estimate with an ordinary least squares slope, that flags all 13 covariance-driven failures at a 1.5% false-alarm rate.</li>
+      </ul>
+      <p>Presented at RSECon26. A pull request to kinisi is open and a paper is in preparation. <a href="https://github.com/ShubhamX57/kappa-kinisi" target="_blank" rel="noopener">Code</a></p>
+
+      <h3>qens: Bayesian analysis of neutron scattering data</h3>
+      <p class="muted">With ISIS Neutron and Muon Source · supervised by Gøran Nilsen and Dr Andrew McCluskey · 2025–2026</p>
+      <p>Quasi-elastic neutron scattering shows how atoms and molecules move inside materials, but its data is usually fitted one slice at a time. qens reads ISIS NXSPE files and fits physical models across all momentum transfers at once, using MCMC with convergence checks so every result comes with an uncertainty, behind a simple interface for facility users.</p>
+      <p><a href="https://github.com/ShubhamX57/QENS" target="_blank" rel="noopener">GitHub repository</a> · <a href="https://qens.readthedocs.io" target="_blank" rel="noopener">Documentation</a></p>
+    </section>
+
+    <section id="open-source">
+      <h2>Open-source contributions</h2>
+      <h3>TIGRE: tomographic reconstruction toolbox</h3>
+      <p class="muted">Pull request #796 · merged October 2026</p>
+      <p>Found that the Python image-quality metric (UQI) divided the variances by N but the covariance by N−1, which inflated every score and let it exceed its theoretical maximum of 1. Confirmed the bug against the MATLAB reference implementation and submitted a two-line fix. <a href="https://github.com/CERN/TIGRE/pull/796" target="_blank" rel="noopener">View pull request</a></p>
+
+      <h3>Scikit-HEP Uproot: reading CERN ROOT files in Python</h3>
+      <p class="muted">Pull request #1772 · merged October 2026</p>
+      <p>Fixed a bug where a non-positive step size made data iteration silently return no events. Added one shared validation helper across five modules and 50 regression tests, revised through maintainer review. <a href="https://github.com/scikit-hep/uproot5/pull/1772" target="_blank" rel="noopener">View pull request</a></p>
     </section>
 
     <section id="projects">
-      <h2>Selected projects</h2>
-      <h3>Kinisi — diffusion analysis</h3>
-      <p>Investigated numerical instability in covariance matrices that can affect diffusion estimates. Tested a targeted correction and compared its effect on anomalous and healthy cases.</p>
-      <p><a href="https://github.com/ShubhamX57/kappa-kinisi" target="_blank" rel="noopener">GitHub repository</a></p>
+      <h2>Projects</h2>
+      <h3>phasecover: periodicity searches in gappy telescope data</h3>
+      <p>Telescopes in low Earth orbit lose sight of their target every orbit, so standard tests can "detect" the observing pattern instead of the source. phasecover tests photon events against what an unmodulated source should produce under the real observing windows, cutting false detections from 100% to 0% in Monte Carlo tests while still finding a weak 3% signal. Built on Astropy, with FITS reading, a command-line tool and 19 tests.</p>
+      <p><a href="https://github.com/ShubhamX57/phasecover" target="_blank" rel="noopener">GitHub repository</a></p>
 
-      <h3>QENS analysis</h3>
-      <p>Worked on a Python workflow for quasi-elastic neutron scattering data, including data processing, model fitting and Bayesian parameter estimation.</p>
-      <p><a href="https://github.com/ShubhamX57/QENS" target="_blank" rel="noopener">GitHub repository</a> · <a href="https://qens.readthedocs.io" target="_blank" rel="noopener">Documentation</a></p>
+      <h3>nxcat: catalogue for neutron and X-ray data</h3>
+      <p>Ingests NeXus/HDF5 experiment files into PostgreSQL with metadata validation, with a FastAPI search API and a React web app. In its plain-English search, a language model may only propose a filter, which is validated and confirmed by the user before it runs. 98.5% backend test coverage and a one-command Docker setup.</p>
+      <p><a href="https://github.com/ShubhamX57/nxcat" target="_blank" rel="noopener">GitHub repository</a></p>
 
       <h3>Accelerated liquid-crystal simulation</h3>
-      <p>Compared implementations of a Monte Carlo simulation using NumPy, Numba, Cython, OpenMP and MPI, with tests to check that optimisations preserved the model's behaviour.</p>
+      <p>Took a Lebwohl–Lasher Monte Carlo simulation through several implementations, from pure Python and NumPy to Numba, Cython, OpenMP and hybrid MPI, with tests to check that every optimisation preserved the model's behaviour.</p>
       <p><a href="https://github.com/ShubhamX57/LebwohlLasher-Accelerated" target="_blank" rel="noopener">GitHub repository</a></p>
 
       <h3>Distributed Higgs analysis</h3>
-      <p>Built a distributed data-processing workflow using ROOT, Docker and RabbitMQ, with retries and checkpointing.</p>
+      <p>Scaled the ATLAS Open Data Higgs to four-lepton analysis across Docker workers coordinated through RabbitMQ, with retries, a dead-letter queue, checkpointing and Prometheus metrics, reproducing the reference result.</p>
       <p><a href="https://github.com/ShubhamX57/HZZ-Distributed-Computing" target="_blank" rel="noopener">GitHub repository</a></p>
+
+      <h3>arxiv-rag: question answering over research papers</h3>
+      <p>A language model that may only answer from passages retrieved from 204 arXiv papers, with hybrid search, reranking and a check that every quoted citation matches its source. On 76 test questions, reranking raised MRR@10 from 0.80 to 0.96.</p>
+      <p><a href="https://github.com/ShubhamX57/arxiv-rag" target="_blank" rel="noopener">GitHub repository</a></p>
     </section>
 
     <section id="experience">
       <h2>Experience</h2>
       <h3>Data Scientist &amp; Project Engineer</h3>
-      <p class="muted">Raj Security and Facility Management · Pune, India · Jun 2024–Aug 2025</p>
-      <ul><li>Built Python services and data pipelines for sensor-data processing.</li><li>Worked with Spark, SLURM, Docker and automated testing workflows.</li><li>Developed and evaluated machine-learning models.</li></ul>
+      <p class="muted">ARDE, Pune (employed by Raj Security and Facility Management) · India · Jun 2024–Aug 2025</p>
+      <ul><li>Trained deep learning models in PyTorch on multiple GPUs for trajectory prediction, reducing prediction error by 42%.</li><li>Built a PySpark and SLURM pipeline loading over 20 GB of data a day into PostgreSQL, with schema validation and failure recovery.</li><li>Built FastAPI services used by several teams and supported them in production.</li></ul>
+
+      <h3>Data Analyst</h3>
+      <p class="muted">Shinde E-State and Construction (family business) · India · Jun 2023–May 2024</p>
+      <p>Built a machine learning model that priced land plots from past and expected prices, plot attributes and planned projects.</p>
 
       <h3>Robotics Research</h3>
       <p class="muted">Rayat Science and Innovation Activity Centre · India · Jun 2023–May 2024</p>
@@ -74,44 +112,47 @@
 
       <h3>Machine Learning Research Engineer</h3>
       <p class="muted">Spartifical · Remote · Feb 2023–May 2023</p>
-      <p>Developed and evaluated a CNN–Transformer model for lunar terrain imagery.</p>
+      <p>Developed a CNN–Transformer image classifier for lunar terrain imagery (89.7% accuracy) and worked on building shadow detection in aerial images, published in JETIR.</p>
 
       <h3>Design Engineer</h3>
       <p class="muted">Gurudatta Enterprises · India · Nov 2020–May 2022</p>
-      <p>Created engineering models and drawings and automated test-bench data processing with Python.</p>
+      <p>Inspected manufactured parts with gauges and a coordinate measuring machine, created engineering models and drawings, and automated test-bench data processing with Python.</p>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <p><strong>Programming:</strong> Python, SQL, Bash, MATLAB</p>
-      <p><strong>Scientific computing:</strong> NumPy, SciPy, MDAnalysis, HDF5, Monte Carlo methods, Bayesian inference</p>
-      <p><strong>Machine learning:</strong> PyTorch, scikit-learn, XGBoost</p>
-      <p><strong>Tools:</strong> Git, pytest, Docker, SLURM, MPI, OpenMP, Numba, Cython</p>
+      <p><strong>Programming:</strong> Python, SQL, Bash, MATLAB, JavaScript/TypeScript</p>
+      <p><strong>Scientific computing:</strong> NumPy, SciPy, Astropy, MDAnalysis, HDF5/NeXus, FITS, Monte Carlo methods, Bayesian inference (MCMC), uncertainty quantification</p>
+      <p><strong>Machine learning:</strong> PyTorch, scikit-learn, XGBoost, computer vision, retrieval-augmented generation</p>
+      <p><strong>Tools:</strong> Git, pytest, Docker, FastAPI, PostgreSQL, SLURM, MPI, OpenMP, Numba, Cython, RabbitMQ</p>
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <h3>MSc Scientific Computing with Data Science</h3>
       <p class="muted">University of Bristol, UK · 2025–2026</p>
-      <p>Dissertation on numerical stability in diffusion analysis.</p>
+      <p>Dissertation: "An Investigation into a Rare Silent Failure in Bayesian Mean Squared Displacement Analysis".</p>
 
       <h3>Postgraduate Diploma in Data Science &amp; AI</h3>
-      <p class="muted">Savitribai Phule Pune University · 2022–2023</p>
+      <p class="muted">Savitribai Phule Pune University · 2022–2023 · Grade A+</p>
+      <p>Capstone project on machine learning for biopsy detection.</p>
 
       <h3>BE Mechanical Engineering</h3>
       <p class="muted">Savitribai Phule Pune University · 2017–2020</p>
       <p>Capstone project on wind-turbine blade optimisation using CFD.</p>
+    </section>
 
-      <h3>Talk</h3>
-      <p>“When a covariance matrix silently breaks your diffusion analysis” — RSECon26, University of Sheffield, 2026.</p>
-      <h3>Publication</h3>
-      <p>“Building shadow detection using aerial imagery with attention-enhanced YOLOv4” — JETIR, 2023. <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" rel="noopener">Read paper</a></p>
+    <section id="publications">
+      <h2>Talks and publications</h2>
+      <p>"When a covariance matrix silently breaks your diffusion analysis". Lightning talk, RSECon26, University of Sheffield, 2026.</p>
+      <p>T. Dhamdhere, S. Shinde. "Building shadow detection using aerial imagery". JETIR 10(9), 2023. <a href="https://www.jetir.org/papers/JETIR2309292" target="_blank" rel="noopener">Read paper</a></p>
+      <p class="muted">In preparation: paper with Dr Andrew McCluskey on the silent failure in Bayesian diffusion analysis.</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email is the best way to reach me.</p>
-      <div class="links"><a href="mailto:shubham.edu.ms@gmail.com">Email</a><a href="https://github.com/ShubhamX57" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/shubhams6" target="_blank" rel="noopener">LinkedIn</a><a href="cv.pdf">CV (add cv.pdf to this folder)</a></div>
+      <div class="links"><a href="mailto:shubham.edu.ms@gmail.com">Email</a><a href="https://github.com/ShubhamX57" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/shubhams6" target="_blank" rel="noopener">LinkedIn</a><a href="cv.pdf">CV</a></div>
     </section>
   </main>
   <footer>Shubham Shinde · Bristol, UK · <a href="#top">Back to top</a></footer>
